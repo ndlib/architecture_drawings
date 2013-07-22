@@ -1,0 +1,41 @@
+##########################################
+# Shared settings
+##########################################
+
+mysql_settings: &mysql_settings
+  adapter: mysql2
+  pool:    5
+  timeout: 5000
+  encoding: utf8
+
+##########################################
+# Environments
+##########################################
+
+development:
+  <<: *mysql_settings
+  database: architecture_blueprints_development
+  username: root
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test: &test
+  <<: *mysql_settings
+  database: architecture_blueprints_test
+  username: root
+
+pre_production:
+  <<: *mysql_settings
+  database: architecture_blueprints_pprd
+  host:     mysql.library.nd.edu
+  username: NOT_STORED_IN_VERSION_CONTROL
+  password: NOT_STORED_IN_VERSION_CONTROL
+
+production:
+  <<: *mysql_settings
+  database: architecture_blueprints_prod
+  host:     mysql.library.nd.edu
+
+cucumber:
+  <<: *test
