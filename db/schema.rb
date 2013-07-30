@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730151508) do
+ActiveRecord::Schema.define(:version => 20130730185109) do
 
   create_table "blueprints", :force => true do |t|
     t.string   "drawer",              :limit => 2
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(:version => 20130730151508) do
     t.boolean  "to_scale"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "flat_file_imports", :force => true do |t|
+    t.integer  "record_count"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "import_file_file_name"
+    t.string   "import_file_content_type"
+    t.integer  "import_file_file_size"
+    t.datetime "import_file_updated_at"
   end
 
   create_table "searches", :force => true do |t|
