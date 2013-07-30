@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'blacklight'
 gem 'mysql2'
+gem "paperclip", "~> 3.0"
 gem 'roo'
 
 # Gems used only for assets and not required
