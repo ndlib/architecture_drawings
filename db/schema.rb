@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130722030742) do
+ActiveRecord::Schema.define(:version => 20130730151508) do
 
   create_table "blueprints", :force => true do |t|
     t.string   "drawer",              :limit => 2
@@ -47,6 +47,29 @@ ActiveRecord::Schema.define(:version => 20130722030742) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "user_type"
+  end
+
+  create_table "drawings", :force => true do |t|
+    t.string   "drawer",             :limit => 2
+    t.string   "title"
+    t.string   "author"
+    t.string   "publisher"
+    t.string   "publish_location"
+    t.string   "publish_year"
+    t.string   "sheet_count"
+    t.string   "media"
+    t.string   "height_centimeters"
+    t.string   "width_centimeters"
+    t.string   "content_year"
+    t.string   "description"
+    t.string   "subject_string"
+    t.string   "function_type"
+    t.string   "system_number"
+    t.string   "call_number"
+    t.string   "oclc_number"
+    t.boolean  "to_scale"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "searches", :force => true do |t|
