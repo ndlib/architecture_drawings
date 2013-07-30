@@ -52,8 +52,9 @@ class CatalogController < ApplicationController
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
     config.add_facet_field 'subject_facet', label: 'Subject'
-    config.add_facet_field 'format', :label => 'Format'
-    config.add_facet_field 'pub_date', :label => 'Publication Year', :single => true
+    config.add_facet_field 'media_facet', :label => 'Media'
+    config.add_facet_field 'author_facet', :label => 'Author'
+    # config.add_facet_field 'year_t', :label => 'Publication Year', :single => true
     config.add_facet_field 'subject_topic_facet', :label => 'Topic', :limit => 20
     config.add_facet_field 'language_facet', :label => 'Language', :limit => true
     config.add_facet_field 'lc_1letter_facet', :label => 'Call Number'
@@ -62,11 +63,19 @@ class CatalogController < ApplicationController
 
     config.add_facet_field 'example_pivot_field', :label => 'Pivot Field', :pivot => ['format', 'language_facet']
 
-    config.add_facet_field 'example_query_facet_field', :label => 'Publish Date', :query => {
-       :years_5 => { :label => 'within 5 Years', :fq => "pub_date:[#{Time.now.year - 5 } TO *]" },
-       :years_10 => { :label => 'within 10 Years', :fq => "pub_date:[#{Time.now.year - 10 } TO *]" },
-       :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
-    }
+    start_year = 1400
+    year_increment = 25
+    year_query = {}
+    while start_year < Time.now.year do
+      end_year = start_year + year_increment - 1
+      year_query["year_#{start_year}".to_sym] = {
+        label: "#{start_year}-#{end_year}",
+        fq: "year_t:[#{start_year} TO #{end_year}]"
+      }
+      start_year += 25
+    end
+
+    config.add_facet_field 'example_query_facet_field', :label => 'Year', :query => year_query
 
 
     # Have BL send all facet field names to Solr, which has been the default
@@ -78,6 +87,7 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     # config.add_index_field 'title_display', :label => 'Title:'
     config.add_index_field 'drawer_display', :label => 'Drawer:'
+    config.add_index_field 'year_display', :label => 'Year:'
     config.add_index_field 'title_vern_display', :label => 'Title:'
     config.add_index_field 'author_display', :label => 'Author:'
     config.add_index_field 'author_vern_display', :label => 'Author:'
@@ -91,6 +101,7 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     # config.add_show_field 'title_display', :label => 'Title:'
     config.add_show_field 'drawer_display', :label => 'Drawer:'
+    config.add_show_field 'year_display', :label => 'Year:'
     config.add_show_field 'note_display', :label => 'Note:'
     config.add_show_field 'title_vern_display', :label => 'Title:'
     config.add_show_field 'subtitle_display', :label => 'Subtitle:'
@@ -169,10 +180,10 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, pub_date_sort desc, title_sort asc', :label => 'relevance'
-    config.add_sort_field 'pub_date_sort desc, title_sort asc', :label => 'year'
+    config.add_sort_field 'score desc, year_t_sort desc, title_sort asc', :label => 'relevance'
+    config.add_sort_field 'year_sort asc, title_sort asc', :label => 'year'
     config.add_sort_field 'author_sort asc, title_sort asc', :label => 'author'
-    config.add_sort_field 'title_sort asc, pub_date_sort desc', :label => 'title'
+    config.add_sort_field 'title_sort asc, year_sort desc', :label => 'title'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.

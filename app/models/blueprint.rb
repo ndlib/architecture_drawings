@@ -28,8 +28,35 @@ class Blueprint < ActiveRecord::Base
     subject_listing.to_s.split(/(\r\n?|\r?\n)/).reject{|value| value.blank?}
   end
 
+  def authors
+    original = author.to_s
+    if original =~ /;/
+      split = original.split(/; */)
+    elsif original =~ / and /
+      split = original.split(/ and /)
+    elsif original =~ / & /
+      split = original.split(/ & /)
+    else
+      split = [original]
+    end
+    split.reject{|value| value.blank?}
+  end
+
   def solr_id
     "blueprint-#{id}"
+  end
+
+  def creation_year
+    match = note_1.to_s.match(/[0-9]{4}/)
+    if match
+      year = match[0]
+      if note_1 =~ /before/
+        year -= 1
+      end
+      year
+    else
+      nil
+    end
   end
 
   def to_solr
@@ -38,13 +65,18 @@ class Blueprint < ActiveRecord::Base
       :title_display => title,
       :title_t => title,
       :title_sort => title,
-      author_t: author,
+      author_facet: authors,
+      author_t: authors,
       author_display: author,
-      :pub_date => year,
+      author_sort: author,
+      :year_t => creation_year,
+      year_sort: creation_year,
+      :year_display => note_1,
       :published_display => "#{publisher} #{publishing_location}",
       :subject_facet => subjects,
       :subject_t => subjects,
-      format: media,
+      media_facet: media,
+      media_display: media,
       drawer_display: drawer,
       note_display: note_2
     }.reject{|key, value| value.blank?}

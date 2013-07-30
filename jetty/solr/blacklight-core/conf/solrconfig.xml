@@ -203,6 +203,8 @@
          published_display,
          published_vern_display,
          pub_date,
+         year_t,
+         year_display,
          title_display,
          title_vern_display,
          subject_topic_facet,
@@ -214,6 +216,7 @@
          url_suppl_display,
          drawer_display,
          note_display,
+         media_display,
        </str>
 
        <str name="facet">true</str>
@@ -225,6 +228,7 @@
        <str name="facet.field">lc_b4cutter_facet</str>
        <str name="facet.field">language_facet</str>
        <str name="facet.field">pub_date</str>
+       <str name="facet.field">year_t</str>
        <str name="facet.field">subject_era_facet</str>
        <str name="facet.field">subject_geo_facet</str>
        <str name="facet.field">subject_topic_facet</str>
@@ -399,6 +403,8 @@
         published_display,
         published_vern_display,
         pub_date,
+        year_t,
+        year_display,
         title_display,
         title_vern_display,
         subject_topic_facet,
@@ -410,6 +416,7 @@
         url_suppl_display,
         drawer_display,
         note_display,
+        media_display,
       </str>
 
       <str name="facet">true</str>
@@ -421,6 +428,7 @@
       <str name="facet.field">lc_b4cutter_facet</str>
       <str name="facet.field">language_facet</str>
       <str name="facet.field">pub_date</str>
+      <str name="facet.field">year_t</str>
       <str name="facet.field">subject_era_facet</str>
       <str name="facet.field">subject_geo_facet</str>
       <str name="facet.field">subject_topic_facet</str>
