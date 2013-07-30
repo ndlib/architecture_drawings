@@ -89,15 +89,6 @@ class BlueprintImport
   end
 
   def self.test
-    self.new(File.join(Rails.root,"test/fixtures/test-export.xlsx"))
-  end
-
-  def self.testencoding
-    require 'csv'
-    rows = []
-    CSV.read(File.join(Rails.root,"test/fixtures/7-22-2013-trial.csv")).each_with_index do |row,index|
-      rows << row
-    end
-    rows
+    self.new(File.join(Rails.root,"spec/fixtures/test-export.xlsx"))
   end
 end
