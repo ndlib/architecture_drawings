@@ -1,6 +1,7 @@
 class CreateDrawings < ActiveRecord::Migration
   def change
     create_table :drawings do |t|
+      t.string :identifier
       t.string :drawer, limit: 2
       t.string :title
       t.string :author

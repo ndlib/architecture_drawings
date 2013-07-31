@@ -90,6 +90,7 @@
          title_unstem_search^100000
          subtitle_unstem_search^50000
          title_t^25000
+         system_number_t^25000
          subtitle_t^10000
          title_addl_unstem_search^5000
          title_addl_t^2500
@@ -113,6 +114,7 @@
        <str name="pf">
          title_unstem_search^1000000
          subtitle_unstem_search^500000
+         system_number_t^250000
          title_t^250000
          subtitle_t^100000
          title_addl_unstem_search^50000
@@ -217,6 +219,8 @@
          drawer_display,
          note_display,
          media_display,
+         subject_t,
+         system_number_display,
        </str>
 
        <str name="facet">true</str>
@@ -417,6 +421,7 @@
         drawer_display,
         note_display,
         media_display,
+        subject_t,
       </str>
 
       <str name="facet">true</str>

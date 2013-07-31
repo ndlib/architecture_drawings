@@ -1,0 +1,5 @@
+<h1>Last Import</h1>
+<p><%= @import.created_at %></p>
+<p><%= @import.record_count %> records imported.  <%= @import.new_record_count %> new records.</p>
+
+<p><%= link_to("New Import", new_flat_file_import_path) %></p>

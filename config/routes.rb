@@ -3,6 +3,9 @@ ArchitectureBlueprints::Application.routes.draw do
 
   Blacklight.add_routes(self)
 
+  resource :flat_file_import, only: [:show, :new, :create], path: :import do
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

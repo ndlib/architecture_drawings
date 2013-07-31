@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20130730185109) do
   end
 
   create_table "drawings", :force => true do |t|
+    t.string   "identifier"
     t.string   "drawer",             :limit => 2
     t.string   "title"
     t.string   "author"
@@ -74,6 +75,8 @@ ActiveRecord::Schema.define(:version => 20130730185109) do
 
   create_table "flat_file_imports", :force => true do |t|
     t.integer  "record_count"
+    t.integer  "new_record_count"
+    t.boolean  "processed"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
     t.string   "import_file_file_name"

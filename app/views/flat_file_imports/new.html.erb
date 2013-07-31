@@ -1,0 +1,13 @@
+<h1>Import Flat Files</h1>
+
+<%= form_for @import, url: flat_file_import_path, html: { multipart: true } do |form| %>
+  <% if form.object.errors.size > 0 %>
+    <div class="alert alert-danger">
+      <% form.object.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <p><%= form.file_field :import_file %></p>
+  <p><%= form.submit "Import" %></p>
+<% end %>
