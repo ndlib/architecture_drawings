@@ -10,6 +10,14 @@ GIT
       twitter-bootstrap-rails
       uglifier (>= 1.0.3)
 
+GIT
+  remote: git@git.library.nd.edu:hesburgh_infrastructure
+  revision: 8933611d8440dcd3459a61cd9c4cc3c1cf2f8705
+  specs:
+    hesburgh_infrastructure (0.0.1)
+      capistrano (~> 2.15.0)
+      rails (~> 3.2.13)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,6 +60,12 @@ GEM
     bootstrap-sass (2.3.2.1)
       sass (~> 3.2)
     builder (3.0.4)
+    capistrano (2.15.5)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.1)
@@ -67,6 +81,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    highline (1.6.19)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -86,6 +101,13 @@ GEM
     mini_portile (0.5.1)
     multi_json (1.7.7)
     mysql2 (0.3.11)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.6.8)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     paperclip (3.5.0)
@@ -176,6 +198,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 3.2.1)
   hesburgh_assets!
+  hesburgh_infrastructure!
   jquery-rails (~> 2.1.4)
   mysql2
   paperclip (~> 3.0)

@@ -7,9 +7,10 @@ gem 'rails', '3.2.13'
 
 gem 'blacklight'
 gem 'hesburgh_assets', :git => 'git@git.library.nd.edu:assets'
+gem 'hesburgh_infrastructure', git: 'git@git.library.nd.edu:hesburgh_infrastructure'
 gem 'jquery-rails', '~> 2.1.4'
 gem 'mysql2'
-gem "paperclip", "~> 3.0"
+gem 'paperclip', "~> 3.0"
 gem 'roo'
 
 # Gems used only for assets and not required
