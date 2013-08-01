@@ -23,6 +23,7 @@ set :application, 'architecture_drawings'
 desc "Setup for the Pre-Production environment"
 task :pre_production do
   # Customize pre_production configuration
+  set :domain,    "rpprd.library.nd.edu"
 end
 
 desc "Setup for the production environment"
@@ -35,3 +36,9 @@ end
 #############################################################
 
 # Define any addional tasks or callbacks here
+
+namespace :db do
+    task :migrate, :roles => :app do
+      # Temporarily disable the migrate task
+    end
+  end
