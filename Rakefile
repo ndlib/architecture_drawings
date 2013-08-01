@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-ArchitectureBlueprints::Application.load_tasks
+ArchitectureDrawings::Application.load_tasks

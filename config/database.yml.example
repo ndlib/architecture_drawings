@@ -14,7 +14,7 @@ mysql_settings: &mysql_settings
 
 development:
   <<: *mysql_settings
-  database: architecture_blueprints_development
+  database: architecture_drawings_development
   username: root
 
 # Warning: The database defined as "test" will be erased and
@@ -22,20 +22,22 @@ development:
 # Do not set this db to the same as development or production.
 test: &test
   <<: *mysql_settings
-  database: architecture_blueprints_test
+  database: architecture_drawings_test
   username: root
 
 pre_production:
   <<: *mysql_settings
-  database: architecture_blueprints_pprd
+  database: architecture_drawings_pprd
   host:     mysql.library.nd.edu
   username: NOT_STORED_IN_VERSION_CONTROL
   password: NOT_STORED_IN_VERSION_CONTROL
 
 production:
   <<: *mysql_settings
-  database: architecture_blueprints_prod
+  database: architecture_drawings_prod
   host:     mysql.library.nd.edu
+  username: NOT_STORED_IN_VERSION_CONTROL
+  password: NOT_STORED_IN_VERSION_CONTROL
 
 cucumber:
   <<: *test
