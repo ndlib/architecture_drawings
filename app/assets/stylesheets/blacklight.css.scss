@@ -1,7 +1,36 @@
-@import 'bootstrap';
-@import 'bootstrap-responsive';
-
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+@import 'bootstrap/wells';
+@import 'bootstrap/sprites';
 @import 'blacklight/blacklight';
+
+body {
+  padding: 0;
+}
+
+.util-links {
+  float: right;
+  margin-left: 8px;
+  div {
+    text-align: right;
+  }
+}
+
+.search-query-form {
+  margin-bottom: 1em;
+
+  input {
+    width: 206px;
+  }
+
+  select {
+    width: auto;
+  }
+
+  .input-append, .input-prepend {
+    font-size: 0;
+  }
+}
 
 .document, #document {
   h1, h2, h3 {
@@ -61,4 +90,77 @@
 
 .document-subheadings {
   clear: both;
+}
+
+#facets li {
+  padding-right: 0;
+
+  a.remove {
+    padding: 3px 0;
+    margin-left: -10px;
+  }
+
+  .count {
+    margin-right: 0;
+    margin-left: 8px;
+  }
+}
+
+.css-dropdown {
+  margin: 0;
+}
+
+.flash_messages {
+  clear: both;
+}
+
+.page_links {
+  float: left;
+  margin-bottom: 5px;
+}
+
+.bookmarkTools {
+  display: none;
+}
+
+@media only screen and (max-width: 580px) {
+  #sortAndPerPage div {
+    display: inline-block;
+    float: none;
+    padding-left: 0;
+  }
+}
+
+.child_facet {
+  font-size: 0.9em;
+  margin-left: 1em;
+}
+
+.hide_facet {
+  display:none;
+}
+
+.sidenav {
+  border: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  h5, h4 {
+    padding-left: 0;
+  }
+}
+
+#facets {
+  h5 {
+    border-bottom: 1px solid #CCCCCC;
+  }
+
+  ul {
+    margin-left: 0.5em;
+  }
+
+  li {
+    margin-right: 5px;
+  }
 }

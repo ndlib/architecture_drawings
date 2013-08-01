@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title><%= "#{@page_title || application_name}".html_safe %> // Hesburgh Libraries // University of Notre Dame</title>
+    <meta name="description" content="Information resources and collections of the Hesburgh Libraries, University of Notre Dame." />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+
+    <%= stylesheet_link_tag    "hesburgh_assets/main/1.0/index.css", :media => "all" %>
+    <!--[if lte IE 9]>
+      <%= stylesheet_link_tag    "hesburgh_assets/main/1.0/ie.css", :media => "all" %>
+    <![endif]-->
+    <%= javascript_include_tag "hesburgh_assets/main/1.0/index.js" %>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= raw(render_head_content) %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row header">
+        <div class="twelve columns">
+          <%= include_ssi("/local_ssi/responsive/header.shtml") %>
+        </div>
+      </div>
+      <div class="row menu">
+        <div class="twelve columns">
+          <%= include_ssi("/ssi/main-menu.shtml") %>
+        </div>
+      </div>
+      <div class="row breadcrumb hide-on-phones">
+        <div class="twelve columns">
+          <%
+          if !content_for?(:breadcrumb)
+            breadcrumb()
+          end
+          %>
+          <p><%= content_for(:breadcrumb) %></p>
+        </div>
+      </div>
+      <div class="row content">
+        <div class="container">
+          <% if content_for?(:left_column) %>
+            <div class="three columns">
+              <%= content_for(:left_column) %>
+            </div>
+          <% end %>
+          <%
+          content_width = 12
+          if content_for?(:left_column)
+            content_width -= 3
+          end
+          if content_for?(:right_column)
+            content_width -= 4
+          end
+          if content_for?(:right_column_wide)
+            content_width -= 5
+          end
+          %>
+          <div class="<%= number_to_word(content_width) %> columns">
+            <div class="util-links">
+              <%= render :partial=>'/user_util_links' %>
+            </div>
+            <h1 class="site_title"><%= link_to "eJournal Locator", "/" %></h1>
+
+            <%= render :partial=>'/flash_msg' %>
+            <div class="row">
+              <div class="three columns"></div>
+              <div class="nine columns">
+                <%= render_search_bar %>
+              </div>
+            </div>
+            <%= yield %>
+          </div>
+          <% if content_for?(:right_column) %>
+            <div class="four columns">
+              <%= content_for(:right_column) %>
+            </div>
+          <% end %>
+          <% if content_for?(:right_column_wide) %>
+            <div class="five columns">
+              <%= content_for(:right_column_wide) %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= include_ssi("/local_ssi/responsive/footer.shtml") %>
+    </div>
+  </body>
+</html>
