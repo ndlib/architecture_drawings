@@ -21,8 +21,6 @@ class Drawing < ActiveRecord::Base
     :oclc_number,
     :to_scale
 
-  validates_uniqueness_of :identifier
-
   def subjects
     subject_string.to_s.split(/(\r\n?|\r?\n)/).reject{|value| value.blank?}
   end
@@ -100,12 +98,17 @@ class Drawing < ActiveRecord::Base
       size_display: size_display,
       system_number_t: system_numbers,
       system_number_display: system_number,
-      lc_callnum_display: call_number
+      lc_callnum_display: call_number,
+      import_id_i: (import_id || 0)
     }.reject{|key, value| value.blank?}
   end
 
   def add_solr
-    Blacklight.solr.add to_solr
+    self.class.solr.add to_solr
+  end
+
+  def self.solr
+    Blacklight.solr
   end
 
   def self.reindex_solr
@@ -116,11 +119,24 @@ class Drawing < ActiveRecord::Base
   end
 
   def self.commit_solr
-    Blacklight.solr.commit
+    self.solr.commit
+  end
+
+  def self.last_import_id
+    self.maximum(:import_id)
+  end
+
+  def self.inactive_drawings
+    where("import_id > ?",self.last_import_id)
+  end
+
+  def self.destroy_inactive_drawings
+    self.inactive_drawings.destroy_all
+    self.commit_solr
   end
 
   def remove_from_index
-    Blacklight.solr.delete_by_id(self.solr_id)
+    self.solr.delete_by_id(self.solr_id)
     self.class.commit_solr
   end
 end

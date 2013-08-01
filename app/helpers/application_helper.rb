@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def in_catalog?
+    ['catalog','search_history'].include?(params[:controller])
+  end
+
   def success
     flash[:success]
   end

@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(:version => 20130730185109) do
   end
 
   create_table "drawings", :force => true do |t|
+    t.integer  "import_id"
+    t.integer  "import_row"
+    t.string   "system_number"
     t.string   "identifier"
     t.string   "drawer",             :limit => 2
     t.string   "title"
@@ -38,7 +41,6 @@ ActiveRecord::Schema.define(:version => 20130730185109) do
     t.string   "description"
     t.string   "subject_string"
     t.string   "function_type"
-    t.string   "system_number"
     t.string   "call_number"
     t.string   "oclc_number"
     t.boolean  "to_scale"
@@ -46,9 +48,15 @@ ActiveRecord::Schema.define(:version => 20130730185109) do
     t.datetime "updated_at",                      :null => false
   end
 
+  add_index "drawings", ["identifier"], :name => "index_drawings_on_identifier"
+  add_index "drawings", ["import_id"], :name => "index_drawings_on_import_id"
+  add_index "drawings", ["system_number"], :name => "index_drawings_on_system_number"
+
   create_table "flat_file_imports", :force => true do |t|
     t.integer  "record_count"
     t.integer  "new_record_count"
+    t.integer  "updated_record_count"
+    t.integer  "deleted_record_count"
     t.boolean  "processed"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false

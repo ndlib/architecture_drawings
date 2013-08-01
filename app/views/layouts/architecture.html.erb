@@ -61,18 +61,19 @@
           end
           %>
           <div class="<%= number_to_word(content_width) %> columns">
-            <div class="util-links">
-              <%= render :partial=>'/user_util_links' %>
-            </div>
-            <h1 class="site_title"><%= link_to application_name, "/" %></h1>
+            <% if in_catalog? %>
+              <h1 class="site_title"><%= link_to application_name, "/" %></h1>
+            <% end %>
 
             <%= render :partial=>'/flash_msg' %>
-            <div class="row">
-              <div class="three columns"></div>
-              <div class="nine columns">
-                <%= render_search_bar %>
+             <% if in_catalog? %>
+              <div class="row">
+                <div class="three columns"></div>
+                <div class="nine columns">
+                  <%= render_search_bar %>
+                </div>
               </div>
-            </div>
+            <% end %>
             <%= yield %>
           </div>
           <% if content_for?(:right_column) %>

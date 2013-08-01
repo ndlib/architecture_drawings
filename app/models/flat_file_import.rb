@@ -33,6 +33,8 @@ class FlatFileImport < ActiveRecord::Base
   def process_import_file!
     self.record_count = 0
     self.new_record_count = 0
+    self.updated_record_count = 0
+    self.deleted_record_count = 0
     self.duplicates = []
     if import_file.original_filename =~ /xls$/
       spreadsheet = Roo::Excel.new(import_file.path)
@@ -41,18 +43,20 @@ class FlatFileImport < ActiveRecord::Base
     end
     (2..spreadsheet.last_row).each do |i|
       row = spreadsheet.row(i)
-      process_row(row)
+      process_row(row, i)
     end
     Drawing.commit_solr
+    self.deleted_record_count = Drawing.inactive_drawings.count
+    Drawing.destroy_inactive_drawings
     self.processed = true
     self.save
   end
 
-  def process_row(row)
+  def process_row(row_data, row_index)
     data = {}
     COLUMN_MAP.each_with_index do |field, index|
       if field.present?
-        data[field] = row[index]
+        data[field] = row_data[index]
       end
     end
     if data[:to_scale] == "Yes"
@@ -69,17 +73,19 @@ class FlatFileImport < ActiveRecord::Base
     data[:identifier] = Digest::SHA1.hexdigest(data[:title])
     drawing = nil
     if data[:system_number].present?
-      drawing = Drawing.where(system_number: data[:system_number]).first
+      drawing = Drawing.where("import_id < ?",self.id).where(system_number: data[:system_number]).first
     end
     if drawing.nil?
-      drawing = Drawing.where(identifier: data[:identifier]).first
+      drawing = Drawing.where("import_id < ?",self.id).where(identifier: data[:identifier]).first
     end
     if drawing.nil?
       drawing = Drawing.new
       self.new_record_count += 1
     else
-      self.duplicates << [drawing.inspect, data]
+      self.updated_record_count += 1
     end
+    drawing.import_id = self.id
+    drawing.import_row = row_index
     begin
       drawing.update_attributes!(data)
     rescue Exception => e

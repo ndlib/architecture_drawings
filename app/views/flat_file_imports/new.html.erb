@@ -8,6 +8,10 @@
       <% end %>
     </div>
   <% end %>
-  <p><%= form.file_field :import_file %></p>
-  <p><%= form.submit "Import" %></p>
+  <%= form.label :import_file %>
+  <%= form.file_field :import_file %>
+  <span class="help-block">The import file should be an Excel Spreadsheet exported from the FileMaker Pro database.</span>
+  <div class="form-actions">
+    <%= form.submit "Import", class: 'btn btn-primary' %>
+  </div>
 <% end %>

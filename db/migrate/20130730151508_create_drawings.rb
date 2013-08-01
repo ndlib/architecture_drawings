@@ -1,6 +1,9 @@
 class CreateDrawings < ActiveRecord::Migration
   def change
     create_table :drawings do |t|
+      t.integer :import_id
+      t.integer :import_row
+      t.string :system_number
       t.string :identifier
       t.string :drawer, limit: 2
       t.string :title
@@ -16,11 +19,14 @@ class CreateDrawings < ActiveRecord::Migration
       t.string :description
       t.string :subject_string
       t.string :function_type
-      t.string :system_number
       t.string :call_number
       t.string :oclc_number
       t.boolean :to_scale
       t.timestamps
     end
+
+    add_index :drawings, :import_id
+    add_index :drawings, :system_number
+    add_index :drawings, :identifier
   end
 end
