@@ -29,6 +29,7 @@ end
 desc "Setup for the production environment"
 task :production do
   # Customize production configuration
+  set :domain,    "rprod.library.nd.edu"
 end
 
 #############################################################
