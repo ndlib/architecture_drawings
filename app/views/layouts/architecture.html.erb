@@ -8,10 +8,12 @@
     <meta name="viewport" content="width=device-width" />
 
     <%= stylesheet_link_tag    "hesburgh_assets/main/1.0/index.css", :media => "all" %>
+    <%= stylesheet_link_tag    "hesburgh_assets/architecture_library/1.0/index.css", :media => "all" %>
     <!--[if lte IE 9]>
       <%= stylesheet_link_tag    "hesburgh_assets/main/1.0/ie.css", :media => "all" %>
     <![endif]-->
     <%= javascript_include_tag "hesburgh_assets/main/1.0/index.js" %>
+    <%= javascript_include_tag "hesburgh_assets/architecture_library/1.0/index.js" %>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -26,7 +28,7 @@
       </div>
       <div class="row menu">
         <div class="twelve columns">
-          <%= include_ssi("/ssi/main-menu.shtml") %>
+          <%= include_ssi("/architecture/ssi/main-menu.shtml") %>
         </div>
       </div>
       <div class="row breadcrumb hide-on-phones">
@@ -62,7 +64,7 @@
             <div class="util-links">
               <%= render :partial=>'/user_util_links' %>
             </div>
-            <h1 class="site_title"><%= link_to "eJournal Locator", "/" %></h1>
+            <h1 class="site_title"><%= link_to application_name, "/" %></h1>
 
             <%= render :partial=>'/flash_msg' %>
             <div class="row">
@@ -85,7 +87,7 @@
           <% end %>
         </div>
       </div>
-      <%= include_ssi("/local_ssi/responsive/footer.shtml") %>
+      <%= include_ssi("/architecture/local_ssi/footer.shtml") %>
     </div>
   </body>
 </html>

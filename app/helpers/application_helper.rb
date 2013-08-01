@@ -27,7 +27,8 @@ module ApplicationHelper
 
   def breadcrumb(*crumbs)
     crumbs.unshift(link_to(application_name, root_path))
-    crumbs.unshift(link_to("Hesburgh Libraries", "https://www.library.nd.edu"))
+    crumbs.unshift(link_to("Architecture Library", "http://library.nd.edu/architecture"))
+    crumbs.unshift(link_to("Hesburgh Libraries", "http://library.nd.edu"))
     content_for(:breadcrumb, raw(crumbs.join(" &gt; ")))
   end
 

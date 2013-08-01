@@ -1,6 +1,10 @@
 module BlacklightHelper
   include Blacklight::BlacklightHelperBehavior
 
+  def application_name
+    "Maps and Plans Collection"
+  end
+
   def render_document_subheadings(document)
     subheadings = content_tag(:h2,render_document_show_field_value(document, field: "author_display"))
     subheadings += content_tag(:h3,render_document_show_field_value(document, field: "published_display"))

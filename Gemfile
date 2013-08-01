@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'blacklight'
 gem 'hesburgh_assets', :git => 'git@git.library.nd.edu:assets'
+gem 'jquery-rails', '~> 2.1.4'
 gem 'mysql2'
 gem "paperclip", "~> 3.0"
 gem 'roo'
@@ -20,8 +21,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
