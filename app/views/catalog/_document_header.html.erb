@@ -1,11 +1,12 @@
 <% # header bar for doc items in index view -%>
 <div class="documentHeader clearfix">
-
+  <h1 class="counter"><%= t('blacklight.search.documents.counter', :counter => (document_counter + 1 + @response.params[:start].to_i)) %></h1>
   <% # main title container for doc partial view -%>
-    <h5 class="index_title"><%= t('blacklight.search.documents.counter', :counter => (document_counter + 1 + @response.params[:start].to_i)) %><%= link_to_document document, :label=>document_show_link_field(document), :counter => (document_counter + 1 + @response.params[:start].to_i) %></h5>
+    <h1 class="index_title"><%= link_to_document document, :label=>document_show_link_field(document), :counter => (document_counter + 1 + @response.params[:start].to_i) %></h1>
 
 
   <% # bookmark functions for items/docs -%>
   <%= render_index_doc_actions document, :wrapping_class => "documentFunctions span2" %>
+  <%= render_document_subheadings(document) %>
 </div>
 

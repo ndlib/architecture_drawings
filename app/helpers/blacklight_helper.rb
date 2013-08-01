@@ -3,7 +3,14 @@ module BlacklightHelper
 
   def render_document_subheadings(document)
     subheadings = content_tag(:h2,render_document_show_field_value(document, field: "author_display"))
-    subheadings += content_tag(:h2,render_document_show_field_value(document, field: "published_display"))
+    subheadings += content_tag(:h3,render_document_show_field_value(document, field: "published_display"))
+    location_string = "Architecture Library Maps and Plans - Flat Files, Drawer #{render_document_show_field_value(document, field: "drawer_display")}"
+    call_number = render_document_show_field_value(document, field: "lc_callnum_display")
+    if call_number.present?
+      location_string += " (#{call_number})"
+    end
+    subheadings += content_tag(:p, location_string)
+    content_tag(:div, subheadings, class: "document-subheadings")
   end
 
   ##

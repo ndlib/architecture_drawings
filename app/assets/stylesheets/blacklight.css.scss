@@ -3,6 +3,62 @@
 
 @import 'blacklight/blacklight';
 
-.index_title {
-  max-width: inherit;
+.document, #document {
+  h1, h2, h3 {
+    line-height: inherit;
+    margin: 0;
+  }
+
+  h1 {
+    color: #133250;
+  }
+}
+
+.documentHeader {
+  position: relative;
+  margin-left: 2em;
+
+  .counter {
+    position: absolute;
+    right: 100%;
+    margin-right: 0.5em;
+  }
+  h1 {
+    font-size: 120%;
+  }
+
+  .index_title {
+    max-width: inherit;
+  }
+
+  .document-subheadings {
+    h2 {
+      font-size: 100%;
+    }
+  }
+}
+
+.document-subheadings {
+  h2 {
+    font-size: 110%;
+    color: #404040;
+  }
+  h3 {
+    font-size: 100%;
+    color: #7f7f7f;
+  }
+}
+
+#document {
+  h1 {
+    font-size: 130%;
+  }
+}
+
+#documents .documentFunctions {
+  margin: 0;
+}
+
+.document-subheadings {
+  clear: both;
 }
