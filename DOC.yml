@@ -1,0 +1,31 @@
+id: architecture_drawings
+name: Architecture Drawings
+owner: jkennel
+developers:
+  - jkennel
+  - rfox2
+purpose: >
+  Search index for the Architecture Library's collection of drawings.
+audience: Architecture Library patrons
+dependencies:
+  - mysql
+  - solr
+hosts:
+  - drawingspprd.library.nd.edu
+  - drawings.library.nd.edu
+urls:
+  - "http://drawingspprd.library.nd.edu"
+  - "http://drawings.library.nd.edu"
+  - "http://library.nd.edu/architecture/<path here>"
+setup: >
+  rake db:create; rake db:migrate; rake db:test:prepare;
+  To start the server both jetty (Solr) and the Rails server must be started in separate consoles:
+  cd jetty; java -jar start.jar
+  rails s
+
+  To add test data, visit http://localhost:3000/import and upload the test file from spec/fixtures/test-export.xlsx
+notes: >
+
+last_review:
+  date: 2013-08-02
+  reviewer: jkennel
