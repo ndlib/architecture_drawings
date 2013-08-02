@@ -136,7 +136,7 @@ class Drawing < ActiveRecord::Base
   end
 
   def remove_from_index
-    self.solr.delete_by_id(self.solr_id)
+    self.class.solr.delete_by_id(self.solr_id)
     self.class.commit_solr
   end
 end
