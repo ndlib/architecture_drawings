@@ -1,5 +1,5 @@
 # Set the name of the application.  This is used to determine directory paths and domains
-set :application, 'architecture_drawings'
+set :application, 'drawings'
 
 #############################################################
 #  Application settings
@@ -8,7 +8,7 @@ set :application, 'architecture_drawings'
 # Defaults are set in lib/hesburgh_infrastructure/capistrano/common.rb
 
 # Repository defaults to "git@git.library.nd.edu:#{application}"
-# set :repository, "git@git.library.nd.edu:myrepository"
+set :repository, "git@git.library.nd.edu:architecture_drawings"
 
 # Define symlinks for files or directories that need to persist between deploys.
 # /log, /vendor/bundle, and /config/database.yml are automatically symlinked
