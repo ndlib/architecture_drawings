@@ -7,7 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'blacklight'
 gem 'hesburgh_assets', :git => 'git@git.library.nd.edu:assets'
-gem 'hesburgh_infrastructure', git: 'git@git.library.nd.edu:hesburgh_infrastructure'
+gem 'hesburgh_infrastructure', :git => 'git@git.library.nd.edu:hesburgh_infrastructure'
 gem 'jquery-rails', '~> 2.1.4'
 gem 'mysql2'
 gem 'nokogiri', '~> 1.5.0'

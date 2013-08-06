@@ -27,15 +27,15 @@ test: &test
 
 pre_production:
   <<: *mysql_settings
-  database: architecture_drawings_pprd
-  host:     mysql.library.nd.edu
+  database: drawings_pprd
+  host:     dbpprd.library.nd.edu
   username: NOT_STORED_IN_VERSION_CONTROL
   password: NOT_STORED_IN_VERSION_CONTROL
 
 production:
   <<: *mysql_settings
-  database: architecture_drawings_prod
-  host:     mysql.library.nd.edu
+  database: drawings_prod
+  host:     dbprod.library.nd.edu
   username: NOT_STORED_IN_VERSION_CONTROL
   password: NOT_STORED_IN_VERSION_CONTROL
 
