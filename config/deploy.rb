@@ -37,6 +37,8 @@ end
 
 # Define any addional tasks or callbacks here
 
+require 'deploy/whenever'
+
 namespace :deploy do
 
   desc "Reload the Solr configuration"
