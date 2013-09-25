@@ -44,6 +44,6 @@ job_type :rake,   "cd :path && :environment_variable=:environment :bundler exec 
 
 # Learn more: http://github.com/javan/whenever
 
-every '0 12 * * *' do
+every '0 3 * * *' do
   rake "blacklight:delete_old_searches[7]"
 end
