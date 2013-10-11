@@ -25,10 +25,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do
-  gem 'rspec-rails', '~> 2.0'
-end
-
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -46,3 +42,20 @@ end
 
 gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "bootstrap-sass"
+
+group :development do
+  gem "debugger"
+  gem "rspec-rails"
+  gem "capybara"
+  gem "factory_girl_rails", :require => false
+  gem "faker"
+
+  gem "guard"
+  gem "guard-bundler"
+  gem "guard-coffeescript"
+  gem "guard-rails"
+  gem "guard-rspec"
+  gem "guard-spork"
+  gem "rb-readline"
+  gem "growl"
+end

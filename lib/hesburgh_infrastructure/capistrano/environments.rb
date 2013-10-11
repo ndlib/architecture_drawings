@@ -2,6 +2,7 @@ Capistrano::Configuration.instance(:must_exist).load do
 
   # Environments
   _cset :relative_ruby_path, "ruby/1.9.3/bin"
+  _cset(:deploy_directory) { application }
 
   after 'pre_production', 'environments:pre_production_defaults', 'environments:defaults'
   after 'production', 'environments:production_defaults', 'environments:defaults'
@@ -30,7 +31,7 @@ Capistrano::Configuration.instance(:must_exist).load do
       _cset :rails_env, 'pre_production'
       _cset :user,      'rbpprd'
       _cset :home_path, "/shared/ruby_pprd"
-      _cset :domain,    "#{application}pprd.library.nd.edu"
+      _cset :domain,    "rpprd.library.nd.edu"
     end
 
     desc "Default configuration for the production environment"
@@ -38,12 +39,12 @@ Capistrano::Configuration.instance(:must_exist).load do
       _cset :rails_env, 'production'
       _cset :user,      'rbprod'
       _cset :home_path, "/shared/ruby_prod"
-      _cset :domain,    "#{application}.library.nd.edu"
+      _cset :domain,    "rprod.library.nd.edu"
     end
 
     desc "Common default configuration for all environments"
     task :defaults do
-      _cset :deploy_to,     "#{home_path}/data/app_home/#{application}"
+      _cset :deploy_to,     "#{home_path}/data/app_home/#{deploy_directory}"
       _cset :ruby_bin,      "#{home_path}/#{relative_ruby_path}"
       _cset :ruby,          File.join(ruby_bin, 'ruby')
       _cset :bundler,        File.join(ruby_bin, 'bundle')
