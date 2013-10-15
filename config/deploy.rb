@@ -51,7 +51,7 @@ namespace :deploy do
     base_solr_url = core_url.gsub(core_regex,'')
     reload_url = base_solr_url + "admin/cores?action=RELOAD&core=" + core_name
     puts "Reloading solr core: #{reload_url}"
-    run "curl -I -A \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)\" #{reload_url}"
+    run "curl -I -A \"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)\" \"#{reload_url}\""
   end
 end
 
