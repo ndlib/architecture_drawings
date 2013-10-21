@@ -55,4 +55,4 @@ namespace :deploy do
   end
 end
 
-after 'deploy:create_symlink_shared', 'deploy:reload_solr_core'
+after 'restart_passenger', 'deploy:reload_solr_core'
