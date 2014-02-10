@@ -39,7 +39,7 @@
       <Arg>
           <New class="org.eclipse.jetty.server.nio.SelectChannelConnector">
             <Set name="host"><SystemProperty name="jetty.host" /></Set>
-            <Set name="port"><SystemProperty name="jetty.port" default="8983"/></Set>
+            <Set name="port"><SystemProperty name="jetty.port" default="8010"/></Set>
             <Set name="maxIdleTime">50000</Set>
             <Set name="Acceptors">2</Set>
             <Set name="statsOn">false</Set>
@@ -58,7 +58,7 @@
       <Arg>
           <New class="org.eclipse.jetty.server.bio.SocketConnector">
             <Set name="host"><SystemProperty name="jetty.host" /></Set>
-            <Set name="port"><SystemProperty name="jetty.port" default="8983"/></Set>
+            <Set name="port"><SystemProperty name="jetty.port" default="8010"/></Set>
             <Set name="maxIdleTime">50000</Set>
             <Set name="lowResourceMaxIdleTime">1500</Set>
             <Set name="statsOn">false</Set>
@@ -67,7 +67,7 @@
     </Call>
 
     <!-- =========================================================== -->
-    <!-- Set handler Collection Structure                            --> 
+    <!-- Set handler Collection Structure                            -->
     <!-- =========================================================== -->
     <Set name="handler">
       <New id="Handlers" class="org.eclipse.jetty.server.handler.HandlerCollection">
@@ -86,11 +86,11 @@
         </Set>
       </New>
     </Set>
-    
+
     <!-- =========================================================== -->
     <!-- Configure Request Log                                       -->
     <!-- =========================================================== -->
-    <!-- 
+    <!--
     <Ref id="Handlers">
       <Call name="addHandler">
         <Arg>
@@ -137,10 +137,10 @@
             <Arg>org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern</Arg>
             <Arg>.*/servlet-api-[^/]*\.jar$</Arg>
           </Call>
-          
-          
+
+
           <!-- Add a customize step to the deployment lifecycle -->
-          <!-- uncomment and replace DebugBinding with your extended AppLifeCycle.Binding class 
+          <!-- uncomment and replace DebugBinding with your extended AppLifeCycle.Binding class
           <Call name="insertLifeCycleNode">
             <Arg>deployed</Arg>
             <Arg>starting</Arg>
@@ -154,11 +154,11 @@
             </Arg>
           </Call>
           -->
-          
+
         </New>
       </Arg>
     </Call>
-    
+
     <Ref id="DeploymentManager">
       <Call name="addAppProvider">
         <Arg>

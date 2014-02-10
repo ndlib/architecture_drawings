@@ -16,13 +16,13 @@
 Solr example configuration
 --------------------------
 
-To run this example configuration, use 
+To run this example configuration, use
 
   java -jar start.jar
 
-in this directory, and when Solr is started connect to 
+in this directory, and when Solr is started connect to
 
-  http://localhost:8983/solr/admin/
+  http://localhost:8010/solr/admin/
 
 To add documents to the index, use the post.sh script in
 the exampledocs subdirectory (while Solr is running),

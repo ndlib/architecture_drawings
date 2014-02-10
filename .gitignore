@@ -17,3 +17,4 @@
 # Custom Application ignores
 /config/database.yml
 /public/system/flat_file_imports
+/jetty/jettywrapper.log

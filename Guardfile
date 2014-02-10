@@ -19,6 +19,11 @@ hesburgh_guard.rails do
   # Watch any custom paths
 end
 
+guard 'jetty', jetty_port: hesburgh_guard.application.jetty_port do
+  watch('config/jetty.yml')
+  watch(%r{^jetty/(.+)\.xml$})
+end
+
 # Intelligently start/reload your RSpec Drb spork server
 # https://github.com/guard/guard-spork
 hesburgh_guard.spork do
