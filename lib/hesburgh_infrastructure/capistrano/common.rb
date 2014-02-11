@@ -13,7 +13,7 @@ Capistrano::Configuration.instance(:must_exist).load do
   # Settings for deployment with Jenkins
   _cset :scm_command, '/shared/git/bin/git'
   ssh_options[:paranoid] = false
-  ssh_options[:keys] = %w(/shared/jenkins/.ssh/id_dsa)
+  ssh_options[:keys] = %w(/shared/jenkins/.ssh/id_dsa /shared/jenkins/.ssh/id_rsa)
 
   # Git settings for Capistrano
   default_run_options[:pty]     = true # needed for git password prompts
