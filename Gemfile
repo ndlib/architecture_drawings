@@ -12,6 +12,7 @@ gem 'jquery-rails', '~> 2.1.4'
 gem 'mysql2'
 gem 'nokogiri', '~> 1.5.0'
 gem 'paperclip', "~> 3.0"
+gem "rb-readline"
 gem 'roo'
 gem "whenever", :require => false
 
@@ -57,6 +58,5 @@ group :development do
   gem "guard-rails"
   gem "guard-rspec"
   gem "guard-spork"
-  gem "rb-readline"
   gem "growl"
 end
