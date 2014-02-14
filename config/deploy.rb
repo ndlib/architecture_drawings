@@ -53,7 +53,7 @@ namespace :deploy do
 
   desc "Reload the Solr configuration"
   task :reload_solr_core, :roles => :app do
-    solr_config = YAML.load_file("#{release_path}/config/solr.yml")[rails_env.to_s]
+    solr_config = YAML.load_file("config/solr.yml")[rails_env.to_s]
     core_url = solr_config["url"]
     core_regex = /[^\/]+$/
     core_name = core_url.match(core_regex)[0]
