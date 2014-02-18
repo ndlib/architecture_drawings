@@ -17,6 +17,6 @@ test: &test
 cucumber:
   <<: *test
 pre_production:
-  url: http://solr41pprd.library.nd.edu:8080/solr/architecture_drawings
+  url: http://127.0.0.1:8080/solr/architecture_drawings
 production:
-  url: http://solr41prod.library.nd.edu:8080/solr/architecture_drawings
+  url: http://127.0.0.1:8080/solr/architecture_drawings
