@@ -17,12 +17,12 @@
 #   runner "AnotherModel.prune_old_records"
 # endset :output, "log/cron_log.log"
 
+# Learn more: http://github.com/javan/whenever
+
 set :output, "log/cron_log.log"
 
 job_type :runner, "cd :path && bundle exec rails runner -e :environment ':task' :output"
 job_type :rake,   "cd :path && :environment_variable=:environment bundle exec rake :task --silent :output"
-
-# Learn more: http://github.com/javan/whenever
 
 every '0 3 * * *' do
   rake "blacklight:delete_old_searches[7]"
