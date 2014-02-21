@@ -15,32 +15,10 @@
 #
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
-# end
+# endset :output, "log/cron_log.log"
 
-if environment == 'pre_production'
-  set :bundler, "/shared/ruby_pprd/ruby/1.9.3/bin/bundle"
-elsif environment == 'production'
-  set :bundler, "/shared/ruby_prod/ruby/1.9.3/bin/bundle"
-else
-  set :bundler, "bundle"
-end
-
-
-if environment == 'pre_production' || environment == 'production'
-  set :rails_exec, 'vendor/bundle/bin/rails'
-else
-  set :rails_exec, 'rails'
-end
-
-if environment == 'pre_production' || environment == 'production'
-  set :rake_exec, 'vendor/bundle/bin/rake'
-else
-  set :rake_exec, 'rake'
-end
-
-
-job_type :runner, "cd :path && :bundler exec :rails_exec runner -e :environment ':task' :output"
-job_type :rake,   "cd :path && :environment_variable=:environment :bundler exec :rake_exec :task --silent :output"
+job_type :runner, "cd :path && bundle exec rails runner -e :environment ':task' :output"
+job_type :rake,   "cd :path && :environment_variable=:environment bundle exec rake :task --silent :output"
 
 # Learn more: http://github.com/javan/whenever
 
