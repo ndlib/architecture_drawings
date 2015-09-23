@@ -87,13 +87,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    columnize (0.3.6)
-    debugger (1.6.2)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.2.3)
-    debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.3)
     diff-lcs (1.2.2)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -285,7 +278,6 @@ DEPENDENCIES
   bootstrap-sass
   capybara
   coffee-rails (~> 3.2.1)
-  debugger
   factory_girl_rails
   faker
   growl
@@ -312,3 +304,6 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   unicode
   whenever
+
+BUNDLED WITH
+   1.10.6

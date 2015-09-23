@@ -47,7 +47,6 @@ gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "bootstrap-sass"
 
 group :development do
-  gem "debugger"
   gem "rspec-rails"
   gem "capybara"
   gem "factory_girl_rails", :require => false
