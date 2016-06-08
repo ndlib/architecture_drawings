@@ -32,14 +32,14 @@ desc "Setup for the Pre-Production environment"
 task :pre_production do
   # Customize pre_production configuration
   set :deploy_to, "/home/app/#{deploy_directory}"
-  set :domain, "libnd-drawings.library.nd.edu"
+  set :domain, "libnd-drawingspprd.library.nd.edu"
 end
 
 desc "Setup for the production environment"
 task :production do
   # Customize production configuration
   set :deploy_to, "/home/app/#{deploy_directory}"
-  set :domain, "drawingsprod-vm.library.nd.edu"
+  set :domain, "drawings.library.nd.edu"
 end
 
 #############################################################
