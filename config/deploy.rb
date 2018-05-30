@@ -24,7 +24,7 @@ set :scm, "git"
 set :scm_command, '/usr/bin/git'
 
 set :repository, 'git@github.com:ndlib/architecture_drawings.git'
-set :user, 'ndlib-git'
+set :user, 'app'
 set :ruby_bin, "/opt/ruby/current/bin"
 
 set :deploy_directory, "drawings"
