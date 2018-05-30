@@ -6,7 +6,6 @@
     <meta name="description" content="Information resources and collections of the Hesburgh Libraries, University of Notre Dame." />
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
-
     <%= stylesheet_link_tag    "hesburgh_assets/main/1.0/index.css", :media => "all" %>
     <%= stylesheet_link_tag    "hesburgh_assets/architecture_library/1.0/index.css", :media => "all" %>
     <!--[if lte IE 9]>
@@ -18,17 +17,20 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= raw(render_head_content) %>
+    <!-- include Drapes files -->
+    <script src='https://resources.library.nd.edu/frame/code.js' type='text/javascript'></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) {
+        documentReady();
+      });
+    </script>
+  <!-- end -->
   </head>
   <body>
     <div class="container">
-      <div class="row header">
-        <div class="twelve columns">
-          <%= include_ssi("/local_ssi/responsive/header.shtml") %>
-        </div>
-      </div>
       <div class="row menu">
         <div class="twelve columns">
-          <%= include_ssi("/architecture/ssi/main-menu.shtml") %>
+          <!-- include_ssi("/architecture/ssi/main-menu.shtml") -->
         </div>
       </div>
       <div class="row breadcrumb hide-on-phones">
@@ -88,7 +90,6 @@
           <% end %>
         </div>
       </div>
-      <%= include_ssi("/architecture/local_ssi/footer.shtml") %>
     </div>
   </body>
 </html>
