@@ -23,7 +23,7 @@ set :application, 'architecture_drawings'
 set :scm, "git"
 set :scm_command, '/usr/bin/git'
 
-set :repository git@github.com:ndlib/architecture_drawings.git
+set :repository, 'git@github.com:ndlib/architecture_drawings.git'
 set :user, 'app'
 set :ruby_bin, "/opt/ruby/current/bin"
 
