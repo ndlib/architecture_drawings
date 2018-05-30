@@ -14,6 +14,16 @@ bundle exec rake db:create
 bundle exec rake db:migrate
 bundle exec rake db:migrate RAILS_ENV=test
 ```
+### Notes
+
+If you encounter errors with libv8 and therubyracer:
+```
+gem install libv8 -v '3.16.14.3' -- --with-system-v8
+bundle config build.libv8 --with-system-v8
+bundle config build.therubyracer --with-system-v8
+gem install therubyracer
+bundle install
+```
 
 ## Running
 ```sh

@@ -9,7 +9,7 @@ gem 'blacklight'
 gem 'hesburgh_assets', :git => 'git@git.library.nd.edu:assets'
 gem 'hesburgh_infrastructure', :git => 'git@git.library.nd.edu:hesburgh_infrastructure'
 gem 'jquery-rails', '~> 2.1.4'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.11'
 gem 'nokogiri', '~> 1.5.0'
 gem 'paperclip', "~> 3.0"
 gem "rb-readline"
