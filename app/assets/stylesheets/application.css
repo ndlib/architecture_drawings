@@ -15,3 +15,10 @@
 .breadcrumb, .content, .footer, .container {
   background: transparent !important;
 }
+#facets li a.remove {
+      margin-left: 0 !important;
+}
+
+#sortAndPerPage {
+  min-height: 60px;
+}
