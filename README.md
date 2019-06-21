@@ -35,6 +35,9 @@ bundle exec guard
 1. Open http://localhost:3010/import
 2. Import the file from spec/fixtures/test-export.xlsx
 
+Alternatively, run a rake task to do this for you:
+`bundle exec rake import:test`
+
 ## Searching
 
 Searching can be done from http://localhost:3010/

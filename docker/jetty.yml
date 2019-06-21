@@ -1,0 +1,2 @@
+default:
+  jetty_port: 8983

@@ -1,0 +1,8 @@
+FROM java:8-jre
+
+RUN mkdir /jetty
+WORKDIR /jetty
+COPY jetty /jetty
+
+ENV JETTY_HOME /jetty
+ENTRYPOINT java -Djetty.port=8983 -Dsolr.solr.home=/jetty/solr -XX:+CMSPermGenSweepingEnabled -XX:+CMSClassUnloadingEnabled -XX:PermSize=64M -XX:MaxPermSize=128M -jar /jetty/start.jar
