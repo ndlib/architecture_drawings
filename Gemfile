@@ -6,9 +6,10 @@ gem 'rails', '~> 3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'blacklight'
-gem 'hesburgh_assets', :git => 'git@git.library.nd.edu:assets'
-gem 'hesburgh_infrastructure', :git => 'git@git.library.nd.edu:hesburgh_infrastructure'
+gem 'hesburgh_assets', :path => 'vendor/bundle/assets'
+gem 'hesburgh_infrastructure', :git => 'https://github.com/ndlib/hesburgh_infrastructure'
 gem 'jquery-rails', '~> 2.1.4'
+gem 'logger', '~> 1.2.8'
 gem 'mysql2', '~> 0.3.11'
 gem 'nokogiri', '~> 1.5.0'
 gem 'paperclip', "~> 3.0"

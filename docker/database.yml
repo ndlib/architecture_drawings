@@ -1,0 +1,29 @@
+##########################################
+# Shared settings
+##########################################
+
+mysql_settings: &mysql_settings
+  adapter: mysql2
+  pool:    5
+  timeout: 5000
+  encoding: utf8
+  username: root
+  password: password
+  database: architecture_drawings_development
+  host: mysql
+  port: 3306
+
+development:
+  <<: *mysql_settings
+
+test:
+  <<: *mysql_settings
+
+pre_production:
+  <<: *mysql_settings
+
+production:
+  <<: *mysql_settings
+
+cucumber:
+  <<: *mysql_settings

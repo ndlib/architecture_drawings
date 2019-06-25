@@ -1,0 +1,15 @@
+FROM selenium/standalone-chrome:3.141.59
+USER root
+RUN apt-get update && apt-get -y install python-pip && pip install selenium
+
+RUN wget https://chromedriver.storage.googleapis.com/75.0.3770.90/chromedriver_linux64.zip
+RUN unzip chromedriver_linux64.zip -d /usr/local/bin/
+RUN chmod a+x /usr/local/bin/chromedriver
+
+COPY spec spec
+
+RUN useradd -r selenium
+USER selenium
+
+ENV BaseURL 'http://rails:3000'
+CMD exec python spec/feature/chrome_spec.py

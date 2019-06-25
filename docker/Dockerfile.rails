@@ -1,0 +1,17 @@
+FROM ruby:2.0.0
+
+
+# Put the installed gems outside of project_root so that the sync volume won't interfere
+RUN mkdir /bundle
+WORKDIR /bundle
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
+COPY vendor/bundle vendor/bundle
+RUN bundle install --path /bundle
+
+RUN mkdir /project_root
+WORKDIR /project_root
+COPY . /project_root
+COPY docker/database.yml /project_root/config/database.yml
+COPY docker/solr.yml /project_root/config/solr.yml
+COPY docker/jetty.yml /project_root/config/jetty.yml

@@ -1,0 +1,46 @@
+version: '3'
+services:
+  mysql:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: architecture_drawings_development
+    volumes:
+      - ./docker/mysql-utf8.cnf:/etc/mysql/conf.d/mysql-utf8.cnf
+    healthcheck:
+        interval: 30s
+        timeout: 10s
+        retries: 5
+  rails:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.rails
+    command: bash docker/rails_entry.sh
+    environment:
+      BUNDLE_PATH: "/bundle"
+      MYSQL_HOST: mysql
+      SOLR_HOST: jetty
+      SOLR_PORT: 8983
+      # Need to pass the user running docker into the container so that
+      # config/admin_usernames.yml pulls in the user as an admin. This is
+      # to replicate existing behavior on OSX and may not work correctly on
+      # another OS
+      USER: #{USER}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+      - solr
+  solr:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.solr
+    command: bash /solr/jetty.sh start
+    environment:
+      JETTY_HOME: "/jetty"
+    ports:
+      - "8983:8983"
