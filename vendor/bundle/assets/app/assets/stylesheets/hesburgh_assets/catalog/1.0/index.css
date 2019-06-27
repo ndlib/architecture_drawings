@@ -1,0 +1,11 @@
+/*
+ * Manifest file for version 1 styles.
+ *
+ *= require_self
+ *= require ../../common/foundation-2.2.1.css
+ *= require ../../common/bootstrap-2.0.3.css
+ *= require ../../common/prettify.css
+ *= require ../../main/1.0/bootstrap_overrides.css
+ *= require ./catalog.css
+ *= require ./search.css
+ */

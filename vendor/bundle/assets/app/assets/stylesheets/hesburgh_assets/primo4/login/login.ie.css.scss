@@ -1,0 +1,48 @@
+html {
+  font-size: 14px;
+}
+body {
+  width: 100%;
+  text-align: center;
+}
+#main {
+  margin: 10px 0;
+  border: 1px solid grey;
+  width: 420px;
+  padding: 10px;
+  text-align: left;
+}
+table {
+  width: 400px;
+  font-size: 90%;
+  margin-bottom: 20px;
+}
+
+div#slider, div#help {
+  width: 400px;
+  font-size: 95%;
+}
+label, h1, .hidden, #checker {
+  display: none;
+}
+.empty {
+  visibility: hidden;
+}
+.or {
+  background-color: #ccf;
+  text-align: center;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+h2, h3, #help p {
+  margin-top: .2em;
+  margin-bottom: .2em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.bottom {
+  border-bottom: 1px solid black;
+}
+input.form {
+  width: 15em;
+}

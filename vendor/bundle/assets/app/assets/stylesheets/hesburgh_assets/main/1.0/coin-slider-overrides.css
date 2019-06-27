@@ -1,0 +1,11 @@
+.coin-slider {
+  width: 263px;
+  border:solid 1px #fff;
+  background-color: #fff;
+  margin-bottom:1.5em;
+}
+
+#cs-buttons-gallerycs {
+  left:0 !important;
+  margin-left: 0 !important;
+}

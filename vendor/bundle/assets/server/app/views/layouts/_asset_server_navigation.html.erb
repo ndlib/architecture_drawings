@@ -1,0 +1,13 @@
+<div id="asset_server_navigation">
+  <div class="btn-toolbar">
+    <% [:style_guide, :bootstrap, :admin, :catalog, :rarebooks].each do |controller| %>
+      <div class="btn-group">
+        <button class="btn dropdown-toggle <%= params[:controller] == controller.to_s ? "active" : "" %>" data-toggle="dropdown" href="#" role="button">
+          <%= controller.to_s.titleize %>
+          <span class="caret"></span>
+        </button>
+        <%= send("#{controller}_links_ul", class: "dropdown-menu") %>
+      </div>
+    <% end %>
+  </div>
+</div>

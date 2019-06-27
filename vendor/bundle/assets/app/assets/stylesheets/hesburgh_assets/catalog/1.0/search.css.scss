@@ -1,0 +1,151 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.find-resources {
+  .EXLHiddenCue, .EXLMyShelfStar, .EXLResultNumber, .EXLTabsRibbon, .EXLTabHeaderButtons, .EXLDetailsContent, .EXLResultTabContainer {
+    display: none;
+  }
+
+  .six fieldset {
+    border:solid 1px #2C5882;
+    padding:5px 12px;
+  }
+
+  fieldset legend {
+    margin-bottom: 0;
+    border:none;
+    padding:0 5px;
+    width: auto;
+    font-size: 19px;
+    color:#0F3255;
+    font-weight: bold;
+  }
+
+
+  .more {
+    float: right;
+  }
+
+  .record {
+    clear: both;
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 1em;
+    padding-bottom: 10px;
+    min-height: 110px;
+
+    p {
+      font-size: 13px;
+      line-height: 15px;
+      margin-bottom: 0;
+    }
+
+    .summary {
+      margin-left: 90px;
+    }
+
+    .cover {
+      width: 80px;
+      float: left;
+      text-align: center;
+    }
+
+    .cover-image {
+      background-color: #fff;
+      background-image: url("http://onesearch.library.nd.edu/primo_library/libweb/images.v3/icon_other.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 57px;
+      height: 80px;
+      margin: auto;
+
+      img {
+        width: 57px;
+        height: 80px;
+      }
+    }
+
+    .cover-type {
+      text-align: center;
+    }
+
+    .title {
+      font-size: 16px;
+      line-height: 16px;
+      margin-bottom: 0;
+    }
+
+    .author {
+      font-size: 13px;
+    }
+
+    .available {
+      color: #5ca301;
+    }
+
+    .availability span {
+      display: block;
+    }
+  }
+
+  .record-book {
+    .cover-image {
+      background-image: url("http://onesearch.library.nd.edu/primo_library/libweb/images.v3/icon_book.png");
+    }
+  }
+
+  .record-article {
+    .cover-image {
+      background-image: url("http://onesearch.library.nd.edu/primo_library/libweb/images.v3/icon_article.png");
+    }
+  }
+
+  .record-journal {
+    .cover-image {
+      background-image: url("http://onesearch.library.nd.edu/primo_library/libweb/images.v3/icon_journal.png");
+    }
+  }
+
+  .record-database {
+    .cover-image {
+      background-image: url("http://onesearch.library.nd.edu/primo_library/libweb/images.v3/icon_database.png");
+    }
+  }
+
+  .record-newspaper_article {
+    .cover-image {
+      background-image: url("http://onesearch.library.nd.edu/primo_library/libweb/images.v3/icon_newspaper.png");
+    }
+  }
+
+  .record-text_resource {
+    .cover-image {
+      background-image: url("http://onesearch.library.nd.edu/primo_library/libweb/images.v3/icon_text_resource.png");
+    }
+  }
+
+  .record-video {
+    .cover-image {
+      background-image: url("http://onesearch.library.nd.edu/primo_library/libweb/images.v3/icon_video.png");
+    }
+  }
+
+  .record-audio {
+    .cover-image {
+      background-image: url("http://onesearch.library.nd.edu/primo_library/libweb/images.v3/icon_audio.png");
+    }
+  }
+
+  .record-score {
+    .cover-image {
+      background-image: url("http://onesearch.library.nd.edu/primo_library/libweb/images.v3/icon_music.png");
+    }
+  }
+
+  tr.EXLResultMediaTYPElibguide .multipleCoverImageContainer {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAABQCAAAAACGiILLAAAACXBIWXMAAArEAAAKxAFmbYLUAAAB2ElEQVR4Xu2WoY7bQBRFb1cPPPCAgYGBgYFBwYKA/j9d2JW2wFIt1SBgwIABAwZcaduN5I3maW2vilrJB1nKnNzkjBQFr3/L/2ue5mme5mkKVniNBfto1wlW3p/ypKbYR1J4fD/zgBsos4E4gLCJfjOAkLLvipIIvTOjFU2jYY+0NEXjaq5tn16+v/w6yvnzz6En3xYkDAdYJuALHefxxwQrlPKcfZNucKJU5koS8WbopeQiZrjjTRJSFA5yiQoUHZrqw7rNNmQ3quMEyQBkHpvNTQCP8MzIUGVONl/k/kVdIXBK9aAhCpsCaklN6CsRD7iTCiomFMlSxsdv0gBppxCQ3UsEDS1gmcQbhHxUyEodf4QQyUKXo0JsaxOEXuBQlSjLAg1gFci3XRIrUdo2aIQxAYxyS/RBISI6EQzaWouUrWUsYbmLbpMIqOk52LURkP01Kdq76grFzldo0LYsonnur0W4dSvWFyeKALeq9vVHD2imM1fEsIVeIpq0dSu7SLdzK9Omtb6tgd5MABYcEgGkBje+vOKNZ874HKNcqs1yxQ7dWi5FLO6XmiS2EVkfCLA2tV+wgSvQW20O87AQx8ggA6pCyEv+lGnDuvmv/084zdM8zdM8zd/uiWQ+gTLwOwAAAABJRU5ErkJggg==');
+  height: 80px;
+  width: 57px;
+}
+
+}

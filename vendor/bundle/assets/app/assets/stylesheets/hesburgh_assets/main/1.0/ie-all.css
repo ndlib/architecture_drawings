@@ -1,0 +1,9 @@
+.srch-box {
+	border:solid 1px #ccc !important;
+}
+
+dl.tabs dd .default a.active {
+	padding-bottom:0 !important;
+	height:0 !important;
+	color:green;
+}

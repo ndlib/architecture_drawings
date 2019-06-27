@@ -1,0 +1,8 @@
+/*
+ * Manifest file for version 1 admin styles.
+ *
+ *= require_self
+ *= require ../../common/foundation-3.2.5.css
+ *= require ../../common/bootstrap-2.3.1.css
+ *= require ./admin.css
+ */

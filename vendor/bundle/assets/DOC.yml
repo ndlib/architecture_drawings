@@ -1,0 +1,29 @@
+id: assets
+name: Assets
+owner: jkennel
+developers:
+  - jkennel
+  - awetheri
+  - jhartzle
+purpose: >
+  To provide a common versioned repository for common css, images and html that make up the library templates.
+audience: >
+  Library web developers
+dependencies:
+  - cas
+hosts:
+  - assets.library.nd.edu
+  - assetspprd.library.nd.edu
+urls:
+  - https://assets.library.nd.edu
+  - https://assetspprd.library.nd.edu
+  - http://jenkins.library.nd.edu/jenkins
+setup: >
+  Check out the repo. guard
+deploy: >
+  Login in to jenkins and run the assets project.
+notes:
+last_review:
+  date: 2013-06-24
+reviewer: jhartzle
+

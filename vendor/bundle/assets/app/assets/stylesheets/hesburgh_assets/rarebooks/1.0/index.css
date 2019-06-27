@@ -1,0 +1,10 @@
+/*
+ * Manifest file for version 1 styles.
+ *
+ *= require_self
+ *= require ./foundation.css
+ *= require ./app.css
+ *= require ./rb-layout.css
+ *= require ./superfish.css
+ *= require ./jquery-ui.css
+ */

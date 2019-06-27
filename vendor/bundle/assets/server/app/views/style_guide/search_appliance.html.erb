@@ -1,0 +1,34 @@
+<% style_guide_header "Search Appliance" %>
+
+<div id="tab_box" class="search-appliance">
+  <dl class="tabs contained">
+    <dd><a tabindex="1" href="<%= library_url("/search/onesearch") %>" id="tab_primo_l" class="onesearch tab"><span>OneSearch</span></a></dd>
+    <dd><a tabindex="2" href="<%= library_url("/search/catalog") %>" id="tab_cat_l" class="ndcatalog tab"><span>ND Catalog</span></a></dd>
+    <dd><a tabindex="3" href="<%= library_url("/search/articles") %>" id="tab_art_l" class="tab">Articles</a></dd>
+    <dd><a tabindex="4" href="<%= library_url("/search/ejournals") %>" id="tab_jou_l" class="active tab">eJournals</a></dd>
+    <dd><a tabindex="5" href="<%= library_url("/search/databases") %>" id="tab_dat_l" class="tab">Databases</a></dd>
+    <dd><a tabindex="6" href="<%= library_url("/search/ebooks") %>" id="tab_boo_l" class="tab">eBooks</a></dd>
+  </dl>
+
+  <div id="search_box">
+    <ul class="tabs-content contained">
+      <li class="active tab_jou" id="tab_jouTab">
+        <form accept-charset="UTF-8" action="<%= library_url("/search/ejournals") %>" method="get">
+          <fieldset>
+            <select title="Targeted search options" name="search_field" id="search_field" class="search_field input-small">
+              <option value="all_fields">All Fields</option>
+              <option value="title">Title</option>
+              <option value="issn">ISSN</option>
+            </select>
+            <input class="srch-box long" id="q" name="q" placeholder="Find a specific journal" type="text" value="Science" />
+            <button type="submit" class="btn btn-primary search-btn" id="search">Search</button>
+          </fieldset>
+        </form>
+
+        <ul class="extra-links">
+          <li><a href="http://library.nd.edu/eresources/ejournals/alljournals">All journals</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

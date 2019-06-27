@@ -1,0 +1,8 @@
+.search-appliance ul.contained.tabs-content > li:before{
+	box-shadow: none !important;
+}
+
+.tabs {
+	clear:both;
+	padding-bottom:40px;
+}

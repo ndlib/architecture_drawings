@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js"><!-- InstanceBegin template="/Templates/two-column.dwt" codeOutsideHTMLIsLocked="true" --><head>
+
+  <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+  <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+  <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+  <!--[if gt IE 8]><!-->  <!--<![endif]-->
+
+  <meta charset="utf-8" />
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+  <!-- InstanceBeginEditable name="doctitle" -->
+  <title><%= @page_title ? @page_title +("// ").html_safe : "" %>Rare Books &amp; Special Collections // Hesburgh Libraries // University of Notre Dame</title>
+  <!-- InstanceEndEditable -->
+  <!-- Included CSS Files -->
+  <%= hesburgh_stylesheet_link_tag :rarebooks, "index.css", :media => "all" %>
+  <!-- Included JS Files -->
+  <%= hesburgh_javascript_include_tag :rarebooks, "index.js" %>
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <link rel="shortcut icon" href="//rarebooks.library.nd.edu/favicon.ico" />
+  </head>
+  <body id="body" class="home">
+    <!-- container -->
+    <div class="container">
+
+      <div class="row header">
+        <div class="twelve columns header-inner">
+
+          <!--#include virtual="/ssi/header.shtml" -->
+          <%-# preheader_content %>
+          <%= rarebooks_include_ssi("/ssi/header.shtml") %>
+          <!--#include virtual="/ssi/site-search.shtml" -->
+          <%= rarebooks_include_ssi("/ssi/site-search.shtml") %>
+
+        </div>
+        <div class="row navigation" id="main-menu">
+          <!--#include virtual="/ssi/top-navigation.shtml" -->
+          <%= rarebooks_include_ssi("/ssi/top-navigation.shtml") %>
+        </div>
+      </div>
+
+      <div class="row hide-on-phones" id="breadcrumb">
+        <div class="twelve columns">
+          <p><a href="http://library.nd.edu/">Hesburgh Libraries</a><!-- InstanceBeginEditable name="crumbs" -->
+            &gt; <a href="/index.shtml">Rare Books &amp; Special Collections</a> <%= @page_title ? ("&gt; ").html_safe + @page_title : "" %>
+        </div>
+      </div>
+      <div class="row" id="content">
+          <%= yield %>
+          <!--#include virtual="/ssi/info.shtml" -->
+          <%= rarebooks_include_ssi("/ssi/info.shtml") %>
+          </div>
+      </div>
+    <div class="row footer">
+      <!--#include virtual="/ssi/footer.shtml" -->
+      <%= rarebooks_include_ssi("/ssi/footer.shtml") %>
+    </div>
+    <!-- container -->
+
+
+  </body>
+</html>

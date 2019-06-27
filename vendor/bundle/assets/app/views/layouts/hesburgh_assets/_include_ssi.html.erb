@@ -1,0 +1,4 @@
+<% cache("ssi/#{active_branch_code}#{filepath}", :expires_in => 1.day) do %>
+  <!-- <%= "#{active_branch_code}#{filepath} cache: #{Time.now.to_s}" %> -->
+  <%= raw read_ssi_file(filepath) %>
+<% end %>

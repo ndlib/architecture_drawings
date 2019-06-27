@@ -1,0 +1,801 @@
+@import url(/css/navigation.css);
+
+body {
+    background-color: #2B5781;
+    color: #304962;
+    font-family: "Helvetica Neue",Helvetica,Verdana,Arial,Helvetica,sans-serif;
+    }
+
+a:link, a:visited {
+	color:#2C5882;
+}
+
+.header {
+	background:#fff;
+
+	background-image:url(/assets/hesburgh_assets/rarebooks/1.0/header.7b.jpg);
+	background-position: right;
+}
+
+.header-inner {
+	height:115px;
+	position:relative;
+
+}
+
+.logo {
+  width:136px;
+  padding-top:86px;
+  height:0;
+  display:block;
+  overflow:hidden;
+  background:url(/assets/hesburgh_assets/rarebooks/1.0/rb.logo.sml.png);
+  position:absolute;
+  left:11px;
+  top:82px;
+  z-index:10000;
+  display: none;
+ }
+
+.header h2 {
+	padding:6px 0 8px 10px;
+	font-size:24px;
+	color:#fff;
+    text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
+    filter: dropshadow(color=#333, offx=3, offy=3);
+    http://www.laughspin.com/2012/05/16/graphic-timeline-37-years-of-saturday-night-live/
+	font-weight:normal;
+	position:absolute;
+	display:block;
+	bottom:0px;
+	margin-bottom:0;
+	/* background: none repeat scroll 0 0 rgba(43, 87, 129, 0.35);
+	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.25); */
+
+       filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#25FFFFFF,endColorstr=#25ffffff);
+       zoom: 1;
+
+	width:auto;
+	right:0;
+	left:0;
+}
+
+.library-home {
+
+	padding:6px 18px;
+	margin:0;
+}
+
+.nd-home a {
+	height:0;
+	overflow:hidden;
+	padding-top:49px;
+	width:201px;
+	background:url(/assets/hesburgh_assets/rarebooks/1.0/nd.logo.png) no-repeat;
+	display:block;
+	position:absolute;
+	left:11px;
+	top:15px;
+	z-index:5;
+}
+
+.divider {
+	position: absolute;
+	border-left:2px solid #fff;
+	left:228px;
+	top:15px;
+	height:33px;
+	display:none;
+}
+
+.library-home a {
+	height:0;
+	overflow:hidden;
+	padding-top:28px;
+	width:222px;
+	background:url(/assets/hesburgh_assets/rarebooks/1.0/hes.logo.png) no-repeat;
+	display:block;
+	position:absolute;
+	left:241px;
+	top:27px;
+	z-index:10;
+	background-size:auto 100% ;
+}
+
+.header_search {
+    position: absolute;
+    right: 0;
+    top:0px;
+}
+.header_search form {
+	margin:0;
+}
+
+.header_search fieldset {
+	border:none;
+	margin:0;
+}
+.header_search .legend {
+	display:none;
+}
+.header_search #search_field {
+    background: none repeat scroll 0 0 #F8F7E9;
+    border: 1px solid #FDD456;
+    margin-right: 4px;
+    opacity: 0.7;
+    padding-left: 3px;
+}
+.header_search button {
+    background: none repeat scroll 0 0 #FEE084;
+    border-width: 1px;
+    line-height: 1em;
+    padding: 1px 4px 2px;
+}
+.header_search input, .header_search button {
+    float: left;
+    vertical-align: top;
+}
+
+.home #main-menu #nav li.home {
+
+}
+
+.contents {
+	display:none;
+}
+
+
+/* START OF CODE FROM SARA */
+.picture {
+	padding: 5px;
+}
+
+.picture img {
+	vertical-align:middle;
+	margin-bottom: 5px;
+}
+
+.picture .caption {
+	font-size: 85%;
+	line-height: 150%;
+    text-align: center;
+}
+
+.right {
+	margin: 0.5em 0pt 0.5em 0.8em;
+	float:right;
+}
+
+.left {
+	margin: 0.5em 0.8em 0.5em 0pt;
+	float:left;
+}
+
+.nodot li {
+	list-style-type: none;
+	padding-left: 0;
+	margin-left: 0;
+}
+
+#ROMAN ol {
+	list-style-type:upper-roman;
+	margin-bottom:0.5em;
+	margin-top:0.5em;
+}
+
+#LATIN ol {
+	list-style-type:upper-latin;
+	margin-bottom:0.5em;
+	margin-top:0.5em;
+}
+
+dt {
+	margin-bottom:0.5em;
+}
+
+dd {
+	margin-bottom:1.5em;
+	margin-left:1.5em;
+	color:#666;
+}
+
+.quote {
+	line-height: 20px;
+	margin: 0;
+	padding: 5px 40px 5px 30px;
+}
+
+.attribution {
+	line-height: 20px;
+	text-align: right;
+	padding: 5px 40px 5px 30px;
+}
+
+.menu-icon {
+	float:left;
+	margin-right:10px;
+	margin-bottom:5px;
+}
+
+.menu-text {
+	clear:both;
+}
+
+/*  END OF CODE FROM SARA */
+
+
+#main-menu #nav li:first-child, {
+	margin-left:10px;
+}
+
+#breadcrumb p {
+	margin-bottom:20px;
+	color:#A99A4B;
+	margin-left:18px;
+	margin-top:30px;
+}
+
+#breadcrumb p a {
+	color:#A99A4B;
+	font-weight:bold;
+}
+
+#content, .footer, #breadcrumb {
+	background: none repeat scroll 0 0 #F8F7E9;
+}
+
+#sidebar {
+	padding-bottom:20px;
+}
+
+#sidebar h3:before, #additional h3:before {
+	border-bottom:solid 1px #fff;
+	bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#sidebar h3, #additional h3 {
+	margin-left:18px;
+	font-size:13px;
+	color:#30465F;
+	background:#A6B7BF;
+	padding:5px 7px;
+	border-bottom:solid 2px #A6B7BF;
+	position:relative;
+	z-index:10;
+
+}
+
+#additional h3 {margin-left:0;}
+
+#sidebar .featured  {
+	margin-left:18px;
+}
+
+#sidebar .featured h3 {
+	margin-left:0;
+}
+
+ul.subnav {
+	margin-left:18px;
+}
+
+ul.subnav ul {
+	margin-left:0;
+	margin-bottom:0;
+	display:none;
+
+}
+
+#sidebar li a {
+	color:#30465F;
+}
+
+#sidebar li {
+	margin-left:25px;
+	list-style-image:url(/assets/hesburgh_assets/rarebooks/1.0/bullet.png);
+	margin-bottom:0;
+}
+
+#sidebar li li {
+	color:#BCAF70;
+	list-style-type:circle;
+	list-style-image:none;
+	margin-left:16px;
+}
+
+#sidebar li li li {
+	color:#6887A0;
+	list-style-type:disc;
+}
+
+.cbody a:link, .cbody a:visited {
+	font-weight:bold;
+
+}
+ .cbody a:hover {
+	text-decoration:underline;
+}
+
+.cbody ul {
+	margin-left: 2em;
+	list-style: disc;
+}
+
+.cbody li {
+	margin-bottom: 0;
+}
+
+/* RB COLUMN WIDTH RESET */
+
+.row .four {
+	width:25.37%;
+}
+
+.pull-eight {
+	right:74.6%;
+}
+
+.row .eight {
+	width:70%;
+}
+
+.push-four {
+	left:28%;
+}
+
+.row .six {
+	width:;
+}
+
+.row .two {
+	width:18%;
+}
+
+.row .ten {
+	width: 77.6%;
+}
+
+/* RB COLUMN WIDTH CONTENT RESET-RESET */
+
+#content .row .four {
+	width:30.37%;
+}
+
+#content .row .eight {
+	width: 65.2%;
+}
+
+#content .row .pull-eight {
+
+}
+
+#content .row .push-four {
+
+}
+
+/* Tables */
+
+table.blank {
+	background:none;
+	border:none;
+}
+
+table.blank tbody tr:nth-child(2n) {
+	background:none;
+}
+
+table.blank tbody tr td {
+	padding:0;
+}
+
+a[target="_blank"], a.offsite {
+	padding-right:16px;
+	background:url(/assets/hesburgh_assets/rarebooks/1.0/offsite.gif) right no-repeat;
+}
+
+.footer {
+	border-top:#B7A765 solid 1px;
+}
+
+.info {
+	margin-left:18px;
+	background:url(/assets/hesburgh_assets/rarebooks/1.0/info-top.gif) top no-repeat #A6B7BF;
+	background-size:100%;
+
+}
+
+.info-inner {
+	background:url(/assets/hesburgh_assets/rarebooks/1.0/info-bottom.gif) bottom no-repeat;
+	padding:18px 14px;
+	background-size:100%;
+}
+
+.info * {
+	color:#30465F;
+}
+
+.info h4 {
+	font-size:1em;
+	margin-bottom:1em;
+}
+.info p strong {
+	font-size:.9em;
+}
+
+.info p {
+	font-size:.9em;
+}
+
+.footer {
+	text-align:center;
+}
+
+.footer div {
+	padding-top:15px;
+	padding-bottom:8px;
+}
+
+.footer p {
+   line-height: 0.9em;
+    margin-bottom: 0.4em;
+    text-align: center;
+}
+
+.footer a {
+	font-weight:bold;
+}
+
+table tbody tr.even,
+table tbody tr.alt { background: #E4E9EC; }
+table tbody tr:nth-child(even) { background: #E4E9EC; }
+
+table.solid tbody tr.even,
+table.solid tbody tr.alt { background: none; }
+table.solid tbody tr:nth-child(even) { background: none; }
+/*table.solid tbody tr td {padding:4px 10px;}*/
+
+/*table {table-layout:fixed;}
+table tbody tr td {
+	-webkit-hyphens: auto;
+-moz-hyphens: auto;
+hyphens: auto;
+}*/
+
+table tbody tr td p:last-child {margin-bottom:0;}
+
+img.right {
+	margin-left:1em;
+	margin-bottom:1em;
+}
+
+.captainer .caption {
+ background: #304962;
+ border-right: 1px solid #666;
+ border-bottom: 1px solid #666;
+ border-left: 1px solid #666;
+ border-top: 1px solid #666;
+ font-family: Verdana;
+ font-size: 11px;
+ padding: 4px;
+ -moz-border-radius-bottomright: 2px;
+ -moz-border-radius-bottomleft: 2px;
+ -webkit-border-bottom-right-radius: 2px;
+ -webkit-border-bottom-left-radius: 2px;
+ color: #eee;
+}
+
+/* TABLET VERTICAL STYLES */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	ul#nav.sf-menu a {
+		font-size:11px !important;
+		padding:7px  !important;
+	}
+	ul#nav.sf-menu li:last-child a {
+		border-right:none;
+	}
+
+}
+
+/* HOME PAGE DISPLAY */
+@media only screen and (min-width: 480px) {
+	#accordion  {
+
+	}
+
+	.box {
+		float:left;
+		width:48%;
+		margin-right:2%;
+	}
+
+	.box h3 {
+		padding:5px;
+	}
+
+	.box div {
+		padding:0 5px 5px;
+	}
+}
+
+
+/* PHONE STYLES */
+@media only screen and (max-width: 767px) {
+
+.container {
+	padding:0 10px;
+}
+
+.info {margin-left:0;margin-bottom:1.12em;}
+
+p.library-home {
+	text-align:right;
+	height:15px;
+	padding-right:6px;
+}
+
+.divider {
+	border-left:solid 1px #fff;
+	left:146px;
+	top:7px;
+	height:22px;
+}
+
+.nd-home a {
+	width:127px;
+	padding-top:31px;
+	background-size:auto 100% ;
+	top:8px;
+}
+
+.library-home a {
+	padding-top:14px;
+	width:122px;
+	background-size:auto 100% ;
+	background-position:center;
+	top:11px;
+	left:152px;
+}
+
+.header {
+	background-image:url(/assets/hesburgh_assets/rarebooks/1.0/header.sml.2.jpg);
+	background-position:right 0px;
+}
+
+.header, .header-inner {
+	height:100px;
+}
+
+.logo {
+	width:100px;
+	padding-top:63px;
+	background-size:auto 100% ;
+
+	left:5px;
+	top:32px;
+	display:none;
+}
+
+.header h2 {
+	margin-left:0px;
+	font-size:16px;
+	top:44px;
+	padding-left:10px;
+	padding-top:4px;
+	padding-bottom:4px;
+	background: none repeat scroll 0 0 rgba(43, 87, 129, 0.55);
+}
+
+#content .columns {
+	padding:0 8px;
+}
+
+.header_search {
+	top:100px;
+	background:#738FA5;
+	width:100%;
+}
+
+.push-two, .push-three, .push-four, .push-five, .push-six, .push-seven, .push-eight, .push-nine, .push-ten {
+    left: auto;
+}
+.pull-two, .pull-three, .pull-four, .pull-five, .pull-six, .pull-seven, .pull-eight, .pull-nine, .pull-ten {
+    right: auto;
+}
+.mnav {
+	position:absolute;
+	left:20px;
+	top:73px;
+	z-index:400;
+	margin:0;
+	width:85%;
+}
+
+#sidebar ul, #sidebar h3, #sidebar .featured {
+	margin-left:0;
+}
+
+.featured img {
+	width:100%;
+}
+
+a:link {
+	text-decoration:underline;
+}
+
+.footer p {
+	text-align:left;
+	font-size:.8em;
+	margin-left:10px;
+	margin-right:10px;
+	line-height:1em;
+}
+
+.cbody .captainer {
+	width:45% !important;
+}
+#content {
+		padding-top:35px;
+	}
+form fieldset {
+		padding:5px;
+	}
+.contents {
+	display:block;
+}
+
+.cbody img, .cbody .picture {
+	display:none;
+}
+
+.cbody .menu-icon img {
+	display:inline;
+}
+
+}
+
+/* PHONE STYLES VERTICAL */
+
+@media only screen and (max-width: 320px) {
+
+
+
+
+}
+
+/*** Main Menu ***/
+ul#nav a {border-bottom:none;}
+ul#nav li {width:196px;} /* 980px / 5 */
+ul#nav li ul,
+ul#nav li ul li {width:240px;}
+ul#nav li li.sfHover ul {left:240px;}
+ul#nav li li li.sfHover ul {left:240px;}
+ul#nav li#dbsaz p {margin:0; padding:0 5px 5px 5px; border-right:1px solid #789cbf; line-height:1.3em;}
+ul#nav li#dbsaz p a {margin:0; padding:0 2px; border:none; display:inline;}
+ul#nav li#dbsaz p a:hover {color:#0066CC; background-color:#EFFFFF;}
+
+/* style for main menu using superfish*/
+
+ul#nav.sf-menu {float: left; margin-bottom:0; position:relative; z-index:2001;  }
+ul#nav.sf-menu a {font-size:15px;border-top: 1px solid #789cbf;   border-right: 1px solid #789cbf;border-right:none; padding: .75em 1em .75em 1em; text-decoration:none;  }
+.home #nav.sf-menu a {font-size:15px; border-right: 1px solid #789cbf;border-right:none; padding: .75em 1em .75em 1em; text-decoration:none; }
+ul#nav.sf-menu li.left >a{border-left: 1px solid #789cbf; border-left:none;  }
+ul#nav.sf-menu li.last {border-bottom: 1px solid #789cbf;   }
+ul#nav.sf-menu a,
+ul#nav.sf-menu a:visited {font-weight: bold; color:#fff; } /* visited pseudo selector so IE6 applies text colour*/
+ul#nav.sf-menu li {background:#304962; text-indent:0; margin-left:6px; white-space:nowrap; }
+
+ul#nav.sf-menu li li {background:#2b5781; border-top: none; border-left: 1px solid #789cbf;  white-space:normal;  }
+ul#nav.sf-menu li li li {background:#3a75af; border-top: none; border-left: 1px solid #789cbf; white-space:normal;  }
+ul#nav.sf-menu li:hover,
+ul#nav.sf-menu li.sfHover,
+ul#nav.sf-menu a:focus,
+ul#nav.sf-menu a:hover,
+ul#nav.sf-menu a:active {background:#0e3255; outline:0; }
+ul#nav.sf-menu li p.list{border-right: 1px solid #; }
+/*ul#nav.sf-menu li {background: #3a75af;  }*/
+
+
+ul#nav {
+
+	/* background: none repeat scroll 0 0 rgba(43, 87, 129, 0.35);
+	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.25); */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#25FFFFFF,endColorstr=#25ffffff);
+       zoom: 1;
+	width:100%;
+
+}
+ul#nav li {
+	width:auto;
+}
+
+ul#nav.sf-menu a {
+	border-top:none;
+}
+
+.collections .collections a:link, .collections .collections a:visited, .using .using a:link, .using .using a:visited,
+.finding .finding a:link, .finding .finding a:visited,
+.exhibits .exhibits a:link, .exhibits .exhibits a:visited, .digital .digital a:link, .digital .digital a:visited {
+	background:#A6B7BF;
+	color:#30465F !important;
+}
+
+.collections .collections a:hover, .using .using a:hover, .finding .finding a:hover, .exhibits .exhibits a:hover, .finding .finding a:link {
+	color:#DDE8F4 !important;
+}
+
+/* ND FONT STYLES */
+
+h2 {
+	color:#0F3255;
+	font-size:2.3rem;
+}
+
+h3 {
+color:#0F3255;
+	font-size:1.6rem;
+}
+
+h4 {
+	color:#0F3255;
+	font-size:1.25rem;
+}
+
+/* RB HOME PAGE COLUMN RESET */
+
+	.home .row .four {
+		width:281px;
+		width:30%;
+	}
+
+	.home .row .eight {
+		width:652px;
+		width:65%;
+	}
+	.home .pull-eight {
+		right:702px;
+		right: 69.6%;
+	}
+
+
+	.home .push-four {
+    	left: 300px;
+    	left:33%;
+	}
+
+@media screen and (max-width: 767px) {
+	.home .pull-eight {
+		right:0;
+	}
+	.home .push-four {
+		left:0;
+	}
+}
+
+/* RB COLUMN WIDTH CONTENT RESET-RESET */
+
+#content .row .four {
+	width:30.37%;
+}
+
+#content .row .eight {
+	width: 65.2%;
+}
+
+#content .row .pull-eight {
+
+}
+
+#content .row .push-four {
+
+}
+
+.hours p {
+	width:auto;
+}
