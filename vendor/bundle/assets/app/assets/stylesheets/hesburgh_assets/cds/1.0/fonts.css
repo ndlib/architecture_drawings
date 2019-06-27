@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'ostrich_sansblack';
+    src: url('/50th/fonts/ostrich-black-webfont.eot');
+    src: url('/50th/fonts/ostrich-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/50th/fonts/ostrich-black-webfont.woff') format('woff'),
+         url('/50th/fonts/ostrich-black-webfont.ttf') format('truetype'),
+         url('/50th/fonts/ostrich-black-webfont.svg#ostrich_sansblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ostrich_sansmedium';
+    src: url('/50th/fonts/ostrich-regular-webfont.eot');
+    src: url('/50th/fonts/ostrich-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/50th/fonts/ostrich-regular-webfont.woff') format('woff'),
+         url('/50th/fonts/ostrich-regular-webfont.ttf') format('truetype'),
+         url('/50th/fonts/ostrich-regular-webfont.svg#ostrich_sansmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ostrich_sanscondensed_light';
+    src: url('/50th/fonts/ostrich-light-webfont.eot');
+    src: url('/50th/fonts/ostrich-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/50th/fonts/ostrich-light-webfont.woff') format('woff'),
+         url('/50th/fonts/ostrich-light-webfont.ttf') format('truetype'),
+         url('/50th/fonts/ostrich-light-webfont.svg#ostrich_sanscondensed_light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {font-family:NDIcons;
+  src:url('//www.nd.edu/assets/fonts/nd.eot');
+  src:url('//www.nd.edu/assets/fonts/nd.eot?iefix') format('embedded-opentype'),
+      url('//www.nd.edu/assets/fonts/nd.woff') format('woff'),
+      url('//www.nd.edu/assets/fonts/nd.ttf') format('truetype'),
+      url('//www.nd.edu/assets/fonts/nd.svg#NDIcons') format('svg');
+}
+@font-face {font-family:GPCBook;
+  src:url('//www.nd.edu/assets/fonts/GalaxiePolarisCondensed-Book.eot');
+  src:url('//www.nd.edu/assets/fonts/GalaxiePolarisCondensed-Book.eot?iefix') format('embedded-opentype'),
+      url('//www.nd.edu/assets/fonts/GalaxiePolarisCondensed-Book.woff') format('woff'),
+      url('//www.nd.edu/assets/fonts/GalaxiePolarisCondensed-Book.ttf') format('truetype'),
+      url('//www.nd.edu/assets/fonts/GalaxiePolarisCondensed-Book.svg#svgGPCBook') format('svg');
+}
+@font-face {font-family:GPCMed;
+  src:url('//www.nd.edu/assets/fonts/GalaxiePolarisCondensed-Medium.eot');
+  src:url('//www.nd.edu/assets/fonts/GalaxiePolarisCondensed-Medium.eot?iefix') format('embedded-opentype'),
+      url('//www.nd.edu/assets/fonts/GalaxiePolarisCondensed-Medium.woff') format('woff'),
+      url('//www.nd.edu/assets/fonts/GalaxiePolarisCondensed-Medium.ttf') format('truetype'),
+      url('//www.nd.edu/assets/fonts/GalaxiePolarisCondensed-Medium.svg#svgGPCMed') format('svg');
+}

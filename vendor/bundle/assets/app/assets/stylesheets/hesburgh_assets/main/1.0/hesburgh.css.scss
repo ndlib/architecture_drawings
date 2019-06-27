@@ -1,0 +1,568 @@
+@font-face{ font-family: 'icons';
+    src: url('/assets/hesburgh_assets/main/1.0/websymbols-regular-webfont.eot');
+    src: url('/assets/hesburgh_assets/main/1.0/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('/assets/hesburgh_assets/main/1.0/websymbols-regular-webfont.woff') format('woff'),
+        url('/assets/hesburgh_assets/main/1.0/websymbols-regular-webfont.ttf') format('truetype'),
+        url('/assets/hesburgh_assets/main/1.0/websymbols-regular-webfont.svg#webfont') format('svg'); }
+
+/* -----------------------------------------
+   Primary Library Template Structure
+----------------------------------------- */
+
+@import "mixins.css.scss";
+
+
+body {
+  background-color: #2B5781;
+  color: $body-blue;
+  font-family: $helvetica;
+
+  > .container {
+    padding: 0;
+  }
+}
+
+.container {
+  margin: 0 auto;
+}
+
+div.header {
+  background:url(/assets/hesburgh_assets/main/1.0/header-home.jpg) no-repeat;
+  position:relative;
+  height: 90px;
+
+    h4, h3 {
+        margin:0;
+    }
+    h4 a, h3 a {
+        @include header-link;
+    }
+    h4 a {
+        top:0;
+        height:62px;
+    }
+    h3 a {
+        top:62px;
+        height:25px;
+    }
+    .sg {
+        position:absolute;
+        top:3px;
+        right:30%;
+    }
+
+}
+
+.header_search {
+    top: 55px;
+    position: absolute;
+    right: 0;
+    #search_field {
+        background: none repeat scroll 0 0 $content-bg;
+        border: 1px solid #FDD456;
+        margin-right: 4px;
+        opacity: 0.7;
+        padding-left: 3px;
+    }
+    button {
+        background: none repeat scroll 0 0 #FEE084;
+        border-width: 1px;
+    }
+    input, button {
+        float: left;
+        vertical-align: top;
+    }
+}
+
+
+.menu {
+    position:relative;
+    z-index:120;
+}
+
+.legend {
+    display:none;
+}
+.content {
+    position: relative;
+}
+
+.breadcrumb, .content, .footer {
+  background: $content-bg;
+}
+
+.footer {
+    border-top: 1px solid #B7A765;
+    padding-top: 15px;
+    .columns {
+        text-align:center;
+    }
+    .three {
+        width:24%;
+    }
+    .six {
+        width:43%;
+    }
+    p {
+        font-size:12px;
+    }
+    img {
+        vertical-align: baseline;
+    }
+}
+
+.librarieslogo, .ndulogo {
+    display:block;
+    height:0;
+    overflow:hidden;
+}
+
+.librarieslogo {
+    background:url(/assets/hesburgh_assets/main/1.0/ndmark300.png);
+    width:200px;
+    padding-top:49px;
+    margin-left: 25px;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+
+.ndulogo {
+    background:url(/assets/hesburgh_assets/main/1.0/slogan.gif);
+    width: 200px;
+    padding-top: 53px;
+    float:right;
+    margin-right: 25px;
+    overflow: hidden;
+    cursor: inherit;
+}
+
+
+
+.intranet {
+    padding-right:21px;
+    background:url(/assets/hesburgh_assets/main/1.0/lock.gif) no-repeat right;
+    overflow: visible;
+    padding-bottom: 3px;
+}
+
+/* -----------------------------------------
+   Main Menu
+----------------------------------------- */
+ul#nav {float: left; margin-bottom:0; position:relative; z-index:2001; width:100%;}
+ul#nav li {width:196px;width:20%;background:$body-blue; text-indent:0; margin-left:0; white-space:nowrap;} /* 980px / 5 */
+ul#nav a, ul#nav a:visited {font-weight: bold; color:#dde8f4; line-height:1em;border-bottom:none;border-top: 1px solid #789cbf; border-right: 1px solid #789cbf; padding: .75em 1em .75em 1em; text-decoration:none; }
+ul#nav li ul {width:240px;}
+ul#nav li li {width:240px;border-top: none; border-left: 1px solid #789cbf;background:#2b5781; white-space: normal; }
+ul#nav li li li {background:#3a75af;}
+ul#nav li li.sfHover ul {left:240px;}
+ul#nav li#dbsaz p {margin:0; padding:0 5px 5px 5px; border-right:1px solid #789cbf; line-height:1.3em;}
+ul#nav li#dbsaz p a {margin:0; padding:0 2px; border:none; display:inline;}
+ul#nav li#dbsaz p a:hover {color:#0066CC; background-color:#EFFFFF;}
+
+// style for main menu using superfish
+ul#nav li.left > a {border-left: 1px solid #789cbf;   }
+ul#nav li.last {border-bottom: 1px solid #789cbf;   }
+ul#nav li:hover,
+ul#nav li.sfHover,
+ul#nav a:focus,
+ul#nav a:hover,
+ul#nav a:active {
+  background:#0e3255; outline:0;
+}
+
+
+ul.contained.tabs-content {
+    list-style:none;
+}
+
+ul.contained.tabs-content > li {
+  @include box;
+  padding: 35px 20px 14px;
+  z-index:40;
+  position: relative;
+  border-top-left-radius: 0;
+}
+
+
+ul.contained.tabs-content > li#simple1Tab {
+  padding-top: 14px;
+}
+
+.content .container:first-child {
+  padding-bottom:1em;
+}
+
+.shim {
+    height:3px;
+    background:#fc0;
+    position:absolute;
+    top:30px;
+    width:100%;
+    z-index: 40;
+}
+
+.default a.on, .default .active {
+    background-image: url(/assets/hesburgh_assets/main/1.0/on.gif);
+}
+
+.content li a:link {
+    text-decoration: none;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+/* -----------------------------------------
+   Box
+----------------------------------------- */
+
+
+.box,
+#quicklinks {
+    @include box;
+    z-index:20;
+    margin-bottom:1.12em;
+}
+
+.yellow {
+    background:#ECE3B0;
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    .header h4 a, .header h3 a {width:auto;}
+    .sg {
+        display:none;
+    }
+}
+
+/* Default Search Notification */
+#gritter-notice-wrapper {
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:301px;
+    z-index:9999;
+    margin-left:-150px;
+}
+#gritter-notice-wrapper.top-left {
+    left: 20px;
+    right: auto;
+}
+#gritter-notice-wrapper.bottom-right {
+    top: auto;
+    left: auto;
+    bottom: 20px;
+    right: 20px;
+}
+#gritter-notice-wrapper.bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 20px;
+    left: 20px;
+}
+.gritter-item-wrapper {
+    position:relative;
+    margin:0 0 10px 0;
+    background:url('/local_images/ie-spacer.gif'); /* ie7/8 fix */
+}
+.gritter-top {
+    background:url(/assets/hesburgh_assets/main/1.0/gritter.png) no-repeat left -30px;
+    height:10px;
+}
+.hover .gritter-top {
+    background-position:right -30px;
+}
+.gritter-bottom {
+    background:url(/assets/hesburgh_assets/main/1.0/gritter.png) no-repeat left bottom;
+    height:8px;
+    margin:0;
+}
+.hover .gritter-bottom {
+    background-position: bottom right;
+}
+.gritter-item {
+    display:block;
+    background:url(/assets/hesburgh_assets/main/1.0/gritter.png) no-repeat left -40px;
+    color:#eee;
+    padding:2px 11px 0px 11px;
+    font-size: 11px;
+    font-family:verdana;
+}
+.hover .gritter-item {
+    background-position:right -40px;
+}
+.gritter-item p {
+    padding:0;
+    margin:0;
+    word-wrap:break-word;
+    display: none;
+}
+.gritter-close {
+    display:none;
+    position:absolute;
+    top:5px;
+    left:3px;
+    background:url(/assets/hesburgh_assets/main/1.0/gritter.png) no-repeat left top;
+    cursor:pointer;
+    width:30px;
+    height:30px;
+}
+.gritter-title {
+    font-size:14px;
+    font-weight:bold;
+    padding:0 0 7px 0;
+    display:block;
+    text-shadow:1px 1px 0 #000; /* Not supported by IE :( */
+}
+.gritter-image {
+    width:48px;
+    height:48px;
+    float:left;
+}
+.gritter-with-image,
+.gritter-without-image {
+    padding:0;
+}
+.gritter-with-image {
+    width:220px;
+    float:right;
+}
+/* for the light (white) version of the gritter notice */
+.gritter-light .gritter-item,
+.gritter-light .gritter-bottom,
+.gritter-light .gritter-top,
+.gritter-light .gritter-close {
+    background-image: url(/assets/hesburgh_assets/main/1.0/gritter-light.png);
+    color: #222;
+}
+.gritter-light .gritter-title {
+    text-shadow: none;
+}
+
+td {
+    vertical-align: top;
+    padding: 4px 10px 4px 5px;
+}
+
+.reveal-modal-bg {
+    z-index: 500;
+}
+
+.reveal-modal {
+    z-index: 501;
+
+    a {
+      text-decoration: underline;
+    }
+}
+
+.search-toggle {
+  display: none !important;
+}
+
+/*Tablet Styles */
+
+@media only screen and (max-width: 990px) {
+  body > .container {
+    padding: 0;
+  }
+
+  .container {
+    padding:10px 10px 0;
+  }
+
+  .header_search {
+    right: 10px;
+  }
+}
+
+/*Phone Styles */
+
+@media only screen and (max-width: 480px) {
+
+  .btn-toolbar {
+    display:none;
+  }
+
+  body > .container {
+    padding: 0;
+  }
+
+  .container {
+      padding:10px 10px 0;
+  }
+
+  .search-toggle {
+    display: block !important;
+    position:absolute;
+    top:5px;
+    right:5px;
+    font-family:'icons';
+    text-decoration:none;
+    background: none repeat scroll 0 0 #FEE084;
+    border-width: 1px;
+    speak:none;
+    padding: 4px 7px;
+  }
+
+  div.header {
+      height:45px;
+      background-size:auto 100%;
+
+      h4 {
+          margin:0;
+          a {
+              width:200px;
+              position: static;
+              float:left;
+              padding-top:45px;
+              height:0;
+          }
+      }
+  }
+
+  div.header.open-search {
+      margin-bottom:38px;
+  }
+
+  .header_search {
+    display: none;
+      top:45px;
+      background:#C0C8D0;
+      -webkit-box-shadow: inset 0px 0px 5px 0px #666;
+      box-shadow: inset 0px 0px 5px 0px #666;
+      width:100%;
+      position:static;
+      clear:both;
+      overflow:hidden;
+      text-align:right;
+      height:auto;
+
+      fieldset {
+          padding:5px;
+      }
+
+      #search_field {
+          width:-moz-calc(100% - 40px) !important;
+          width:-webkit-calc(100% - 40px) !important;
+          width:calc(100% - 40px) !important;
+      }
+  }
+
+  .open-search .header_search {
+    display: block;
+  }
+
+
+  .home-page .header_search .btn {
+      margin-bottom:0;
+  }
+
+  .header_search input, .header_search button {
+      float:none;
+  }
+
+  .header_search form, .header_search input {
+      margin:0;
+  }
+
+  .menu {
+      background:$body-blue;
+      padding:5px 5px;
+      box-sizing:border-box;
+      -moz-box-sizing:border-box;
+      -webkit-box-sizing:border-box;
+
+      select {
+          margin-bottom:0;
+          display:block;
+          width:inherit;
+      }
+  }
+
+  .sf-sub-indicator {
+      display: none;
+  }
+
+  /* HORIZONTAL FORMS AT SMALL SCREEN */
+  .form-horizontal .control-label {
+      float:none !important;
+      width:auto !important;
+      text-align:left;
+  }
+
+  .form-horizontal .controls {
+      margin-left:0 !important;
+  }
+
+  .form-horizontal .form-actions  {
+      padding-left: 0px;
+  }
+
+
+  .input-xlarge {
+      width:auto;
+  }
+
+  .box {
+      margin-top:10px;
+  }
+
+  #gallery {
+      display:none;
+  }
+
+  .taupe-bg {
+      background-image:none;
+  }
+
+  h1 {
+      font-size:20px;
+      line-height: 24px;
+  }
+
+  .home-page .inner-left, .home-page .inner-right {
+      padding:0;
+  }
+
+  #hours {
+      width:100%;
+      -moz-box-sizing:border-box;
+      -webkit-box-sizing:border-box;
+      box-sizing:border-box;
+      margin-bottom: 1.12em;
+  }
+
+  table {
+      width:100%;
+  }
+
+}
+
+span.show {
+  display: inline-block;
+}
+
+.fifty {
+    height:0;
+    padding-top:90px;
+    width:132px;
+    display: block;
+    overflow: hidden;
+    background:url(http://library.nd.edu/images/50th.png) no-repeat;
+    position:absolute;
+    top:0;
+    right:200px;
+}
+
+
+/*.row {
+  max-width: 98%;
+}*/
+
+.header, .menu, .content, .footer, .row {
+    max-width: 98%;
+}

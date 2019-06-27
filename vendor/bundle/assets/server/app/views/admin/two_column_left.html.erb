@@ -1,0 +1,8 @@
+<% admin_breadcrumb "Two Column Left" %>
+<% admin_header "Two Column Left" %>
+
+<% content_for(:left_column) do %>
+  <%= render :partial => "left" %>
+<% end %>
+
+<%= render :partial => "content" %>

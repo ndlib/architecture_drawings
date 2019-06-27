@@ -1,0 +1,55 @@
+/* Foundation v2.2.1 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+/* --------------------------------------------------
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+
+
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+
+/* Hours CSS */
+.hours { width: 202px; margin-bottom: 1.75em; }
+td .hours { margin-bottom: .25em; }
+.hours h5 { text-align: center; margin-bottom: 1em; font-size: 1.25em;}
+.hours dl {  margin-bottom: 1em; }
+.hours p { margin-bottom: 1em;}
+.hours .dl-horizontal dt { float: left;
+  width: 110px;
+  overflow: hidden;
+  clear: left;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: normal;
+}
+.hours dd {
+    margin-left: 120px;
+    margin-bottom: 6.5px;
+  }
+
+.building_hours { font-size: 1.25em; }
+.building_hours .hours { width: 100% }
+.building_hours .dl-horizontal dt { width: 240px; }
+
+.hours .dates { text-align: center; margin-bottom: .75em; margin-top: -1.25em; font-size: .85em; font-style: italic; }

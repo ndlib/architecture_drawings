@@ -1,0 +1,27 @@
+nav, #footer, .nddotedu {
+  display: none;
+}
+
+body {
+  background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #FFFFFF;
+    background-image: url("/cds/images/header.png");
+    background-origin: padding-box;
+    background-position: 0 0px, 0 0;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+}
+
+#header {
+  height:104px;
+}
+
+.content-inner {
+  padding-top:10px;
+}
+
+h1 a {
+   pointer-events: none;
+   cursor: default;
+}

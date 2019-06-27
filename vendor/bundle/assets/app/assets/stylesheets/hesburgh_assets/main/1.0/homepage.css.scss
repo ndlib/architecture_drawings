@@ -1,0 +1,371 @@
+ // -------------
+//  Home Page
+// -------------
+
+@import "mixins.css.scss";
+
+@mixin image-tab {
+  background-position:0px 0px;
+  background-repeat: no-repeat;
+  height: 0 !important;
+  overflow: hidden !important;
+  padding-bottom: 0 !important;
+  padding-top: 29px !important;
+  text-decoration: none;
+}
+
+.home-page dl.tabs {
+  height:33px;
+  dd {
+    margin:0;
+    padding-right:4px;
+    overflow: hidden;
+    position: relative;
+    height: 33px;
+    a {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        height: 25px;
+        line-height: 24px;
+    }
+  }
+  span {
+    margin:0;
+    overflow: hidden;
+    position: relative;
+    display: block;
+  }
+}
+
+.taupe-bg,
+.home-page > .container > .content {
+  background: url(/assets/hesburgh_assets/main/1.0/taupe_bg.png) #f8f7e9 repeat-y top right;
+  border-top: 2px solid #f3ede4;
+  border-bottom: 2px solid #f3ede4;
+  z-index:10;
+}
+
+#gallery {
+    border: 1px solid #F5F3F2;
+    margin-bottom: 1em;
+    visibility: hidden;
+}
+
+.home-page {
+  .breadcrumb {
+    display: none !important;
+  }
+
+  .row .eight {
+    width: 67%;
+  }
+
+  .column, .columns {
+    margin-left: 2.6%;
+  }
+
+  #pg-title {
+    display: none;
+  }
+
+  .inner-left {
+    padding-top:50px;
+    padding-bottom:50px;
+  }
+
+  .inner-right {
+
+    padding-left:20px;
+    padding-top:50px;
+    padding-bottom:50px;
+  }
+
+  ul.contained.tabs-content > li {
+    z-index: 0;
+  }
+
+  .tabs {
+    z-index:100;
+  }
+
+  .btn {
+    margin-bottom:9px;
+  }
+
+  .search-appliance {
+    max-width: none;
+  }
+}
+
+dl.tabs dd {
+  .default {
+    position: absolute;
+    top:0px;
+    right: 7px;
+
+    a {
+      background: url(/assets/hesburgh_assets/main/1.0/off.gif) no-repeat scroll left center transparent;
+      color:#696969;
+      text-decoration: none;
+      padding: 13px 0 0.5em;
+      height:0;
+      line-height: 30px;
+      width: 13px;
+      overflow:hidden;
+      display: block;
+      border:none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    a.act, .active {
+      background-image: url(/assets/hesburgh_assets/main/1.0/on.gif);
+    }
+  }
+}
+
+.extra-links { list-style-type:none; padding-left:0 !important;margin-left: 0; }
+.extra-links li { display:inline; padding-right: 1em; }
+
+.new img {
+    border: medium none !important;
+    margin-top: -5px;
+    padding: 0 4px 0 0 !important;
+    vertical-align: top;
+}
+.new.about-tab a {
+    background: none repeat scroll 0 0 transparent !important;
+    padding: 0 !important;
+}
+.new.about-tab {
+    border: medium none !important;
+    padding-bottom: 1em !important;
+    position: static !important;
+    text-align: left !important;
+}
+.feedback {
+    display: block;
+    margin-top: -22px;
+    padding-bottom: 8px;
+    padding-left: 76px;
+}
+
+
+/* Home Page Chat Window Update */
+
+#chat {
+    position:relative;
+    background-color: #F5F3E2;
+    border: 2px solid #FCFBF5;
+    float: left;
+    padding: 0 0 0 1px;
+    width: 261px;
+    margin-bottom: 1.5em;
+}
+
+#chat-head {
+    cursor: pointer;
+    float: left;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+#chat-widget {
+    position:absolute;
+    left:-2px;
+    top:19px;
+    margin-top:0;
+    padding-top:5px;
+    width:258px;
+    background:#F5F3E2;
+    border:2px solid #FCFBF5;
+    border-top:none;
+    display: none;
+    float: left;
+}
+
+#hours {
+    background-color: #F5F3E2;
+    border: 2px solid #FCFBF5;
+    float: left;
+    padding: 0.75em;
+    width: 242px;
+}
+
+.onesearch span {
+    background-image: url(/assets/hesburgh_assets/main/1.0/onesearch.png);
+    @include image-tab;
+    width: 84px;
+}
+
+.ndcatalog span {
+    background-image: url(/assets/hesburgh_assets/main/1.0/ndcatalog.png);
+    @include image-tab;
+    width: 73px;
+}
+
+#quicklinks {
+  clear:both;
+  float: left;
+
+
+  h4 {
+    margin-bottom: 1em;
+    font-weight: bold;
+    clear:both;
+    border-bottom:2px solid #fdd456;
+  }
+  ul {
+    font-size:90%;
+    margin: 0 0 .7em 0;
+    padding-left:0;
+    list-style-type:none;
+    float:left;
+    li {
+      display:block;
+      width:auto;
+      margin-left: 1.2em;
+      text-indent:-1em;
+      a {
+        font-size:115%;
+        text-decoration:none;
+        color:#2c5882;
+      }
+
+      a:hover {
+        text-decoration:underline;
+      }
+
+    }
+  }
+}
+
+.w27pct {
+    padding: 0;
+    width: 29%;
+}
+
+.w39pct {
+    padding: 0 0 0 10px;
+    width: 37%;
+}
+
+.w32pct {
+    padding: 0;
+    width: 32%;
+}
+
+@media only screen and (max-width: 1160px) {
+  .home-page {
+    @include tabs-small;
+    .search-appliance {
+      @include search-appliance-tabs-small;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 990px) {
+  .home-page {
+
+    #chat {
+      display: none;
+    }
+    #hours, .hours {
+      width: auto;
+      max-width: 300px;
+    }
+    #quicklinks ul {
+      width: 100%;
+    }
+    .inner-left {
+      padding: 10px 0 0;
+    }
+    .inner-right {
+      padding: 10px 0 0 5px;
+    }
+    .taupe-bg .eight {
+      // margin:0 !important;
+    }
+    .four.columns {
+      margin-left:0;
+    }
+    .tabs {
+      position: relative;
+    }
+
+
+
+    .row .eight {
+      width: calc(97.8% - 290px);
+      width: -moz-calc(97.8% - 290px);
+      width: -webkit-calc(97.8% - 290px);
+    }
+
+    .row .four {
+      width: 290px;
+    }
+
+    .column, .columns {
+      margin-left: 2.2%;
+    }
+
+    .tabs {
+      position: static;
+    }
+
+    .about-tab {
+      bottom:10px;
+      right:10px;
+      display: none;
+    }
+
+
+  }
+
+  html[data-useragent*='MSIE 10.0'], html[data-useragent*='MSIE 9.0'] {
+    .home-page {
+      .search-appliance {
+        @include search-appliance-ie-tabs-small;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .taupe-bg,
+  .home-page > .container > .content {
+    background: #f8f7e9;
+  }
+  .home-page {
+    #hours {
+      clear: both;
+    }
+
+    .hours {
+      width: auto;
+    }
+
+    .inner-left {
+      padding: 0;
+    }
+    .inner-right {
+      padding: 0;
+    }
+  }
+}
+
+/*Phone Styles */
+
+@media only screen and (max-width: 480px) {
+  #hours {
+    margin: 0;
+  }
+
+  #quicklinks {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+

@@ -1,0 +1,373 @@
+@import "mixins.css.scss";
+
+.search-appliance {
+
+  // From Foundation
+  div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0 none;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+  }
+
+  dl.tabs { display: block; margin: 0 0 0 0; padding: 0; height: 30px; border-bottom: solid 1px #ddd; }
+  dl.tabs dt { display: block; width: auto; height: 30px; padding: 0 9px 0 20px; line-height: 30px; float: left; color: #999; font-size: 11px; text-transform: uppercase; cursor: default; }
+  dl.tabs dt:first-child { padding: 0 9px 0 0; }
+  dl.tabs dd { display: block; width: auto; height: 30px; padding: 0; float: left; }
+  dl.tabs dd a { display: block; width: auto; height: 29px; padding: 0 9px; line-height: 30px; border: solid 1px #ddd; margin: 0 -1px 0 0; color: #555; background: #eee; }
+  // End Foundation
+
+  // Bootstrap
+  [class^="icon-"], [class*=" icon-"] {
+    vertical-align: text-top;
+    margin-top: 1px;
+  }
+  // End Bootstrap
+
+  position: relative;
+  z-index: 1;
+
+  input,
+  textarea,
+  select,
+  .uneditable-input {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .checkbox, .radio {
+    padding-left: 18px;
+  }
+
+  @include tabs;
+
+  dl.contained.tabs dd a {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  dl.tabs {
+
+    z-index: 100;
+    height:37px;
+
+    dd {
+      height: 37px;
+      margin-left: 0 !important;
+      overflow: hidden;
+      padding-right: 4px;
+      position: relative;
+      display: block;
+      float: left;
+
+      a {
+        border-radius:4px 4px 0 0;
+        background:#CECEBF;
+        border:none;
+        box-shadow: inset -0px -5px 3px #888;
+        height: 25px;
+        line-height: 24px;
+
+        color:#777777;
+        padding-top:8px;
+        padding-bottom: 0.5em;
+        font-size: 13px;
+        font-weight: bold;
+        margin: 0;
+        position: relative;
+        text-decoration: none;
+        z-index: 2;
+
+        span {
+          margin: 0;
+          padding-right: 0;
+          overflow: hidden;
+          position: relative;
+          display: block;
+        }
+      }
+
+      > a:hover {
+        background: #E6E6DF;
+        text-decoration: none;
+      }
+
+      > a.active {
+        box-shadow: none;
+        border-style: solid;
+        border-width: 8px 12px 15px 8px;
+        border-color: #fff;
+        -moz-border-image: url(/assets/hesburgh_assets/main/1.0/search_appliance/corner.png) 8 14 15 8 round;
+        -webkit-border-image: url(/assets/hesburgh_assets/main/1.0/search_appliance/corner.png) 8 14 15 8 round;
+        -o-border-image: url(/assets/hesburgh_assets/main/1.0/search_appliance/corner.png) 8 14 15 8 round;
+        border-image: url(/assets/hesburgh_assets/main/1.0/search_appliance/corner.png) 8 14 15 8 fill stretch;
+        padding-top:0;
+        padding-right:0;
+        padding-left:4px;
+        color:#2B5781;
+      }
+
+      > a.active, a.active:hover {
+        background-image: none;
+        background-color: #fff;
+        background-clip: padding-box;
+      }
+
+      > a.active:active {
+        background-image: none;
+        background-color:transparent;
+        box-shadow: none;
+      }
+
+      .default {
+        position: absolute;
+        top:0px;
+        right: 7px;
+
+        a {
+          background: url(/assets/hesburgh_assets/main/1.0/search_appliance/off.gif) no-repeat scroll left center transparent;
+          color:#696969;
+          text-decoration: none;
+          padding: 13px 0 0.5em;
+          height:0;
+          width: 13px;
+          line-height: 30px;
+          overflow:hidden;
+          display: block;
+          border:none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .act {
+          background-image: url(/assets/hesburgh_assets/main/1.0/search_appliance/on.gif);
+        }
+      }
+    }
+  }
+
+  .onesearch span, .ndcatalog span {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 0 !important;
+    overflow: hidden !important;
+    padding-bottom: 0 !important;
+    padding-top: 29px !important;
+    text-decoration: none;
+  }
+
+  .onesearch span {
+    background-image: url(/assets/hesburgh_assets/main/1.0/search_appliance/onesearch.off.png);
+    width: 84px !important;
+  }
+
+  .onesearch.active span {
+    background-image: url(/assets/hesburgh_assets/main/1.0/search_appliance/onesearch.png);
+  }
+
+  .ndcatalog span {
+    background-image: url(/assets/hesburgh_assets/main/1.0/search_appliance/ndcatalog.off.png);
+    width: 73px !important;
+  }
+
+  .ndcatalog.active span {
+    background-image: url(/assets/hesburgh_assets/main/1.0/search_appliance/ndcatalog.png);
+  }
+
+  ul.tabs-content {
+    display: block;
+    margin: 0;
+
+    ul {
+      margin-bottom:0;
+    }
+  }
+
+  ul.contained.tabs-content {
+    list-style: none outside none !important;
+    margin-bottom: 1.12em;
+    padding: 0;
+
+    > li  {
+      @include box;
+      position: relative;
+      border-radius: 0;
+      box-shadow: none;
+      z-index: auto;
+      padding:16px !important;
+      margin-bottom: 40px;
+      list-style: none outside none !important;
+    }
+
+    > li:before,
+    > li:after {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      bottom: 15px;
+      left: 10px;
+      width: 50%;
+      top: 80%;
+      max-width:300px;
+      background: rgba(0, 0, 0, 0.7);
+      -webkit-box-shadow: 0 15px 10px rgba(0,0,0, 0.7);
+      -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+      -webkit-transform: rotate(-3deg);
+      -moz-transform: rotate(-3deg);
+      -o-transform: rotate(-3deg);
+      -ms-transform: rotate(-3deg);
+      transform: rotate(-3deg);
+    }
+
+    > li:after {
+      -webkit-transform: rotate(3deg);
+      -moz-transform: rotate(3deg);
+      -o-transform: rotate(3deg);
+      -ms-transform: rotate(3deg);
+      transform: rotate(3deg);
+      right: 10px;
+      left: auto;
+    }
+  }
+
+  form {
+    margin-bottom: 0;
+  }
+
+  input, select, textarea {
+    margin: 0 0 9px 0;
+    vertical-align: middle;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 18px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    padding: 4px !important;
+    color: #555555;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+  }
+
+  input[type=checkbox] {
+    padding: 0 !important;
+  }
+
+  select {
+    padding: 8px 4px;
+    height: 36px;
+  }
+
+  input[type=text],
+  input[type=search],
+  input.srch-box {
+    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-sizing: border-box;
+    border:none;
+    border-radius: 0;
+    height: 36px;
+    padding: 4px;
+  }
+
+  input.srch-box {
+    width:230px;
+  }
+
+  input.srch-box.long {
+    width:424px;
+    margin-right:3px;
+    padding: 4px 30px 4px 12px !important;
+  }
+
+  .btn {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    background-color: #CBB53F;
+    background-image: none;
+    font-weight: normal;
+    text-transform: uppercase;
+    border-radius: 0;
+    height: 36px;
+    border:none;
+    color:#fff;
+    text-shadow:none;
+    font-size: 14px;
+    margin-bottom: 9px;
+  }
+
+  .extra-links {
+    list-style-type:none;
+    padding-left:0 !important;
+    margin-left: 0;
+    float: none;
+
+    li {
+      display:inline;
+      padding-right: 1em;
+      float: none;
+    }
+  }
+
+  p.about-tab {
+    margin-bottom: 0 !important;
+    text-align: right;
+    position: absolute;
+    border:none;
+    right:0;
+    bottom:0;
+    padding: .3em;
+
+    a {
+      padding:3px 6px 3px 20px;
+      background:url(/assets/hesburgh_assets/main/1.0/info.gif) 5px center no-repeat;
+      font-weight: bold;
+      font-size:10px;
+      cursor: pointer;
+    }
+
+    a:hover {
+      background-color:#e9f0f8;
+    }
+  }
+
+  .about-tab:hover, .about-tab a:hover {
+    background-color: transparent;
+  }
+}
+
+html[data-useragent*='MSIE 10.0'], html[data-useragent*='MSIE 9.0'], html[data-useragent*='MSIE 8.0'] {
+  .search-appliance {
+    dl.tabs dd > a.active {
+      border-width: 0;
+      margin:0;
+      padding:8px 11px 15px 12px;
+      border-right:solid 1px #B1C6D3;
+      background:#fff url(/assets/hesburgh_assets/main/1.0/search_appliance/ie.corner.gif) top left;
+    }
+  }
+}
+
+html[data-useragent*='MSIE 8.0'] {
+  .search-appliance {
+    input.srch-box {
+      border: solid 1px #CCC;
+    }
+  }
+
+  ul.contained.tabs-content {
+
+    > li:before,
+    > li:after {
+      content: none;
+      box-shadow: none;
+      width: 0;
+    }
+  }
+}
+.search-appliance input.srch-box.long {
+  border:solid 1px #ccc;
+}

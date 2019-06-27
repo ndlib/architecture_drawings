@@ -1,0 +1,159 @@
+$assetPath : "/assets/hesburgh_assets/catalog/1.0";
+
+@function asset-url($file) {
+  @return url(#{$assetPath}/#{$file});
+}
+
+.header {
+  background: asset-url("header.jpg") no-repeat scroll center top #2B5681;
+}
+
+.row {
+  max-width: none;
+}
+
+.container {
+  padding: 0;
+}
+
+.header {
+  height: 100px;
+  position: relative;
+  background: asset-url("header.jpg") no-repeat scroll center top #2B5681;
+}
+
+.menu {
+  height: 18px;
+  background-color: #133250;
+}
+
+.search-row {
+  height: 140px;
+  background-color: #133250;
+
+  .search-box {
+    width: 710px;
+    margin: 30px auto 0;
+
+    input[type="text"],
+    input[type="search"] {
+      width: 626px;
+      font-size: 20px;
+      height: 36px;
+      border-top-left-radius:0;
+    }
+
+    .btn {
+      font-size: 14px;
+      height: 36px;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: #CBB53F;
+      background-image: none;
+      text-shadow: none;
+    }
+
+    .worldcat {
+      float: right;
+    }
+
+
+  }
+
+  .search-tabs {
+    margin: 0;
+    list-style-type: none;
+
+    li {
+      float: left;
+      height: 25px;
+      margin: -5px 2px 6px 0;
+      padding: 2px 4px 4px;
+      text-align: center;
+      vertical-align: middle;
+
+      a {
+        color: #FFFFFF;
+        display: block;
+        height: 0;
+        overflow: hidden;
+        padding: 28px 4px 0;
+        border-radius: 3px 3px 3px 3px;
+        background-repeat: no-repeat;
+        background-position: 4px 4px;
+        background-color: #263D49;
+      }
+
+      a:focus {
+        outline-color: #FFF;
+        outline-offset: 3px;
+      }
+
+      a:hover {
+        background-color: #414C3E;
+      }
+    }
+
+    .selected {
+      background-color: #415A72;
+      border-bottom: 3px solid #CC9A07;
+      border-radius: 3px 3px 0 0;
+      height: 32px;
+      margin: -11px 20px 0;
+      padding: 4px 12px;
+
+      a {
+        color: #CFA016;
+        background-position: 0 0;
+        background-color: transparent;
+      }
+
+      a:hover {
+        background-color: transparent;
+      }
+    }
+
+    .selected:first-child {
+      margin-left: 0;
+    }
+
+    .onesearch a {
+      background-image: asset-url("tab.onesearch.small.png");
+      width: 83px;
+    }
+
+    .selected.onesearch a {
+      background-image: asset-url("tab.onesearch.big.png");
+      width: 113px;
+      padding: 30px 0 0;
+    }
+
+    .catalog a {
+      background-image: asset-url("tab.catalog.small.png");
+      width: 75px;
+    }
+
+    .selected.catalog a {
+      background-image: asset-url("tab.catalog.big.png");
+      width: 104px;
+    }
+
+    .libraries a {
+      background-image: asset-url("tab.libraries.small.png");
+      width: 111px;
+    }
+
+    .selected.libraries a {
+      background-image: asset-url("tab.libraries.big.png");
+      width: 146px;
+    }
+  }
+}
+
+.content {
+  padding-top: 9px;
+}
+
+.content .container {
+  padding: 0 20px;
+}

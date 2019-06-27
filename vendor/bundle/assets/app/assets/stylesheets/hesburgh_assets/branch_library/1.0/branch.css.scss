@@ -1,0 +1,30 @@
+.building_hours {
+  font-size: 1.25em;
+
+  .dl-horizontal dt {
+    width: 240px;
+  }
+}
+
+div.header {
+  .header_search,
+  .search-toggle {
+    display:none !important;
+  }
+
+  h4 a {
+    height: 33px;
+    top: 0;
+  }
+
+  h3 a {
+    height: 50px !important;
+    top: 35px !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  div.header h4 a {
+    height: 0;
+  }
+}

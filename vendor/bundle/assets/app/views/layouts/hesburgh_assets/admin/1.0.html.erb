@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Admin CSS</title>
+    <meta name="description" content="Information resources and collections of the Hesburgh Libraries, University of Notre Dame." />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+
+    <%= stylesheet_link_tag    "hesburgh_assets/admin/1.0/index.css", :media => "all" %>
+    <%= javascript_include_tag "hesburgh_assets/admin/1.0/index.js" %>
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="frame" id="frame">
+      <div class="row header">
+        <div class="twelve columns">
+          <%= preheader_content %>
+          <h2>Libraries<em>Admin</em></h2>
+        </div>
+      </div>
+      <div class="row menu">
+        <div class="twelve columns">
+          Menu
+        </div>
+      </div>
+
+      <div class="row content">
+        <div class="frame">
+          <div class="row breadcrumb hide-on-phones">
+            <%
+              if !content_for?(:breadcrumb)
+                breadcrumb()
+              end
+            %>
+            <div class="twelve columns">
+              <p><%= content_for(:breadcrumb) %></p>
+            </div>
+          </div>
+          <% if content_for?(:left_column) %>
+            <div class="three columns">
+              <%= content_for(:left_column) %>
+            </div>
+          <% end %>
+          <%
+          content_width = 12
+          if content_for?(:left_column)
+            content_width -= 3
+          end
+          if content_for?(:right_column)
+            content_width -= 4
+          end
+          if content_for?(:right_column_wide)
+            content_width -= 5
+          end
+          %>
+          <div class="<%= number_to_word(content_width) %> columns">
+            <div id="pg-title">
+              <% if content_for?(:content_title_links) %>
+                <div class="pull-right">
+                  <%= content_for(:content_title_links) %>
+                </div>
+              <% end %>
+              <%= content_for(:content_title) %>
+            </div>
+            <%= display_notices %>
+            <%= yield %>
+          </div>
+          <% if content_for?(:right_column) %>
+            <div class="four columns">
+              <%= content_for(:right_column) %>
+            </div>
+          <% end %>
+          <% if content_for?(:right_column_wide) %>
+            <div class="five columns">
+              <%= content_for(:right_column_wide) %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </body>
+</html>

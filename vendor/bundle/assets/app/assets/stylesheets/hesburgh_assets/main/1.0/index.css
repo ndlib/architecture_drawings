@@ -1,0 +1,18 @@
+/*
+ * Manifest file for version 1 styles.
+ *
+ *= require_self
+ *= require ../../common/foundation-2.2.1.css
+ *= require ../../common/bootstrap-2.0.3.css
+ *= require ../../common/prettify.css
+ *= require ../../common/superfish.css
+ *= require ../../common/colorbox.css
+ *= require ./bootstrap_overrides.css
+ *= require ./coin-slider-styles.css
+ *= require ./tabs.css
+ *= require ./hesburgh.css
+ *= require ./homepage.css
+ *= require ./hours.css
+ *= require ./search-appliance.css
+ *= require ./coin-slider-overrides.css
+ */

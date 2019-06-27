@@ -1,0 +1,40 @@
+
+
+.header form, .header input, input, textarea, select, .uneditable-input, .home-page .btn  {
+	margin-bottom: 0 !important;
+}
+
+.header_search input, .header_search button {
+	float:none;
+	overflow: hidden;
+}
+
+.header_search {
+	width:320px;
+	text-align: right;
+
+	top:50px;
+	z-index:50000;
+}
+
+.header input {
+	
+	border-radius:0;
+}
+
+.header_search {
+	position: relative;
+
+	right:auto;
+	float:right;
+}
+
+
+dl.tabs dd a.active, .tba .menu_center {
+  border-right-width: 1px !important;
+  border-top-width: 0 !important;
+  border-left-width: 0 !important;
+  border-color:none !important;
+  -ms-border-radius: 0 0 !important;
+  behavior: url(/assets/hesburgh_assets/main/1.0/PIE.htc);
+}

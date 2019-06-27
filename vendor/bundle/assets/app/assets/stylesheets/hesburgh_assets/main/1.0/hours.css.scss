@@ -1,0 +1,63 @@
+/* Hours CSS */
+.hours {
+  width: 242px;
+  margin-bottom: 1.75em;
+
+  h5 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 1.25em;
+  }
+
+  dl {
+    margin-bottom: 1em;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  .dl-horizontal dt {
+    float: left;
+    width: 120px;
+    overflow: hidden;
+    clear: left;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: normal;
+  }
+
+  dd {
+    margin-left: 140px;
+    margin-bottom: 2px;
+  }
+
+  .dates {
+    text-align: center;
+    margin-bottom: .75em;
+    margin-top: -1.25em;
+    font-size: .85em;
+    font-style: italic;
+  }
+}
+
+td .hours {
+  margin-bottom: .25em;
+}
+
+#hours hr {
+  height: 1px;
+}
+
+.building_hours .hours {
+  width: 100%;
+}
+
+.reveal-modal-bg {
+  z-index: 10000;
+}
+
+.reveal-modal {
+  z-index: 10001;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+      <% if content_for?(:page_title) then %>
+        <%= content_for(:page_title) %> // Hesburgh Libraries // University of Notre Dame
+      <% else %>
+        Hesburgh Libraries // University of Notre Dame
+      <% end %>
+    </title>
+
+    <% if content_for?(:meta_description) then %>
+      <meta name="description" content="<%= content_for(:meta_description)%>" />
+    <% end %>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <%= favicon_link_tag hesburgh_asset_path(:main, "favicon.ico"), rel: 'shortcut icon', type: 'image/x-icon' %>
+    <%= favicon_link_tag hesburgh_asset_path(:main, "favicon-152.png"), rel: 'shortcut icon', sizes: '128x128', type: 'image/png' %>
+    <%= hesburgh_stylesheet_link_tag active_branch_code, "index.css", :media => "all" %>
+    <!--[if lte IE 9]>
+      <%= hesburgh_stylesheet_link_tag :main, "ie.css", :media => "all" %>
+    <![endif]-->
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= hesburgh_javascript_include_tag :main, "index.js" %>
+    <% if branch_site? %>
+      <%= hesburgh_javascript_include_tag active_branch_code, "index.js" %>
+    <% end %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body <%= body_class %>>
+    <div class="container">
+      <div class="row header">
+        <div class="twelve columns">
+          <%= preheader_content %>
+          <%= include_ssi("/local_ssi/responsive/header.shtml") %>
+        </div>
+      </div>
+      <div class="row menu">
+        <div class="twelve columns">
+          <%= include_branch_ssi("/ssi/main-menu.shtml") %>
+        </div>
+      </div>
+      <div class="row breadcrumb hide-on-phones">
+        <%
+        if !content_for?(:breadcrumb)
+          breadcrumb()
+        end
+        %>
+        <div class="twelve columns">
+          <%= content_for(:breadcrumb) %>
+        </div>
+      </div>
+      <div class="row content">
+        <div class="container">
+          <% if content_for?(:left_column) %>
+            <div class="three columns">
+              <%= content_for(:left_column) %>
+            </div>
+          <% end %>
+          <%
+          content_width = 12
+          if content_for?(:left_column)
+            content_width -= 3
+          end
+          if content_for?(:right_column)
+            content_width -= 4
+          end
+          if content_for?(:right_column_wide)
+            content_width -= 5
+          end
+          %>
+          <div class="<%= number_to_word(content_width) %> columns">
+            <div id="pg-title">
+              <% if content_for?(:content_title_links) %>
+                <div class="pull-right">
+                  <%= content_for(:content_title_links) %>
+                </div>
+              <% end %>
+              <%= content_for(:content_title) %>
+            </div>
+            <%= display_notices %>
+            <%= yield %>
+          </div>
+          <% if content_for?(:right_column) %>
+            <div class="four columns">
+              <%= content_for(:right_column) %>
+            </div>
+          <% end %>
+          <% if content_for?(:right_column_wide) %>
+            <div class="five columns">
+              <%= content_for(:right_column_wide) %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <% if branch_site? %>
+        <%= include_branch_ssi("/local_ssi/footer.shtml") %>
+      <% else %>
+        <%= include_ssi("/local_ssi/responsive/footer.shtml") %>
+      <% end %>
+    </div>
+    <%= content_for(:body_bottom) %>
+  </body>
+</html>
