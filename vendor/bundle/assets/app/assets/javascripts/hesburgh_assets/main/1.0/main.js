@@ -2,11 +2,16 @@
 jQuery(function($) {
   /* Creates the dropdown menu navigation */
 
+  $('input.srch-box').focus(function(){
+    $(this).val('');
+  });
+
   /* handles colorbox */
   //$("p.about-tab>a").colorbox({iframe:false, innerWidth:525, innerHeight:344, speed:250});
   $("p#acceptable-use-note>a").colorbox({iframe:true, innerWidth:525, innerHeight:424, speed:250});
 
   /* general */
+  $("#catplus_search").val($("#catplus_search").siblings('.legend').text());
 
   /* handles all tab behavior */
 
@@ -120,14 +125,12 @@ jQuery(function($) {
   // manages chat flyout
   $('#chat-head').click(function(){
     $('#chat-widget').slideToggle();
-    if($('#chat-head img').attr('src') == '/assets/hesburgh_assets/main/1.0/white_arrow_horiz.png'){
-      $('#chat-head img').attr('src', '/assets/hesburgh_assets/main/1.0/white_arrow_vert.png');
+    if($('#chat-head img').attr('src') == '/assets/hesburgh_assets/main/1.0/blue_arrow_horiz.png'){
+      $('#chat-head img').attr('src', '/assets/hesburgh_assets/main/1.0/blue_arrow_vert.png');
     }else{
-      $('#chat-head img').attr('src', '/assets/hesburgh_assets/main/1.0/white_arrow_horiz.png');
+      $('#chat-head img').attr('src', '/assets/hesburgh_assets/main/1.0/blue_arrow_horiz.png');
     };
 
   });
-
-
 
 });

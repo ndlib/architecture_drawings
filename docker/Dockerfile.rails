@@ -12,6 +12,9 @@ RUN bundle install --path /bundle
 RUN mkdir /project_root
 WORKDIR /project_root
 COPY . /project_root
+RUN ["cp", "/bundle/Gemfile.lock", "/project_root/Gemfile.lock"]
 COPY docker/database.yml /project_root/config/database.yml
 COPY docker/solr.yml /project_root/config/solr.yml
 COPY docker/jetty.yml /project_root/config/jetty.yml
+
+RUN bundle exec rake assets:precompile

@@ -7,10 +7,10 @@ mysql_settings: &mysql_settings
   pool:    5
   timeout: 5000
   encoding: utf8
-  username: root
-  password: password
-  database: architecture_drawings_development
-  host: mysql
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  database: <%= ENV['DB_NAME'] %>
+  host: <%= ENV['DB_HOST'] %>
   port: 3306
 
 development:

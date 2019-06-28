@@ -1,16 +1,16 @@
 <ul class="search-tabs">
   <li class="onesearch selected">
-    <a title="Search Articles, ND LIbraries and Area Library holdings" href="<%= primo_search_url('onesearch') %>">
+    <a title="Search Articles, ND LIbraries and Area Library holdings" href="<%= primo_search_url(tab: 'onesearch') %>">
       <span>OneSearch</span>
     </a>
   </li>
   <li class="catalog">
-    <a title="Search materials held by all Notre Dame campus libraries" href="<%= primo_search_url('nd_campus') %>">
+    <a title="Search materials held by all Notre Dame campus libraries" href="<%= primo_search_url(tab: 'nd_campus') %>">
       <span>ND Campus</span>
     </a>
   </li>
   <li class="libraries">
-    <a title="Search materials held by NDU, SMC, HCC and BC" href="<%= primo_search_url('malc') %>">
+    <a title="Search materials held by NDU, SMC, HCC and BC" href="<%= primo_search_url(tab: 'malc') %>">
       <span>Area Libraries</span>
     </a>
   </li>

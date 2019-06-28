@@ -1,5 +1,6 @@
 FROM mariadb
 
+COPY ./docker/mysql-utf8.cnf /etc/mysql/conf.d/mysql-utf8.cnf
 COPY ./docker/mysql-healthcheck /usr/local/bin/
 
 HEALTHCHECK CMD ["mysql-healthcheck"]

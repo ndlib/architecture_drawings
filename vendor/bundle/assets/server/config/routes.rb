@@ -9,12 +9,8 @@ Rails.application.routes.draw do
   match 'admin' => 'admin#index'
   match 'admin/:action' => 'admin', as: 'admin'
 
-  match 'rarebooks' => 'rarebooks#index'
-  match 'rarebooks/:action' => 'rarebooks', as: 'rarebooks'
-  match 'css/navigation.css', :to => redirect('/assets/hesburgh_assets/rarebooks/1.0/navigation.css')
-
   scope '/catalog' do
-    match '/' => 'catalog#index', as: 'catalog_root'
+    root to: 'catalog#index'
 
     match ':action' => 'catalog', as: 'catalog'
   end

@@ -1,0 +1,317 @@
+<div class="home-page">
+<div class="row content taupe-bg">
+        
+          <div class="eight columns"><div class="inner-left">
+          <!-- TemplateBeginEditable name="left-column-content" -->
+          <div class="off" id="notice">
+  <p><strong>Attention:</strong> We are having
+some intermittent connection issues with OneSearch and the NDCatalog for
+off-campus users.  Some searches may take a long time to complete.  We
+appreciate your patience as we work to get the problem resolved.</p>
+  
+</div>
+
+<style>
+  #notice {
+    display: none;
+    padding: 10px 5px;
+    border:solid #f90 2px;
+    background:#fc6 url(/local_ssi/notice.png) no-repeat 5px 5px;
+    margin-bottom: 1.12em;
+    margin-top:-2em;
+
+  }
+
+  #notice p {
+    margin:0;
+    font-size:12px;
+    color:#633;
+  }
+
+  #notice strong {
+    padding-left:30px;
+  }
+
+  #notice.on {
+    display:block;
+  }
+
+
+
+</style>
+          <div id="tab_box">
+  <dl class="tabs contained">
+    <dd><a href="#tab_primo" class="onesearch tab active" id="tab_primo_l"><span>OneSearch</span></a><div class="default hide-on-phones"><a class="setTabDefault active" href="#tab_primo">Default Tab</a></div></dd>
+    <dd><a class="ndcatalog tab" href="#tab_cat" id="tab_cat_l"><span>ND Catalog</span></a><div class="default hide-on-phones"><a class="setTabDefault" href="#tab_cat">Default Tab</a></div></dd>
+    <dd><a class=" tab" href="#tab_art" id="tab_art_l" tabindex="2">Articles</a><div class="default hide-on-phones"><a class="setTabDefault" href="#tab_art">Default Tab</a></div>
+    </dd><dd><a class=" tab" href="#tab_jou" id="tab_jou_l" tabindex="4">eJournals</a><div class="default hide-on-phones"><a class="setTabDefault" href="#tab_jou">Default Tab</a></div></dd>
+    <dd><a class=" tab" href="#tab_dat" id="tab_dat_l" tabindex="6">Databases</a><div class="default hide-on-phones"><a class="setTabDefault" href="#tab_dat">Default Tab</a></div></dd>
+    <dd><a class="tab" href="#tab_boo" id="tab_boo_l" tabindex="8">eBooks</a><div class="default hide-on-phones"><a class="setTabDefault" href="#tab_boo">Default Tab</a></div></dd>
+  </dl>
+
+
+<div id="search_box">
+<ul class="tabs-content contained">
+<li id="tab_primoTab" class="active" style="display: block;">
+    <form enctype="application/x-www-form-urlencoded; charset=utf-8" class="simple EXLForm" action="http://onesearch.library.nd.edu/primo_library/libweb/action/search.do?vid=NDU&amp;resetConfig=true" method="get" name="searchForm">
+      <!--<p class="new about-tab hide-on-phones"><img src="/local_images/new.png"> <a class="cboxElement" href="/expl/expl-onesearch.shtml">Learn more</a> about our new search service.</p><span class="feedback hide-on-phones"><a href="/onesearch/feedback/">Let us know</a> what you think.</span>-->
+      <fieldset>
+        <span class="legend">Search articles, the ND catalog and area libraries</span>
+        <input type="text" accesskey="s" onkeydown="" value="" name="vl(freeText0)" class="srch-box long" id="catplus_search" tabindex="1">
+  <input type="hidden" value="search" name="fn" id="fn">
+  <input type="hidden" value="search" name="ct" id="ct">
+        <input type="hidden" value="Basic" name="mode" id="mode">
+        <input type="hidden" value="onesearch" name="tab" id="tab">
+        <input type="hidden" value="1" name="indx" id="indx">
+        <input type="hidden" value="true" name="dum" id="dum">
+        <input type="hidden" id="str" value="rank" name="srt">
+        <input type="hidden" value="NDU" name="vid" id="vid">
+        <input type="hidden" value="" name="frbg" id="frbg">
+        <button class="searchbtn btn" type="submit">Search</button>
+
+      </fieldset>
+    </form>
+    <ul class="extra-links">
+      <li><a href="http://onesearch.library.nd.edu/primo_library/libweb/action/search.do?vid=NDU&amp;resetConfig=true&amp;tab=onesearch&amp;mode=Advanced">Advanced search</a></li>
+      <li><a href="http://onesearch.library.nd.edu/primo_library/libweb/action/search.do?vid=NDU&amp;tab=nd_campus&amp;mode=Basic&amp;resetConfig=true">ND Catalog</a></li>
+      <li><a href="http://alephprod.library.nd.edu/F/?func=find-b-0">Catalog Classic</a></li>
+      <li><a href="http://eresources.library.nd.edu/databases/worldcat">WorldCat</a></li>
+      
+    </ul>
+    <p class="about-tab">
+      <a href="http://www.library.nd.edu/expl/expl-onesearch.shtml" class="cboxElement">About OneSearch</a>
+    </p>
+  </li>
+
+<li id="tab_catTab" class="tab_cat ui-tabs ui-tabs-hide" style="display: none;">
+    <form enctype="application/x-www-form-urlencoded; charset=utf-8" class="simple EXLForm" action="http://onesearch.library.nd.edu/primo_library/libweb/action/search.do?vid=NDU&amp;resetConfig=true" method="get" name="searchForm">
+      <fieldset>
+        <span class="legend">Find books, music, movies, etc. in ND and area libraries</span>
+        <input type="text" accesskey="s" onkeydown="" value="" name="vl(freeText0)" class="srch-box long" id="catplus_search">
+  <input type="hidden" value="search" name="fn" id="fn">
+  <input type="hidden" value="search" name="ct" id="ct">
+        <input type="hidden" value="Basic" name="mode" id="mode">
+        <input type="hidden" value="nd_campus" name="tab" id="tab">
+        <input type="hidden" value="1" name="indx" id="indx">
+        <input type="hidden" value="true" name="dum" id="dum">
+        <input type="hidden" id="str" value="rank" name="srt">
+        <input type="hidden" value="NDU" name="vid" id="vid">
+        <input type="hidden" value="" name="frbg" id="frbg">
+        <button class="searchbtn btn" type="submit">Search</button>
+
+      </fieldset>
+    </form>
+  <!--<div id="problem" style="color: green;"><a href="http://www.library.nd.edu/catalogplus/what_you_should_know.shtml">5 Things You Should Know</a> about CatalogPlus, especially if you are an ardent CatalogClassic user. <br /><br /></div>-->
+    <ul class="extra-links">
+      <li><a href="http://onesearch.library.nd.edu/primo_library/libweb/action/search.do?vid=NDU&amp;resetConfig=true&amp;tab=nd_campus&amp;mode=Advanced">Advanced search</a></li>
+      <li><a href="http://alephprod.library.nd.edu/F/?func=find-b-0">Catalog Classic</a></li>
+      <li><a href="http://eresources.library.nd.edu/databases/worldcat">WorldCat</a></li>
+    </ul>
+    <p class="about-tab">
+      <a href="/expl/expl-catplus.shtml" class="cboxElement">About ND Catalog</a>
+    </p>
+  </li>
+
+  <li id="tab_artTab" class="tab_art ui-tabs ui-tabs-hide" style="display: none;">
+    <form method="get" action="http://www.library.nd.edu/ddw/public/statistics/stats.cgi">
+      <fieldset>
+        <span class="legend">Find articles on a topic</span>
+  <input type="hidden" value="genmul" name="subject">
+        <input type="text" value="" name="query" class="srch-box long" id="quick_search">
+        <input type="hidden" name="interface" value="basic">
+        <input type="hidden" name="search_type" value="subject">
+        <button class="searchbtn btn" type="submit">Search</button>
+        <input type="hidden" value="article_search" name="stats_search_type">
+
+      </fieldset>
+    </form>
+    <ul class="extra-links">
+      <li><a href="http://www.library.nd.edu/eresources/quicksearch/quicksearch.cgi?interface=advanced&amp;subject=genmul&amp;search_type=subject">Advanced Search</a></li>
+      <li><a href="http://www.library.nd.edu/find_articles/index.shtml#tab_tad">Most used article databases</a></li>
+      <li><a href="http://www.library.nd.edu/find_articles/index.shtml#tab_dbsub">Articles by subject</a></li>
+    </ul>
+    <p class="about-tab">
+      <a href="/expl/expl-art.shtml" class="cboxElement">About Articles</a>
+    </p>
+  </li>
+
+  <li id="tab_jouTab" class="tab_jou ui-tabs ui-tabs-hide" style="display: none;">
+    <form method="get" action="http://ejl.library.nd.edu/catalog">
+      <fieldset>
+        <span class="legend">Find a specific journal</span>
+        <input type="text" value="" name="q" class="srch-box long" id="journals_search" tabindex="5"> <button class="searchbtn btn" type="submit">Search</button>
+        
+      </fieldset>
+    </form>
+    
+    <ul class="extra-links">
+      <li><a href="http://ejl.library.nd.edu/">Advanced search</a></li>
+      <li><a href="http://eresources.library.nd.edu/ejournals/alljournals">All journals</a></li>
+    </ul>
+    <p class="about-tab">
+      <a href="/expl/expl-jou.shtml" class="cboxElement">About e-Journals</a>
+    </p>
+  </li>
+
+  <li id="tab_datTab" class="tab_dat ui-tabs ui-tabs-hide" style="display: none;">
+    <form id="myform" name="myform" accept-charset="utf-8" enctype="application/x-www-form-urlencoded" method="get" action="http://www.library.nd.edu/ddw/public/statistics/stats.cgi">
+      <fieldset>
+        <span class="legend">Find databases by title or keyword</span>
+        <input type="text" value="" name="query" class="srch-box long" id="dbf_search">
+        <input type="hidden" value="dbf_search" name="stats_search_type">
+        <button class="searchbtn btn" type="submit">Search</button>
+
+      </fieldset>
+    </form>
+    <ul class="extra-links">
+
+      <li>All databases:
+  <span id="atoz">
+        <a href="http://www.library.nd.edu/alpha/a">A</a>
+        <a href="http://www.library.nd.edu/alpha/b">B</a>
+        <a href="http://www.library.nd.edu/alpha/c">C</a>
+        <a href="http://www.library.nd.edu/alpha/d">D</a>
+        <a href="http://www.library.nd.edu/alpha/e">E</a>
+        <a href="http://www.library.nd.edu/alpha/f">F</a>
+        <a href="http://www.library.nd.edu/alpha/g">G</a>
+        <a href="http://www.library.nd.edu/alpha/h">H</a>
+        <a href="http://www.library.nd.edu/alpha/i">I</a>
+        <a href="http://www.library.nd.edu/alpha/j">J</a>
+        <a href="http://www.library.nd.edu/alpha/k">K</a>
+        <a href="http://www.library.nd.edu/alpha/l">L</a>
+        <a href="http://www.library.nd.edu/alpha/m">M</a>
+        <a href="http://www.library.nd.edu/alpha/n">N</a>
+        <a href="http://www.library.nd.edu/alpha/o">O</a>
+        <a href="http://www.library.nd.edu/alpha/p">P</a>
+        <a href="http://www.library.nd.edu/alpha/q">Q</a>
+        <a href="http://www.library.nd.edu/alpha/r">R</a>
+        <a href="http://www.library.nd.edu/alpha/s">S</a>
+        <a href="http://www.library.nd.edu/alpha/t">T</a>
+        <a href="http://www.library.nd.edu/alpha/u">U</a>
+        <a href="http://www.library.nd.edu/alpha/v">V</a>
+        <a href="http://www.library.nd.edu/alpha/w">W</a>
+        <a href="http://www.library.nd.edu/alpha/x">X</a>
+        <a href="http://www.library.nd.edu/alpha/y">Y</a>
+        <a href="http://www.library.nd.edu/alpha/z">Z</a>
+  <a href="http://www.library.nd.edu/alpha/0">0-9</a></span></li><br>
+   <li><a href="http://www.library.nd.edu/ddw/public/subject-all-dbs.cgi">Databases by subject</a></li>
+    </ul>
+    <p class="about-tab">
+      <a href="/expl/expl-dat.shtml" class="cboxElement">About Databases</a>
+    </p>
+  </li>
+
+<li id="tab_booTab" class="tab_boo ui-tabs ui-tabs-hide" style="display: none;">
+  <form enctype="application/x-www-form-urlencoded; charset=utf-8" class="simple EXLForm" action="http://onesearch.library.nd.edu/primo_library/libweb/action/search.do" method="get" name="searchForm">
+      <fieldset>
+        <span class="legend">Find electronic books in ND and area libraries</span>
+        <input type="text" accesskey="s" onkeydown="" value="" name="vl(freeText0)" class="EXLSearchInputText EXLMainSearchField srch-box long" id="search_field">
+  <input type="hidden" value="search" name="fn" id="fn">
+        <input type="hidden" value="Basic" name="mode" id="mode">
+        <input type="hidden" value="nd_campus" name="tab" id="tab">
+        <input type="hidden" value="1" name="indx" id="indx">
+        <input type="hidden" value="true" name="dum" id="dum">
+        <input type="hidden" id="str" value="rank" name="srt">
+        <input type="hidden" value="NDU" name="vid" id="vid">
+        <input type="hidden" value="" name="frbg" id="frbg">
+  <input type="hidden" value="facet" name="ct" id="ct">
+  <input type="hidden" value="facet_tlevel" name="fctN" id="fctN">
+  <input type="hidden" value="online_resources" name="fctV" id="fctV">
+  <input type="hidden" value="facet_rtype" name="fctN" id="fctN">
+  <input type="hidden" value="books" name="fctV" id="fctV">
+        <button class="searchbtn btn" type="submit">Search</button>
+
+      </fieldset>
+    </form>
+    <ul class="extra-links">
+      <li><a href="http://www.library.nd.edu/srch-find/ebooks.shtml">e-Book collections</a></li>
+      <li><a href="http://eresources.library.nd.edu/databases/googlebook">Google Books</a></li>
+      <li><a href="http://eresources.library.nd.edu/databases/hathitrust">HathiTrust</a> (<a href="http://eresources.library.nd.edu/databases/hathifaq">FAQ</a>)</li>
+   </ul>
+    <p class="about-tab">
+      <a href="/expl/expl-ebooks.shtml" class="cboxElement">About e-Books</a>
+    </p>
+  </li>
+
+</ul></div>
+</div> <!-- End #search -->
+
+          <div id="quicklinks">
+  <h4>Quicklinks</h4>
+    <ul class="w27pct">
+      <li><a href="https://www.library.nd.edu/reserves/ereserves/" class="xereserves">Course Reserves</a></li>
+      <li><a href="https://nd.illiad.oclc.org/illiad/IND/logon.html">Interlibrary loan</a></li>
+      <li><a href="/fys/">Starting your research</a></li>
+      <li><a href="/recent-acquisitions/">Recent Acquisitions</a></li>
+      <li><a href="/subjects">Subjects A-Z</a></li>
+      <li><a href="http://guides.library.nd.edu/">Course Pages &amp; Research Guides </a></li>
+    </ul>
+
+    <ul class="w39pct">
+      <li><a href="/about/myaccount.shtml">My Library Accounts</a></li>
+      <li><a href="/circulation/index.shtml">Circulation</a></li>
+      <li><a href="http://eresources.library.nd.edu/databases/refworks">RefWorks</a></li>
+      <li><a href="/eresources/forms/problem/index.cgi?#tab_cp">Report a problem</a></li>
+      <li><a href="/eresources/forms/problem/index.cgi?#tab_fs">Request forms</a></li>
+      <li id="pog"><a href="http://www.library.nd.edu/instruction/potofgold/">Pot of Gold tutorial</a></li>
+    </ul>
+
+    <ul class="w32pct">
+      <li><a href="http://eresources.library.nd.edu/databases/academicsearch">Academic Search Premier</a></li>
+      <li><a href="http://eresources.library.nd.edu/databases/googlescholar">Google Scholar</a></li>
+      <li><a href="http://eresources.library.nd.edu/databases/jstor">JSTOR</a></li>
+      <li><a href="http://eresources.library.nd.edu/databases/webofscience">Web of Science</a></li>
+      <li><a href="http://eresources.library.nd.edu/databases/worldcat">WorldCat</a></li>
+    </ul>
+</div>
+
+
+          <!-- TemplateEndEditable -->
+          </div></div> <!-- end #left-col --> 
+          <div class="four columns"><div class="inner-right">
+            <!-- TemplateBeginEditable name="right-column-content" -->
+            <div id="gallery" style="position: relative; visibility: visible; background: none repeat scroll 0% 0% rgb(245, 243, 226); overflow: hidden; width: 263px; height: 173px;"><div class="gallerylayer" style="position: absolute; left: 0px; top: 0px; z-index: 999;"></div><div class="gallerylayer" style="position: absolute; left: 0px; top: 0px; z-index: 1000; opacity: 1;"><a target="" href="http://eresources.library.nd.edu/databases_docs/hathitrust_FAQ.shtml">
+<img style="border-width:0" src="/local_images/spotlight/hathi-trust.png"></a></div><div class="navpanellayer" style="position: absolute; width: 100%; height: 38px; left: 0px; top: 135px; font: bold 11px Verdana; z-index: 1001;"><div class="navpanelbg" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background: none repeat scroll 0% 0% rgb(245, 243, 242); opacity: 1;"></div><div class="navpanelfg" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; padding-top: 2px; text-align: center; color: white;"><div style="position: relative; top: 12px;" id="gallerythumbs"> <div style="padding: 4px 6px 4px 6px; margin-right: 2px; border: 1px solid #304962; width: 20px; height: 20px; display: inline; color: #2b5781; cursor:hand; cursor:pointer;  " title="Prev" id="leftNav">&lt;</div> <div style="cursor: pointer; padding: 4px 6px; margin-right: 2px; border: 1px solid rgb(48, 73, 98); width: 20px; height: 20px; display: inline; background: none repeat scroll 0% 0% rgb(245, 243, 242); color: rgb(43, 87, 129);" class="gallerythumb" title="0" id="thumb0">1</div><div style="cursor: pointer; padding: 4px 6px; margin-right: 2px; border: 1px solid rgb(48, 73, 98); width: 20px; height: 20px; display: inline; color: rgb(255, 255, 255); background: none repeat scroll 0% 0% rgb(43, 87, 129);" class="gallerythumb" title="1" id="thumb1">2</div><div style="cursor:hand; cursor:pointer; padding: 4px 6px 4px 6px;  margin-right: 2px; border: 1px solid #304962; width: 20px; height: 20px; display: inline;  color: #2b5781;  " class="gallerythumb" title="2" id="thumb2">3</div><div style="cursor:hand; cursor:pointer; padding: 4px 6px 4px 6px;  margin-right: 2px; border: 1px solid #304962; width: 20px; height: 20px; display: inline;  color: #2b5781;  " class="gallerythumb" title="3" id="thumb3">4</div> <div style="padding: 4px 6px 4px 6px; border: 1px solid #304962; width: 20px; height: 20px; display: inline; color: #000000; cursor:hand; cursor:pointer;" title="Next" id="rightNav">&gt;</div></div> </div></div></div><div id="chat"><div id="chat-head">Click to Chat with a Librarian <img src="/images/blue_arrow_horiz.png"></div><div id="chat-widget"><div jid="nd-ask-a-lib@chat.libraryh3lp.com" class="libraryh3lp"><iframe frameborder="0" style="width: 257px; height: 300px; border: 0px inset #2a4480;" src="http://libraryh3lp.com/chat/nd-ask-a-lib@chat.libraryh3lp.com?skin=10273&amp;theme=gota&amp;title=Ask%20a%20Librarian&amp;identity=asklib"></iframe></div></div></div>
+            
+            
+            <div id="hours">
+  <div id="todays-hours">
+    <div id="hrs">
+    <div class="regular_hours hours">
+  
+<h5>Spring Semester Hours</h5>
+
+<dl class="dl-horizontal">
+  <dt>Monday - Thursday</dt>
+  <dd>Open 24 hours*</dd>
+  <dt>Friday</dt>
+  <dd>Open till 11pm</dd>
+  <dt>Saturday</dt>
+  <dd>9am - 7pm</dd>
+  <dt>Sunday</dt>
+  <dd>Opens at 10am</dd>
+</dl>
+<p>Concourse opens early on weekends for Au Bon Pain Cafe.</p>
+
+<p>Phone: (574) 631-6679</p>
+
+</div>
+<div class="next_regular_hours hours">
+  
+</div>
+<div class="hours_exceptions hours">
+  
+</div>
+
+
+    <p><a data-reveal-id="hoursp" href="">*24/5 Procedures</a></p>
+    <p><a href="/about/hours/">Hesburgh Service Desks</a></p>
+    </div>
+  </div>
+</div>
+
+          <!-- TemplateEndEditable -->
+          </div></div> <!-- end right-col -->
+        </div>
+        
+</div>

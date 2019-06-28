@@ -8,11 +8,9 @@
  *= require ../../common/superfish.css
  *= require ../../common/colorbox.css
  *= require ./bootstrap_overrides.css
- *= require ./coin-slider-styles.css
- *= require ./tabs.css
  *= require ./hesburgh.css
  *= require ./homepage.css
  *= require ./hours.css
- *= require ./search-appliance.css
- *= require ./coin-slider-overrides.css
+ *= require ./tabs.css
+ *= require ./search.css
  */

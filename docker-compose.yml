@@ -7,29 +7,29 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: architecture_drawings_development
-    volumes:
-      - ./docker/mysql-utf8.cnf:/etc/mysql/conf.d/mysql-utf8.cnf
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
     healthcheck:
         interval: 30s
         timeout: 10s
         retries: 5
   rails:
+    image: architecture_drawings_rails
     build:
       context: .
       dockerfile: docker/Dockerfile.rails
     command: bash docker/rails_entry.sh
     environment:
-      BUNDLE_PATH: "/bundle"
-      MYSQL_HOST: mysql
-      SOLR_HOST: jetty
-      SOLR_PORT: 8983
-      # Need to pass the user running docker into the container so that
-      # config/admin_usernames.yml pulls in the user as an admin. This is
-      # to replicate existing behavior on OSX and may not work correctly on
-      # another OS
-      USER: #{USER}
+      RAILS_ENV: development
+      DB_HOST: mysql
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_HOST: mysql
+      SOLR_HOST: solr
+      SOLR_URL: http://solr:8983/solr
     ports:
       - "3000:3000"
     depends_on:

@@ -1,0 +1,20 @@
+version: '3'
+services:
+  rails:
+    environment:
+      RAILS_ENV: production
+    volumes:
+      - static-content:/project_root/public/assets
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.nginx
+    command: bash project_root/nginx_entry.sh
+    environment:
+      RAILS_HOST: rails
+    ports:
+      - "80:80"
+    volumes:
+      - static-content:/project_root/assets
+volumes:
+  static-content:

@@ -14,89 +14,18 @@ module HesburghAssets
       11 => "eleven",
       12 => "twelve"
     }
-
-    def include_branch_ssi(filepath)
-      include_ssi("#{active_branch_path}#{clean_ssi_path(filepath)}")
-    end
-
-    # Includes the relevant library SSI file from http://library.nd.edu/ssi/<filename>.shtml
+    # Includes the relevant library SSI file from http://www.library.nd.edu/ssi/<filename>.shtml
     def include_ssi(filepath)
-      render :partial => "/layouts/hesburgh_assets/include_ssi", :locals => {:filepath => clean_ssi_path(filepath)}
-    end
-
-    def clean_ssi_path(filepath)
-      if !(filepath =~ /^\//)
-        filepath = "/#{filepath}"
-      end
-      filepath
-    end
-
-    def get_ssi_contents(url)
-      require 'open-uri'
-      f = open(url, "User-Agent" => "Ruby/#{RUBY_VERSION}")
-      contents = f.read.encode('UTF-8', invalid: :replace, undef: :replace, replace: '')
-      contents
+      render :partial => "/layouts/hesburgh_assets/include_ssi", :locals => {:filepath => filepath}
     end
 
     def read_ssi_file(filepath)
-      contents = get_ssi_contents(ssi_url(filepath))
-      contents = link_sub(contents)
+      require 'open-uri'
+      ssi_url = "http://www.library.nd.edu/#{filepath}"
+      f = open(ssi_url, "User-Agent" => "Ruby/#{RUBY_VERSION}")
+      contents = f.read
+      contents = contents.gsub(/(href|src)="\//,"\\1=\"https://www.library.nd.edu/")
       contents
-    end
-
-    def ssi_url(filepath)
-      "http://library.nd.edu#{filepath}"
-    end
-
-  ##
- # Includes the relevant library SSI file from http://library.nd.edu/ssi/<filename>.shtml
-    def rarebooks_include_ssi(filepath)
-      render :partial => "/layouts/hesburgh_assets/rarebooks/include_ssi", :locals => {:filepath => rarebooks_clean_ssi_path(filepath)}
-    end
-
-    def rarebooks_clean_ssi_path(filepath)
-      if !(filepath =~ /^\//)
-        filepath = "/#{filepath}"
-      end
-      filepath
-    end
-
-    def rarebooks_read_ssi_file(filepath)
-      contents = get_ssi_contents(rarebooks_ssi_url(filepath))
-      contents = rarebooks_link_sub(contents)
-      contents
-    end
-
-    def rarebooks_ssi_url(filepath)
-      "https://rarebooks.library.nd.edu#{filepath}"
-    end
-
-  ##
-    def active_branch_path
-      if active_branch_code == 'main'
-        ''
-      else
-        "/#{active_branch_code.gsub('_library','')}"
-      end
-    end
-
-    def active_branch_code
-      if params[:active_branch_code].blank?
-        'main'
-      else
-        params[:active_branch_code]
-      end
-    end
-
-    def branch_site?
-      active_branch_code != 'main'
-    end
-
-    def link_sub(contents)
-      contents.gsub(/(href|src)="\//,"\\1=\"http://library.nd.edu/")
-    end
-    def rarebooks_link_sub(contents)
-      contents.gsub(/(href|src)="\//,"\\1=\"https://rarebooks.library.nd.edu/")
     end
 
     def number_to_word(number)
@@ -122,10 +51,6 @@ module HesburghAssets
       flash[:success]
     end
 
-    def error
-      flash[:error]
-    end
-
     def display_notices
       content = raw("")
       if notice
@@ -136,9 +61,6 @@ module HesburghAssets
       end
       if success
         content += content_tag(:div, success, class: "alert alert-success")
-      end
-      if error
-        content += content_tag(:div, error, class: "alert alert-error")
       end
       content_tag(:div, content, id: "notices")
     end
@@ -161,26 +83,10 @@ module HesburghAssets
       content_for(:content_title_links, raw(links.join(" ")))
     end
 
-    def preheader_content
-    end
-
     def breadcrumb(*crumbs)
-      crumbs.unshift(application_crumb)
-      crumbs.unshift(root_crumb)
-      crumbs.delete(nil)
-      content_for(:breadcrumb, content_tag(:p, raw(crumbs.join(" &gt; "))))
-    end
-
-    def root_crumb
-      link_to("Hesburgh Libraries", library_url())
-    end
-
-    def application_crumb
-      link_to(application_name, root_path)
-    end
-
-    def application_name
-      Rails.application.class.parent_name.to_s.titleize
+      crumbs.unshift(link_to("Assets", root_path))
+      crumbs.unshift(link_to("Hesburgh Libraries", "https://www.library.nd.edu"))
+      content_for(:breadcrumb, raw(crumbs.join(" &gt; ")))
     end
 
     def body_class
@@ -192,32 +98,5 @@ module HesburghAssets
     def set_body_class(new_class)
       @body_class = new_class
     end
-
-    def library_url(path = nil)
-      if path && !(path =~ /^\//)
-        path = "/#{path}"
-      end
-      "http://#{HesburghAssets.library_host}#{path}"
-    end
-
-    def hesburgh_asset_path(directory, file, options = {})
-      version = options.delete(:version) || "1.0"
-      path = "hesburgh_assets/#{directory}/#{version}/#{file}"
-      if asset_host = HesburghAssets.assets_host
-        path = "//#{asset_host}/assets/#{path}"
-      end
-      path
-    end
-
-    def hesburgh_stylesheet_link_tag(directory, file, options = {})
-      path = hesburgh_asset_path(directory, file, options)
-      stylesheet_link_tag(path, options)
-    end
-
-    def hesburgh_javascript_include_tag(directory, file, options = {})
-      path = hesburgh_asset_path(directory, file, options)
-      javascript_include_tag(path, options)
-    end
-
   end
 end

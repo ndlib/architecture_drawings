@@ -20,4 +20,13 @@ module CatalogHelper
       content_title(title)
     end
   end
+
+  def primo_search_url(parameters = {})
+    parameters = {
+      mode: "Basic",
+      vid: "NDU",
+      tab: "onesearch"
+    }.merge(parameters)
+    "http://onesearch.library.nd.edu/primo_library/libweb/action/search.do?#{parameters.to_query}"
+  end
 end
