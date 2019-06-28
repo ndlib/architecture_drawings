@@ -1,8 +1,12 @@
 class FlatFileImport < ActiveRecord::Base
-  attr_accessible :import_file
+  # attr_accessible :import_file
   has_attached_file :import_file
-  validates :import_file, :attachment_presence => true
-  validates_format_of :import_file_file_name, with: %r{\.xls(x)?$}i, message: "must be an Excel file ending in .xls or .xlsx", allow_nil: true
+  validates :import_file, attachment_presence: true
+  validates_format_of :import_file_file_name,
+                      with: /\.xls(x)?\z/,
+                      message: 'must be an Excel file ending in .xls or .xlsx',
+                      allow_nil: true
+  validates_attachment_content_type :import_file, content_type: ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
   attr_accessor :duplicates
 
   COLUMN_MAP = [

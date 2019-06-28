@@ -1,25 +1,25 @@
 class Drawing < ActiveRecord::Base
   before_destroy :remove_from_index
 
-  attr_accessible :identifier,
-    :drawer,
-    :title,
-    :author,
-    :publisher,
-    :publish_location,
-    :publish_year,
-    :sheet_count,
-    :media,
-    :height_centimeters,
-    :width_centimeters,
-    :content_year,
-    :description,
-    :subject_string,
-    :function_type,
-    :system_number,
-    :call_number,
-    :oclc_number,
-    :to_scale
+  # attr_accessible :identifier,
+  #   :drawer,
+  #   :title,
+  #   :author,
+  #   :publisher,
+  #   :publish_location,
+  #   :publish_year,
+  #   :sheet_count,
+  #   :media,
+  #   :height_centimeters,
+  #   :width_centimeters,
+  #   :content_year,
+  #   :description,
+  #   :subject_string,
+  #   :function_type,
+  #   :system_number,
+  #   :call_number,
+  #   :oclc_number,
+  #   :to_scale
 
   def subjects
     subject_string.to_s.split(/(\r\n?|\r?\n)/).reject{|value| value.blank?}
@@ -108,7 +108,7 @@ class Drawing < ActiveRecord::Base
   end
 
   def self.solr
-    Blacklight.solr
+    Blacklight.blacklight_solr
   end
 
   def self.reindex_solr

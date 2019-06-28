@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 ArchitectureDrawings::Application.routes.draw do
-  root :to => "catalog#index"
+  root to: 'catalog#index'
 
-  Blacklight.add_routes(self)
+  #Blacklight.add_routes(self)
 
-  resource :flat_file_import, only: [:show, :new, :create], path: :import do
-  end
+  resource :flat_file_import, only: %i[show new create], path: :import
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

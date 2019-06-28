@@ -21,20 +21,19 @@ services:
       dockerfile: docker/Dockerfile.rails
     command: bash docker/rails_entry.sh
     environment:
+      SECRET_KEY_BASE: abc123
       BUNDLE_PATH: "/bundle"
       MYSQL_HOST: mysql
+      RAILS_ENV: development
       SOLR_HOST: jetty
       SOLR_PORT: 8983
-      # Need to pass the user running docker into the container so that
-      # config/admin_usernames.yml pulls in the user as an admin. This is
-      # to replicate existing behavior on OSX and may not work correctly on
-      # another OS
-      USER: #{USER}
     ports:
       - "3000:3000"
     depends_on:
       - mysql
       - solr
+    volumes:
+      - ./Gemfile.lock:/project_root/Gemfile.lock
   solr:
     build:
       context: .

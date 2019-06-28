@@ -1,33 +1,34 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.13'
+gem 'rails'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'blacklight'
-gem 'hesburgh_assets', :path => 'vendor/bundle/assets'
-gem 'hesburgh_infrastructure', :git => 'https://github.com/ndlib/hesburgh_infrastructure'
-gem 'jquery-rails', '~> 2.1.4'
-gem 'logger', '~> 1.2.8'
-gem 'mysql2', '~> 0.3.11'
-gem 'nokogiri', '~> 1.5.0'
-gem 'paperclip', "~> 3.0"
-gem "rb-readline"
-gem 'roo'
-gem "whenever", :require => false
-
+# TODO: I have no idea if this version of blacklight will work with whatever
+# solr version we're trying to move to. It sounds like it may continue to work
+# with 4 https://github.com/projectblacklight/blacklight/releases/tag/v6.0.0
+gem 'blacklight', '~>6.0'
+gem 'blacklight-marc'
+gem 'bootstrap-sass', '~>3.0'
+gem 'hesburgh_assets', path: 'vendor/bundle/assets'
+gem 'hesburgh_infrastructure', git: 'https://github.com/ndlib/hesburgh_infrastructure'
+gem 'jquery-rails'
+gem 'kaminari'
+gem 'logger'
+gem 'mysql2'
 gem 'newrelic_rpm'
+gem 'nokogiri'
+gem 'paperclip'
+gem 'rb-readline'
+gem 'roo'
+gem 'scrub_rb'
+gem 'twitter-bootstrap-rails', '2.2.8'
+gem 'unicode', platforms: %i[mri_18 mri_19]
+gem 'whenever', require: false
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'therubyracer'
+gem 'coffee-rails'
+gem 'sass-rails', '4.0.3'
+gem 'therubyracer'
 
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'uglifier'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -44,21 +45,20 @@ end
 # To use debugger
 # gem 'debugger'
 
-gem "unicode", :platforms => [:mri_18, :mri_19]
-gem "bootstrap-sass"
 
 group :development do
-  gem "rspec-rails"
-  gem "capybara"
-  gem "factory_girl_rails", :require => false
-  gem "faker"
+  gem 'capybara'
+  gem 'factory_girl_rails', require: false
+  gem 'faker'
 
-  gem "guard"
-  gem "guard-bundler"
-  gem "guard-coffeescript"
-  gem "guard-jetty"
-  gem "guard-rails"
-  gem "guard-rspec"
-  gem "guard-spork"
-  gem "growl"
+  gem 'growl'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-coffeescript'
+  #gem 'guard-jetty'
+  gem 'guard-rails'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+
+  gem 'rspec-rails'
 end

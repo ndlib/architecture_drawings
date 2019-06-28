@@ -6,6 +6,11 @@ To run the full stack of services, including mysql, solr, and rails, using docke
 docker-compose build
 docker-compose up
 ```
+## Rebuilding Rails
+You can rebuild and restart the running rails service without restarting dependencies with:
+```sh
+docker-compose up -d --force-recreate --no-deps --build rails
+```
 
 ## Chrome Testing
 Run the following to build and run the Chrome tests against the locally running services using Docker:
