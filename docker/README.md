@@ -1,10 +1,15 @@
 # Docker Instructions
 
 ## Running
+### Development
 To run the full stack of services, including mysql, solr, and rails, using docker-compose:
 ```sh
-docker-compose build
 docker-compose up
+```
+### Production
+Production will additionally run an nginx container to serve out static assets. To run it in this mode locally, do the following:
+```sh
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
 ```
 
 ## Chrome Testing

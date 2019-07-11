@@ -66,12 +66,8 @@ module Assets
     # config.assets.precompile += %w( search.js )
     config.assets.precompile += %w(
       hesburgh_assets/main/1.0/index.js
-      hesburgh_assets/main/1.0/tabset.js
       hesburgh_assets/main/1.0/index.css
       hesburgh_assets/main/1.0/ie.css
-      hesburgh_assets/main/1.0/ie-all.css
-      hesburgh_assets/main/1.0/search-appliance.css
-      hesburgh_assets/main/1.0/search-appliance.js
       hesburgh_assets/architecture_library/1.0/index.js
       hesburgh_assets/architecture_library/1.0/index.css
       hesburgh_assets/business_library/1.0/index.js
@@ -88,8 +84,6 @@ module Assets
       hesburgh_assets/medieval_library/1.0/index.css
       hesburgh_assets/radlab_library/1.0/index.js
       hesburgh_assets/radlab_library/1.0/index.css
-      hesburgh_assets/rome_library/1.0/index.js
-      hesburgh_assets/rome_library/1.0/index.css
       hesburgh_assets/vrc_library/1.0/index.js
       hesburgh_assets/vrc_library/1.0/index.css
       hesburgh_assets/catalog/1.0/index.js
@@ -97,24 +91,7 @@ module Assets
       hesburgh_assets/admin/1.0/index.css
       hesburgh_assets/admin/1.0/index.js
       hesburgh_assets/primo/1.0/index.js
-      hesburgh_assets/primo/1.0/index.css
       hesburgh_assets/primo_malc/1.0/index.js
-      hesburgh_assets/primo4/ndu/index.js
-      hesburgh_assets/primo4/malc/index.js
-      hesburgh_assets/primo4/login/login.css
-      hesburgh_assets/primo4/login/login.ie.css
-      hesburgh_assets/tantur/1.0/index.css
-      hesburgh_assets/rarebooks/1.0/index.css
-      hesburgh_assets/rarebooks/1.0/index.js
-      hesburgh_assets/cds/1.0/index.css
-      hesburgh_assets/london_library/1.0/index.js
-      hesburgh_assets/london_library/1.0/index.css
-      koha/rome.js
-      koha/rome.css
-      koha/lup.js
-      koha/lup.css
-      koha/tantur.js
-      koha/tantur.css
     )
 
     config.assets.initialize_on_precompile = false

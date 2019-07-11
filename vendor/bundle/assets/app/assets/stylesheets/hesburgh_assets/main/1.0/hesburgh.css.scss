@@ -9,27 +9,52 @@
    Primary Library Template Structure
 ----------------------------------------- */
 
-@import "mixins.css.scss";
+$body-blue: #304962;
+$header-blue: #0F3255;
+$helvetica: "Helvetica Neue",Helvetica,Verdana,Arial,Helvetica,sans-serif;
+$content-bg: #F8F7E9;
+
+@mixin box {
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #B1C6D3;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius:14px;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.7);
+    behavior: url(/assets/hesburgh_assets/main/1.0/PIE.htc);
+    padding:14px;
+    width:100%;
+}
+
+@mixin header-link {
+    border: medium none;
+    display: block;
+    position:absolute;
+    left:0;
+    margin: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 460px;
+}
 
 
 body {
-  background-color: #2B5781;
-  color: $body-blue;
-  font-family: $helvetica;
-
-  > .container {
-    padding: 0;
-  }
+	background-color: #2B5781;
+    color: $body-blue;
+    font-family: $helvetica;
 }
 
 .container {
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
 div.header {
-  background:url(/assets/hesburgh_assets/main/1.0/header-home.jpg) no-repeat;
-  position:relative;
-  height: 90px;
+	background:url(/assets/hesburgh_assets/main/1.0/header-home.jpg) no-repeat;
+	position:relative;
+	height: 90px;
 
     h4, h3 {
         margin:0;
@@ -88,7 +113,7 @@ div.header {
 }
 
 .breadcrumb, .content, .footer {
-  background: $content-bg;
+	background: $content-bg;
 }
 
 .footer {
@@ -118,25 +143,19 @@ div.header {
 }
 
 .librarieslogo {
-    background:url(/assets/hesburgh_assets/main/1.0/ndmark300.png);
+    background:url(/assets/hesburgh_assets/main/1.0/hesburgh_mark.png);
     width:200px;
     padding-top:49px;
     margin-left: 25px;
-    background-repeat: no-repeat;
-    background-size:contain;
 }
 
 .ndulogo {
-    background:url(/assets/hesburgh_assets/main/1.0/slogan.gif);
-    width: 200px;
-    padding-top: 53px;
+    background:url(/assets/hesburgh_assets/main/1.0/ndmark.png);
+    width: 150px;
+    padding-top: 35px;
     float:right;
-    margin-right: 25px;
-    overflow: hidden;
-    cursor: inherit;
+    margin-right: 25px
 }
-
-
 
 .intranet {
     padding-right:21px;
@@ -181,11 +200,20 @@ ul.contained.tabs-content > li {
   z-index:40;
   position: relative;
   border-top-left-radius: 0;
+  padding:35px 20px 14px;
 }
 
 
 ul.contained.tabs-content > li#simple1Tab {
   padding-top: 14px;
+}
+
+#search_box {
+  margin-bottom: 40px;
+  float: left;
+  width: 100%;
+  margin-top: 32px;
+  z-index: 1;
 }
 
 .content .container:first-child {
@@ -218,8 +246,7 @@ ul.contained.tabs-content > li#simple1Tab {
 ----------------------------------------- */
 
 
-.box,
-#quicklinks {
+.box {
     @include box;
     z-index:20;
     margin-bottom:1.12em;
@@ -353,216 +380,299 @@ td {
 
 .reveal-modal {
     z-index: 501;
+}
 
-    a {
-      text-decoration: underline;
+/*Tablet Styles*/
+
+@media only screen and (max-width: 990px) {
+    dl.tabs dd a {
+        border-radius:0;
+        z-index:35;
+        box-shadow:none;
+    }
+
+    ul.contained.tabs-content > li {
+        border-radius:0 0 14px 14px;
+        clear:both;
+        box-shadow:none;
+    }
+
+    dl.tabs dd {
+        margin:0;
+        width:100%;
+    }
+
+    .home-page dl.tabs dd a {
+        width:100%;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+        display:block;
+        line-height: 1em;
+        height: 100%;
+    }
+
+    dl.tabs dd a:hover {background:#fff;}
+
+    .home-page dl.tabs dd {
+        width:50%;
+        border: none;
+        margin:0 !important;
+        padding-right:0;
+    }
+
+    #tabs li div  {
+        width:100%;
+        border-radius: 0;
+        margin:0 !important;
+        box-shadow: none;
+        border-width: 1px 0;
+        padding:0;
+    }
+
+    ul.contained.tabs-content li {
+        border-radius: 0;
+    }
+
+    #tab_box input.srch-box.long {
+        width:95%;
+    }
+    #search_box {
+        padding:0;
+        border-radius: 0;
+        margin:0 !important;
+        box-shadow: none;
+    }
+
+    .home-page dl.tabs dd a {
+        padding-top:10px;
+    }
+
+    .home-page .tabs {
+        position: static;
+    }
+
+    .home-page ul.contained.tabs-content > li {
+        width: 100%;
+        margin-bottom: 20px;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+    }
+
+    .onesearch, .ndcatalog {
+        padding-top: 5px !important;
+    }
+
+
+    ul.extra-links {
+        margin-left:0;
+        width: 100%;
+        float: left;
+    }
+
+    #tab_box p.about-tab {
+        bottom:10px;
+        right:10px;
+        display: none;
     }
 }
 
-.search-toggle {
-  display: none !important;
+@media only screen and (max-width: 960px) {
+    .home-page .inner-left {
+        padding-bottom: 25px;
+        padding-left: 15px;
+        padding-top: 25px;
+    }
+
+    .home-page .inner-right {
+        padding-top:25px;
+    }
+
+    .row .eight {
+        width: calc(97.8% - 290px);
+        width: -moz-calc(97.8% - 290px);
+        width: -webkit-calc(97.8% - 290px);
+    }
+
+    .home-page .row .four {
+        width: 290px;
+    }
+
+    .home-page .column, .home-page .columns {
+        margin-left: 2.2%;
+    }
+
+    .taupe-bg {
+        background-position: 104% 0%;
+    }
+
+
 }
 
-/*Tablet Styles */
-
-@media only screen and (max-width: 990px) {
-  body > .container {
-    padding: 0;
-  }
-
-  .container {
-    padding:10px 10px 0;
-  }
-
-  .header_search {
-    right: 10px;
-  }
+@media only screen and (max-width: 767px) {
+    .search-toggle {
+        position:absolute;
+        top:5px;
+        right:5px;
+        font-family:'icons';
+        text-decoration:none;
+        background: none repeat scroll 0 0 #FEE084;
+        border-width: 1px;
+        speak:none;
+        padding: 4px 7px;
+    }
 }
 
 /*Phone Styles */
 
 @media only screen and (max-width: 480px) {
 
-  .btn-toolbar {
-    display:none;
-  }
+    .btn-toolbar {
+        display:none;
+    }
 
-  body > .container {
-    padding: 0;
-  }
+    .container {
+        padding:10px 10px 0;
+    }
 
-  .container {
-      padding:10px 10px 0;
-  }
+    div.header {
+        height:45px;
+        background-size:auto 100%;
 
-  .search-toggle {
-    display: block !important;
-    position:absolute;
-    top:5px;
-    right:5px;
-    font-family:'icons';
-    text-decoration:none;
-    background: none repeat scroll 0 0 #FEE084;
-    border-width: 1px;
-    speak:none;
-    padding: 4px 7px;
-  }
+        h4 {
+            margin:0;
+            a {
+                width:200px;
+                position: static;
+                float:left;
+                padding-top:45px;
+                height:0;
+            }
+        }
+    }
 
-  div.header {
-      height:45px;
-      background-size:auto 100%;
+    div.header.open {
+        margin-bottom:38px;
+    }
 
-      h4 {
-          margin:0;
-          a {
-              width:200px;
-              position: static;
-              float:left;
-              padding-top:45px;
-              height:0;
-          }
-      }
-  }
+    .header_search {
+        top:45px;
+        background:#C0C8D0;
+        -webkit-box-shadow: inset 0px 0px 5px 0px #666;
+        box-shadow: inset 0px 0px 5px 0px #666;
+        width:100%;
+        position:static;
+        clear:both;
+        overflow:hidden;
+        text-align:right;
+        height:auto;
 
-  div.header.open-search {
-      margin-bottom:38px;
-  }
+        fieldset {
+            padding:5px;
+        }
 
-  .header_search {
-    display: none;
-      top:45px;
-      background:#C0C8D0;
-      -webkit-box-shadow: inset 0px 0px 5px 0px #666;
-      box-shadow: inset 0px 0px 5px 0px #666;
-      width:100%;
-      position:static;
-      clear:both;
-      overflow:hidden;
-      text-align:right;
-      height:auto;
-
-      fieldset {
-          padding:5px;
-      }
-
-      #search_field {
-          width:-moz-calc(100% - 40px) !important;
-          width:-webkit-calc(100% - 40px) !important;
-          width:calc(100% - 40px) !important;
-      }
-  }
-
-  .open-search .header_search {
-    display: block;
-  }
+        #search_field {
+            width:-moz-calc(100% - 40px) !important;
+            width:-webkit-calc(100% - 40px) !important;
+            width:calc(100% - 40px) !important;
+        }
+    }
 
 
-  .home-page .header_search .btn {
-      margin-bottom:0;
-  }
+    .home-page .header_search .btn {
+        margin-bottom:0;
+    }
 
-  .header_search input, .header_search button {
-      float:none;
-  }
+    .header_search input, .header_search button {
+        float:none;
+    }
 
-  .header_search form, .header_search input {
-      margin:0;
-  }
+    .closed {
+        height:0;
+        padding:0;
 
-  .menu {
-      background:$body-blue;
-      padding:5px 5px;
-      box-sizing:border-box;
-      -moz-box-sizing:border-box;
-      -webkit-box-sizing:border-box;
+    }
 
-      select {
-          margin-bottom:0;
-          display:block;
-          width:inherit;
-      }
-  }
+    .header_search form, .header_search input {
+        margin:0;
+    }
 
-  .sf-sub-indicator {
-      display: none;
-  }
+    .menu {
+        background:$body-blue;
+        padding:5px 5px;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
 
-  /* HORIZONTAL FORMS AT SMALL SCREEN */
-  .form-horizontal .control-label {
-      float:none !important;
-      width:auto !important;
-      text-align:left;
-  }
+        select {
+            margin-bottom:0;
+            display:block;
+            width:inherit;
+        }
+    }
 
-  .form-horizontal .controls {
-      margin-left:0 !important;
-  }
+    .sf-sub-indicator {
+        display: none;
+    }
 
-  .form-horizontal .form-actions  {
-      padding-left: 0px;
-  }
+    /* HORIZONTAL FORMS AT SMALL SCREEN */
+    .form-horizontal .control-label {
+        float:none !important;
+        width:auto !important;
+        text-align:left;
+    }
+
+    .form-horizontal .controls {
+        margin-left:0 !important;
+    }
+
+    .form-horizontal .form-actions  {
+        padding-left: 0px;
+    }
 
 
-  .input-xlarge {
-      width:auto;
-  }
+    .input-xlarge {
+        width:auto;
+    }
 
-  .box {
-      margin-top:10px;
-  }
+    .box {
+        margin-top:10px;
+    }
 
-  #gallery {
-      display:none;
-  }
+    .column, .columns, .content {position:static;}
 
-  .taupe-bg {
-      background-image:none;
-  }
+    #gallery {
+        display:none;
+    }
 
-  h1 {
-      font-size:20px;
-      line-height: 24px;
-  }
+    .taupe-bg {
+        background-image:none;
+    }
 
-  .home-page .inner-left, .home-page .inner-right {
-      padding:0;
-  }
+    h1 {
+        font-size:20px;
+        line-height: 24px;
+    }
 
-  #hours {
-      width:100%;
-      -moz-box-sizing:border-box;
-      -webkit-box-sizing:border-box;
-      box-sizing:border-box;
-      margin-bottom: 1.12em;
-  }
+    .home-page .inner-left, .home-page .inner-right {
+        padding:0;
+    }
 
-  table {
-      width:100%;
-  }
+    #hours {
+        width:100%;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+        box-sizing:border-box;
+        margin-bottom: 1.12em;
+    }
+
+    table {
+        width:100%;
+    }
 
 }
 
 span.show {
-  display: inline-block;
-}
-
-.fifty {
-    height:0;
-    padding-top:90px;
-    width:132px;
-    display: block;
-    overflow: hidden;
-    background:url(http://library.nd.edu/images/50th.png) no-repeat;
-    position:absolute;
-    top:0;
-    right:200px;
-}
-
-
-/*.row {
-  max-width: 98%;
-}*/
-
-.header, .menu, .content, .footer, .row {
-    max-width: 98%;
+    display: inline-block;
 }

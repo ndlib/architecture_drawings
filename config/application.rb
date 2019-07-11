@@ -58,6 +58,8 @@ module ArchitectureDrawings
     # Default SASS Configuration, check out https://github.com/rails/sass-rails for details
     config.assets.compress = !Rails.env.development?
 
+    config.assets.initialize_on_precompile = false
+
     config.assets.precompile += %w(
       hesburgh_assets/architecture_library/1.0/index.js
       hesburgh_assets/architecture_library/1.0/index.css

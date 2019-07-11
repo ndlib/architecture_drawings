@@ -1,8 +1,6 @@
- // -------------
+// -------------
 //  Home Page
 // -------------
-
-@import "mixins.css.scss";
 
 @mixin image-tab {
   background-position:0px 0px;
@@ -31,6 +29,7 @@
   }
   span {
     margin:0;
+    padding-right:4px;
     overflow: hidden;
     position: relative;
     display: block;
@@ -56,14 +55,6 @@
     display: none !important;
   }
 
-  .row .eight {
-    width: 67%;
-  }
-
-  .column, .columns {
-    margin-left: 2.6%;
-  }
-
   #pg-title {
     display: none;
   }
@@ -81,35 +72,33 @@
   }
 
   ul.contained.tabs-content > li {
+    float: left;
     z-index: 0;
   }
 
   .tabs {
     z-index:100;
+    position: absolute;
   }
 
   .btn {
     margin-bottom:9px;
   }
 
-  .search-appliance {
-    max-width: none;
-  }
 }
 
-dl.tabs dd {
+#tab_box {
   .default {
     position: absolute;
     top:0px;
     right: 7px;
 
     a {
-      background: url(/assets/hesburgh_assets/main/1.0/off.gif) no-repeat scroll left center transparent;
+      background: url("/assets/hesburgh_assets/main/1.0/off.gif") no-repeat scroll left center transparent;
       color:#696969;
       text-decoration: none;
       padding: 13px 0 0.5em;
       height:0;
-      line-height: 30px;
       width: 13px;
       overflow:hidden;
       display: block;
@@ -124,8 +113,8 @@ dl.tabs dd {
   }
 }
 
-.extra-links { list-style-type:none; padding-left:0 !important;margin-left: 0; }
-.extra-links li { display:inline; padding-right: 1em; }
+.extra-links { list-style-type:none; padding-left:0 !important; float:left;margin-left: 0; }
+.extra-links li { display:inline; padding-right: 1em;  float:left; }
 
 .new img {
     border: medium none !important;
@@ -160,7 +149,6 @@ dl.tabs dd {
     float: left;
     padding: 0 0 0 1px;
     width: 261px;
-    margin-bottom: 1.5em;
 }
 
 #chat-head {
@@ -188,20 +176,21 @@ dl.tabs dd {
     background-color: #F5F3E2;
     border: 2px solid #FCFBF5;
     float: left;
+    margin: 2em 0 0;
     padding: 0.75em;
     width: 242px;
 }
 
 .onesearch span {
-    background-image: url(/assets/hesburgh_assets/main/1.0/onesearch.png);
+    background-image: url("/assets/hesburgh_assets/main/1.0/onesearch.png");
     @include image-tab;
-    width: 84px;
+    width: 80px !important;
 }
 
 .ndcatalog span {
-    background-image: url(/assets/hesburgh_assets/main/1.0/ndcatalog.png);
+    background-image: url("/assets/hesburgh_assets/main/1.0/ndcatalog.png");
     @include image-tab;
-    width: 73px;
+    width: 73px !important;
 }
 
 #quicklinks {
@@ -254,118 +243,3 @@ dl.tabs dd {
     padding: 0;
     width: 32%;
 }
-
-@media only screen and (max-width: 1160px) {
-  .home-page {
-    @include tabs-small;
-    .search-appliance {
-      @include search-appliance-tabs-small;
-    }
-  }
-
-}
-
-@media only screen and (max-width: 990px) {
-  .home-page {
-
-    #chat {
-      display: none;
-    }
-    #hours, .hours {
-      width: auto;
-      max-width: 300px;
-    }
-    #quicklinks ul {
-      width: 100%;
-    }
-    .inner-left {
-      padding: 10px 0 0;
-    }
-    .inner-right {
-      padding: 10px 0 0 5px;
-    }
-    .taupe-bg .eight {
-      // margin:0 !important;
-    }
-    .four.columns {
-      margin-left:0;
-    }
-    .tabs {
-      position: relative;
-    }
-
-
-
-    .row .eight {
-      width: calc(97.8% - 290px);
-      width: -moz-calc(97.8% - 290px);
-      width: -webkit-calc(97.8% - 290px);
-    }
-
-    .row .four {
-      width: 290px;
-    }
-
-    .column, .columns {
-      margin-left: 2.2%;
-    }
-
-    .tabs {
-      position: static;
-    }
-
-    .about-tab {
-      bottom:10px;
-      right:10px;
-      display: none;
-    }
-
-
-  }
-
-  html[data-useragent*='MSIE 10.0'], html[data-useragent*='MSIE 9.0'] {
-    .home-page {
-      .search-appliance {
-        @include search-appliance-ie-tabs-small;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .taupe-bg,
-  .home-page > .container > .content {
-    background: #f8f7e9;
-  }
-  .home-page {
-    #hours {
-      clear: both;
-    }
-
-    .hours {
-      width: auto;
-    }
-
-    .inner-left {
-      padding: 0;
-    }
-    .inner-right {
-      padding: 0;
-    }
-  }
-}
-
-/*Phone Styles */
-
-@media only screen and (max-width: 480px) {
-  #hours {
-    margin: 0;
-  }
-
-  #quicklinks {
-    border-radius: 0;
-    box-shadow: none;
-  }
-}
-
-

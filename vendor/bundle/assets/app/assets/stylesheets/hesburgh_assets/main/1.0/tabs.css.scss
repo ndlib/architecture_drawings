@@ -2,9 +2,47 @@
 // Tabs
 // -----------------------------------------
 
-@import "mixins.css.scss";
-
-@include tabs;
+dl.tabs {
+  border-bottom:none;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 41;
+  dd {
+    margin-left:0px;
+    overflow: hidden;
+    padding-right: 4px;
+    position: relative;
+    a {
+      color:#2B5781;
+      border: 1px solid #B1C6D3;
+      border-bottom:none;
+      border-radius:6px 6px 0 0 ;
+      box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.7);
+      z-index:2;
+      position: relative;
+      /*background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FmY2FlNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjYwJSIgc3RvcC1jb2xvcj0iI2IwY2FlNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjYwJSIgc3RvcC1jb2xvcj0iIzljYmRkZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiMGNhZTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);*/
+      background: -moz-linear-gradient(top, #9bbcdd 0%, #9cbddd 60%, #b0cae4 56%, #b5cde6 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9bbcdd), color-stop(60%,#9cbddd), color-stop(60%,#b0cae4), color-stop(100%,#b5cde6)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #9bbcdd 0%,#9cbddd 60%,#b0cae4 60%,#b5cde6 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #9bbcdd 0%,#9cbddd 60%,#b0cae4 60%,#b5cde6 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #9bbcdd 0%,#9cbddd 60%,#b0cae4 60%,#b5cde6 100%); /* IE10+ */
+      background: linear-gradient(top, #9bbcdd 0%,#9cbddd 60%,#b0cae4 60%,#b5cde6 100%); /* W3C */
+      font-size:13px;
+      font-weight:bold;
+      text-decoration:none;
+      behavior: url(/assets/hesburgh_assets/main/1.0/PIE.htc);
+      margin:0;
+    }
+    a:hover {
+      background: -moz-linear-gradient(top, #afcae4 0%, #b7cfe7 60%, #c5d9ec 60%, #c9dbed 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#afcae4), color-stop(60%,#b7cfe7), color-stop(60%,#c5d9ec), color-stop(100%,#c9dbed)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #afcae4 0%,#b7cfe7 60%,#c5d9ec 60%,#c9dbed 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #afcae4 0%,#b7cfe7 60%,#c5d9ec 60%,#c9dbed 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #afcae4 0%,#b7cfe7 60%,#c5d9ec 60%,#c9dbed 100%); /* IE10+ */
+      background: linear-gradient(top, #afcae4 0%,#b7cfe7 60%,#c5d9ec 60%,#c9dbed 100%); /* W3C */
+    }
+  }
+}
 
 /* Tabs (temp) */
 
@@ -35,17 +73,13 @@
 #tab_box .ui-tabs-panel ul li {list-style:none; margin-left:0;}
 #tab_box .ui-tabs-panel ul li ul li {padding-right:0;}
 #tab_box fieldset {margin:0; padding:0; border:none;}
-.tabs-content form {margin-bottom:1em;}
-.about-tab {margin-bottom:0; text-align:right; position:absolute; bottom: 15px; right: 15px; border:1px solid #DDD; padding: .3em; }
-.about-tab a {
-  padding:3px 6px 3px 20px;
-  background:url('/assets/hesburgh_assets/main/1.0/info.gif') 5px center no-repeat;
-  cursor: pointer;
-}
-.about-tab a:hover {background-color:#e9f0f8;}
+#tab_box form {margin-bottom:1em;}
+#tab_box p.about-tab {margin-bottom:0; text-align:right; position:absolute; bottom: 15px; right: 15px; border:1px solid #DDD; padding: .3em; }
+#tab_box p.about-tab a {padding:3px 6px 3px 20px; background:url('/assets/hesburgh_assets/main/1.0/info.gif') 5px center no-repeat; }
+#tab_box p.about-tab a:hover {background-color:#e9f0f8;}
 #tab_box select {width:190px;}
-input.srch-box {padding: 3px 5px; width:230px;}
-input.srch-box.long {width:424px;}
+#tab_box input.srch-box {padding:.5em 0; width:230px;}
+#tab_box input.srch-box.long {width:424px;}
 
 .ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding:0; }
 

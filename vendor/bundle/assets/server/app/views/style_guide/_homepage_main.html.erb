@@ -1,5 +1,5 @@
 <div class="inner-left">
-  <div id="tab_box" class="search-appliance">
+  <div id="tab_box">
     <dl class="tabs contained">
       <dd><a id="tab_primo_l" class="onesearch active tab" href="#tab_primo"><span>OneSearch</span></a><div class="default hide-on-phones"><a href="#tab_primo" class="setTabDefault" title="Save OneSearch as my default search.">Default Tab</a></div></dd>
       <dd><a id="tab_cat_l" href="#tab_cat" class="ndcatalog tab"><span>ND Catalog</span></a><div class="default hide-on-phones"><a href="#tab_cat" class="setTabDefault" title="Save ND Catalog as my default search.">Default Tab</a></div></dd>
@@ -13,96 +13,111 @@
     <div id="search_box">
       <ul class="tabs-content contained">
         <li class="active" id="tab_primoTab">
-          <form name="searchForm" method="get" action="<%= primo_search_url("onesearch") %>" class="simple EXLForm" enctype="application/x-www-form-urlencoded; charset=utf-8">
-            <!--<p class="new about-tab hide-on-phones"><img src="/local_images/new.png"> <a class="cboxElement" href="/expl/expl-onesearch.shtml">Learn more</a> about our new search service.</p><span class="feedback hide-on-phones"><a href="/onesearch/feedback/">Let us know</a> what you think.</span>-->
+          <form name="searchForm" method="get" action="http://onesearch.library.nd.edu/primo_library/libweb/action/search.do?vid=NDU&amp;resetConfig=true" class="simple EXLForm" enctype="application/x-www-form-urlencoded; charset=utf-8">
+            <!--<p class="new about-tab hide-on-phones"><img src="http://www.library.nd.edu/local_images/new.png"> <a class="cboxElement" href="http://www.library.nd.edu/expl/expl-onesearch.shtml">Learn more</a> about our new search service.</p><span class="feedback hide-on-phones"><a href="http://www.library.nd.edu/onesearch/feedback/">Let us know</a> what you think.</span>-->
             <fieldset>
               <span class="legend">Search articles, the ND catalog and area libraries</span>
-              <input tabindex="1" type="text" id="catplus_search" class="srch-box long" name="q" value="" onkeydown="" accesskey="s" />
-              <% if !Rails.env.production? %>
-                <input type="hidden" name="vid" value="NDUC">
-              <% end %>
+              <input tabindex="1" type="text" id="catplus_search" class="srch-box long" name="vl(freeText0)" value="" onkeydown="" accesskey="s" />
+              <input type="hidden" id="fn" name="fn" value="search" />
+              <input type="hidden" id="ct" name="ct" value="search" />
+              <input type="hidden" id="mode" name="mode" value="Basic"/>
+              <input type="hidden" id="tab" name="tab" value="onesearch"/>
+              <input type="hidden" id="indx" name="indx" value="1"/>
+              <input type="hidden" id="dum" name="dum" value="true"/>
+              <input type="hidden" name="srt" value="rank" id="str"/>
+              <input type="hidden" id="vid" name="vid" value="NDU"/>
+              <input type="hidden" id="frbg" name="frbg" value=""/>
               <button type="submit" class="searchbtn btn">Search</button>
-
             </fieldset>
           </form>
           <ul class="extra-links">
-            <li><a href="<%= primo_search_url("onesearch", mode: 'Advanced') %>">Advanced search</a></li>
-            <li><a href="<%= primo_search_url("nd_campus") %>">ND Catalog</a></li>
+            <li><a href="http://onesearch.library.nd.edu/primo_library/libweb/action/search.do?vid=NDU&resetConfig=true&tab=onesearch&mode=Advanced">Advanced search</a></li>
+            <li><a href="http://onesearch.library.nd.edu/primo_library/libweb/action/search.do?vid=NDU&tab=nd_campus&mode=Basic&resetConfig=true">ND Catalog</a></li>
             <li><a href="http://alephprod.library.nd.edu/F/?func=find-b-0">Catalog Classic</a></li>
             <li><a href="http://eresources.library.nd.edu/databases/worldcat">WorldCat</a></li>
 
           </ul>
           <p class="about-tab">
-            <a data-reveal-id="onesearch">About OneSearch</a>
+            <a href="http://www.library.nd.edu/expl/expl-onesearch.shtml">About OneSearch</a>
           </p>
         </li>
 
         <li class="tab_cat ui-tabs ui-tabs-hide" id="tab_catTab">
-          <form name="searchForm" method="get" action="<%= primo_search_url("nd_campus") %>" class="simple EXLForm" enctype="application/x-www-form-urlencoded; charset=utf-8">
+          <form name="searchForm" method="get" action="http://onesearch.library.nd.edu/primo_library/libweb/action/search.do?vid=NDU&resetConfig=true" class="simple EXLForm" enctype="application/x-www-form-urlencoded; charset=utf-8">
             <fieldset>
               <span class="legend">Find books, music, movies, etc. in ND and area libraries</span>
-              <input type="text" id="catplus_search" class="srch-box long" name="q" value="" onkeydown="" accesskey="s" />
-              <% if !Rails.env.production? %>
-                <input type="hidden" name="vid" value="NDUC">
-              <% end %>
+              <input type="text" id="catplus_search" class="srch-box long" name="vl(freeText0)" value="" onkeydown="" accesskey="s" />
+        <input type="hidden" id="fn" name="fn" value="search" />
+        <input type="hidden" id="ct" name="ct" value="search" />
+              <input type="hidden" id="mode" name="mode" value="Basic"/>
+              <input type="hidden" id="tab" name="tab" value="nd_campus"/>
+              <input type="hidden" id="indx" name="indx" value="1"/>
+              <input type="hidden" id="dum" name="dum" value="true"/>
+              <input type="hidden" name="srt" value="rank" id="str"/>
+              <input type="hidden" id="vid" name="vid" value="NDU"/>
+              <input type="hidden" id="frbg" name="frbg" value=""/>
               <button type="submit" class="searchbtn btn">Search</button>
-              <label class="checkbox"><input type="checkbox" name="search_scope" value="default_scope"> Include Partner Libraries</label>
+
             </fieldset>
           </form>
-        <!--<div id="problem" style="color: green;"><a href="http://library.nd.edu/catalogplus/what_you_should_know.shtml">5 Things You Should Know</a> about CatalogPlus, especially if you are an ardent CatalogClassic user. <br /><br /></div>-->
+        <!--<div id="problem" style="color: green;"><a href="http://www.library.nd.edu/catalogplus/what_you_should_know.shtml">5 Things You Should Know</a> about CatalogPlus, especially if you are an ardent CatalogClassic user. <br /><br /></div>-->
           <ul class="extra-links">
-            <li><a href="<%= primo_search_url("nd_campus", mode: 'Advanced') %>">Advanced search</a></li>
+            <li><a href="http://onesearch.library.nd.edu/primo_library/libweb/action/search.do?vid=NDU&resetConfig=true&tab=nd_campus&mode=Advanced">Advanced search</a></li>
             <li><a href="http://alephprod.library.nd.edu/F/?func=find-b-0">Catalog Classic</a></li>
             <li><a href="http://eresources.library.nd.edu/databases/worldcat">WorldCat</a></li>
           </ul>
           <p class="about-tab">
-            <a data-reveal-id="catplus">About ND Catalog</a>
+            <a href="http://www.library.nd.edu/expl/expl-catplus.shtml">About ND Catalog</a>
           </p>
         </li>
 
         <li class="tab_art ui-tabs ui-tabs-hide" id="tab_artTab">
-          <form action="<%= search_url("articles") %>" method="get">
+          <form action="http://www.library.nd.edu/ddw/public/statistics/stats.cgi" method="get">
             <fieldset>
               <span class="legend">Find articles on a topic</span>
-              <input id="quick_search" class="srch-box long" type="text" name="q" value="" />
+              <input type="hidden" name="subject" value="genmul" />
+              <input id="quick_search" class="srch-box long" type="text" name="query" value="" />
+              <input type="hidden" value="basic" name="interface" />
+              <input type="hidden" value="subject" name="search_type" />
               <button type="submit" class="searchbtn btn">Search</button>
+              <input type="hidden" name="stats_search_type" value="article_search" />
 
             </fieldset>
           </form>
           <ul class="extra-links">
-            <li><a href="<%= search_url("articles") %>">Advanced Search</a></li>
-            <li><a href="<%= library_url("/find_articles/index.shtml#tab_tad") %>">Most used article databases</a></li>
-            <li><a href="<%= library_url("/find_articles/index.shtml#simple3") %>">Articles by subject</a></li>
+            <li><a href="http://www.library.nd.edu/eresources/quicksearch/quicksearch.cgi?interface=advanced&subject=genmul&search_type=subject">Advanced Search</a></li>
+            <li><a href="http://www.library.nd.edu/find_articles/index.shtml#tab_tad">Most used article databases</a></li>
+            <li><a href="http://www.library.nd.edu/find_articles/index.shtml#tab_dbsub">Articles by subject</a></li>
           </ul>
           <p class="about-tab">
-            <a data-reveal-id="art">About Articles</a>
+            <a href="http://www.library.nd.edu/expl/expl-art.shtml">About Articles</a>
           </p>
         </li>
 
         <li class="tab_jou ui-tabs ui-tabs-hide" id="tab_jouTab">
-          <form action="<%= search_url("ejournals") %>" method="get">
+          <form action="http://ejl.library.nd.edu/catalog" method="get">
             <fieldset>
               <span class="legend">Find a specific journal</span>
-              <input tabindex="5" id="journals_search" class="srch-box long" type="text" name="q" value="" />
-              <button type="submit" class="searchbtn btn">Search</button>
+              <input tabindex="5" id="journals_search" class="srch-box long" type="text" name="q" value="" /> <button type="submit" class="searchbtn btn">Search</button>
 
             </fieldset>
           </form>
 
           <ul class="extra-links">
-            <li><a href="<%= search_url("ejournals") %>">Advanced search</a></li>
+            <li><a href="http://ejl.library.nd.edu/">Advanced search</a></li>
             <li><a href="http://eresources.library.nd.edu/ejournals/alljournals">All journals</a></li>
           </ul>
           <p class="about-tab">
-            <a data-reveal-id="jou">About e-Journals</a>
+            <a href="http://www.library.nd.edu/expl/expl-jou.shtml">About e-Journals</a>
           </p>
         </li>
 
         <li class="tab_dat ui-tabs ui-tabs-hide" id="tab_datTab">
-          <form action="<%= search_url("databases") %>" method="get"  enctype="application/x-www-form-urlencoded" accept-charset="utf-8" name="myform" id="myform">
+          <form action="http://www.library.nd.edu/ddw/public/statistics/stats.cgi" method="get"  enctype="application/x-www-form-urlencoded" accept-charset="utf-8" name="myform" id="myform">
             <fieldset>
               <span class="legend">Find databases by title or keyword</span>
-              <input id="dbf_search" class="srch-box long" type="text" name="q" value="" />
+              <input id="dbf_search" class="srch-box long" type="text" name="query" value="" />
+              <input type="hidden" name="stats_search_type" value="dbf_search" />
               <button type="submit" class="searchbtn btn">Search</button>
 
             </fieldset>
@@ -110,89 +125,94 @@
           <ul class="extra-links">
 
             <li>All databases:
-              <span id="atoz">
-                <a href="http://library.nd.edu/alpha/a">A</a>
-                <a href="http://library.nd.edu/alpha/b">B</a>
-                <a href="http://library.nd.edu/alpha/c">C</a>
-                <a href="http://library.nd.edu/alpha/d">D</a>
-                <a href="http://library.nd.edu/alpha/e">E</a>
-                <a href="http://library.nd.edu/alpha/f">F</a>
-                <a href="http://library.nd.edu/alpha/g">G</a>
-                <a href="http://library.nd.edu/alpha/h">H</a>
-                <a href="http://library.nd.edu/alpha/i">I</a>
-                <a href="http://library.nd.edu/alpha/j">J</a>
-                <a href="http://library.nd.edu/alpha/k">K</a>
-                <a href="http://library.nd.edu/alpha/l">L</a>
-                <a href="http://library.nd.edu/alpha/m">M</a>
-                <a href="http://library.nd.edu/alpha/n">N</a>
-                <a href="http://library.nd.edu/alpha/o">O</a>
-                <a href="http://library.nd.edu/alpha/p">P</a>
-                <a href="http://library.nd.edu/alpha/q">Q</a>
-                <a href="http://library.nd.edu/alpha/r">R</a>
-                <a href="http://library.nd.edu/alpha/s">S</a>
-                <a href="http://library.nd.edu/alpha/t">T</a>
-                <a href="http://library.nd.edu/alpha/u">U</a>
-                <a href="http://library.nd.edu/alpha/v">V</a>
-                <a href="http://library.nd.edu/alpha/w">W</a>
-                <a href="http://library.nd.edu/alpha/x">X</a>
-                <a href="http://library.nd.edu/alpha/y">Y</a>
-                <a href="http://library.nd.edu/alpha/z">Z</a>
-                <a href="http://library.nd.edu/alpha/0">0-9</a>
-              </span>
-            </li><br />
-            <li><a href="http://library.nd.edu/ddw/public/subject-all-dbs.cgi">Databases by subject</a></li>
+        <span id="atoz">
+              <a href="http://www.library.nd.edu/alpha/a">A</a>
+              <a href="http://www.library.nd.edu/alpha/b">B</a>
+              <a href="http://www.library.nd.edu/alpha/c">C</a>
+              <a href="http://www.library.nd.edu/alpha/d">D</a>
+              <a href="http://www.library.nd.edu/alpha/e">E</a>
+              <a href="http://www.library.nd.edu/alpha/f">F</a>
+              <a href="http://www.library.nd.edu/alpha/g">G</a>
+              <a href="http://www.library.nd.edu/alpha/h">H</a>
+              <a href="http://www.library.nd.edu/alpha/i">I</a>
+              <a href="http://www.library.nd.edu/alpha/j">J</a>
+              <a href="http://www.library.nd.edu/alpha/k">K</a>
+              <a href="http://www.library.nd.edu/alpha/l">L</a>
+              <a href="http://www.library.nd.edu/alpha/m">M</a>
+              <a href="http://www.library.nd.edu/alpha/n">N</a>
+              <a href="http://www.library.nd.edu/alpha/o">O</a>
+              <a href="http://www.library.nd.edu/alpha/p">P</a>
+              <a href="http://www.library.nd.edu/alpha/q">Q</a>
+              <a href="http://www.library.nd.edu/alpha/r">R</a>
+              <a href="http://www.library.nd.edu/alpha/s">S</a>
+              <a href="http://www.library.nd.edu/alpha/t">T</a>
+              <a href="http://www.library.nd.edu/alpha/u">U</a>
+              <a href="http://www.library.nd.edu/alpha/v">V</a>
+              <a href="http://www.library.nd.edu/alpha/w">W</a>
+              <a href="http://www.library.nd.edu/alpha/x">X</a>
+              <a href="http://www.library.nd.edu/alpha/y">Y</a>
+              <a href="http://www.library.nd.edu/alpha/z">Z</a>
+        <a href="http://www.library.nd.edu/alpha/0">0-9</a></span></li><br />
+         <li><a href="http://www.library.nd.edu/ddw/public/subject-all-dbs.cgi">Databases by subject</a></li>
           </ul>
           <p class="about-tab">
-            <a data-reveal-id="dat">About Databases</a>
+            <a href="http://www.library.nd.edu/expl/expl-dat.shtml">About Databases</a>
           </p>
         </li>
 
         <li class="tab_boo ui-tabs ui-tabs-hide" id="tab_booTab">
-          <form name="searchForm" method="get" action="<%= primo_search_url("ebooks") %>" class="simple EXLForm" enctype="application/x-www-form-urlencoded; charset=utf-8">
+          <form name="searchForm" method="get" action="http://onesearch.library.nd.edu/primo_library/libweb/action/search.do" class="simple EXLForm" enctype="application/x-www-form-urlencoded; charset=utf-8">
             <fieldset>
               <span class="legend">Find electronic books in ND and area libraries</span>
-              <input type="text" id="search_field" class="EXLSearchInputText EXLMainSearchField srch-box long" name="q" value="" onkeydown="" accesskey="s" />
-              <% if !Rails.env.production? %>
-                <input type="hidden" name="vid" value="NDUC">
-              <% end %>
+              <input type="text" id="search_field" class="EXLSearchInputText EXLMainSearchField srch-box long" name="vl(freeText0)" value="" onkeydown="" accesskey="s" />
+              <input type="hidden" id="fn" name="fn" value="search" />
+              <input type="hidden" id="mode" name="mode" value="Basic"/>
+              <input type="hidden" id="tab" name="tab" value="nd_campus"/>
+              <input type="hidden" id="indx" name="indx" value="1"/>
+              <input type="hidden" id="dum" name="dum" value="true"/>
+              <input type="hidden" name="srt" value="rank" id="str"/>
+              <input type="hidden" id="vid" name="vid" value="NDU"/>
+              <input type="hidden" id="frbg" name="frbg" value=""/>
+              <input type="hidden" id="ct" name="ct" value="facet" />
+              <input type="hidden" id="fctN" name="fctN" value="facet_tlevel" />
+              <input type="hidden" id="fctV" name="fctV" value="online_resources" />
+              <input type="hidden" id="fctN" name="fctN" value="facet_rtype" />
+              <input type="hidden" id="fctV" name="fctV" value="books"/>
               <button type="submit" class="searchbtn btn">Search</button>
+
             </fieldset>
           </form>
           <ul class="extra-links">
-            <li><a href="<%= library_url("/srch-find/ebooks.shtml") %>">e-Book collections</a></li>
+            <li><a href="http://www.library.nd.edu/srch-find/ebooks.shtml">e-Book collections</a></li>
             <li><a href="http://eresources.library.nd.edu/databases/googlebook">Google Books</a></li>
             <li><a href="http://eresources.library.nd.edu/databases/hathitrust">HathiTrust</a> (<a href="http://eresources.library.nd.edu/databases/hathifaq">FAQ</a>)</li>
          </ul>
           <p class="about-tab">
-            <a data-reveal-id="ebooks">About e-Books</a>
+            <a href="http://www.library.nd.edu/expl/expl-ebooks.shtml">About e-Books</a>
           </p>
         </li>
       </ul>
     </div>
-  </div> <!-- End #search -->
+  </div>
 
   <div id="quicklinks" class="box">
     <h4>Quicklinks</h4>
     <ul class="w27pct">
-      <li><a traget="_blank" href="https://reserves.library.nd.edu/">Library Reserves</a></li>
+      <li><a class="xereserves" href="https://www.library.nd.edu/reserves/ereserves/">Course Reserves</a></li>
       <li><a href="https://nd.illiad.oclc.org/illiad/IND/logon.html">Interlibrary loan</a></li>
-      <li><a href="/fys/">Starting your research</a></li>
-      <li><a href="/recent-acquisitions/">Recent Acquisitions</a></li>
-      <li><a href="http://eresources.library.nd.edu/databases/trials">Electronic Resource Trials</a></li>
-      <li><a href="/subjects">Subjects A-Z</a></li>
+      <li><a href="http://www.library.nd.edu/fys/">Starting your research</a></li>
+      <li><a href="http://www.library.nd.edu/recent-acquisitions/">Recent Acquisitions</a></li>
+      <li><a href="http://www.library.nd.edu/subjects">Subjects A-Z</a></li>
       <li><a href="http://guides.library.nd.edu/">Course Pages &amp; Research Guides </a></li>
     </ul>
 
     <ul class="w39pct">
-      <li><a href="/about/myaccount.shtml">My Library Accounts</a></li>
-      <li><a href="/circulation/index.shtml">Circulation</a></li>
+      <li><a href="http://www.library.nd.edu/about/myaccount.shtml">My Library Accounts</a></li>
+      <li><a href="http://www.library.nd.edu/circulation/index.shtml">Circulation</a></li>
       <li><a href="http://eresources.library.nd.edu/databases/refworks">RefWorks</a></li>
-      <li><a href="/eresources/forms/problem/index.cgi?#tab_cp">Report a problem</a></li>
-      <li><a href="/eresources/forms/problem/index.cgi?#tab_fs">Request forms</a></li>
-      <li>
-        <a href="/instruction/workshops/">Workshop Registration</a>
-      </li>
-      <li id="pog"><a href="http://library.nd.edu/instruction/potofgold/">Pot of Gold tutorial</a></li>
+      <li><a href="http://www.library.nd.edu/eresources/forms/problem/index.cgi?#tab_cp">Report a problem</a></li>
+      <li><a href="http://www.library.nd.edu/eresources/forms/problem/index.cgi?#tab_fs">Request forms</a></li>
+      <li id="pog"><a href="http://www.library.nd.edu/instruction/potofgold/">Pot of Gold tutorial</a></li>
     </ul>
 
     <ul class="w32pct">

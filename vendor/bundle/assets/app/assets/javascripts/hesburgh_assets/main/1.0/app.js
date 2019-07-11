@@ -1,101 +1,81 @@
 /* Foundation v2.2.1 http://foundation.zurb.com */
 jQuery(document).ready(function ($) {
 
-  /* Use this js doc for all application specific JS */
+	/* Use this js doc for all application specific JS */
 
-  /* TABS --------------------------------- */
-  /* Remove if you don't need :) */
+	/* TABS --------------------------------- */
+	/* Remove if you don't need :) */
 
-  function activateTab($tab, initialLoad) {
-    var $activeTab = $tab.closest('dl').find('a.active'),
-        contentLocation = $tab.attr("href") + 'Tab';
+	function activateTab($tab) {
+		var $activeTab = $tab.closest('dl').find('a.active'),
+				contentLocation = $tab.attr("href") + 'Tab';
+				
+		// Strip off the current url that IE adds
+		contentLocation = contentLocation.replace(/^.+#/, '#');
 
-    // Strip off the current url that IE adds
-    contentLocation = contentLocation.replace(/^.+#/, '#');
+		//Make Tab Active
+		$activeTab.removeClass('active');
+		$tab.addClass('active');
 
-    //Make Tab Active
-    $activeTab.removeClass('active');
-    $tab.addClass('active');
+    //Show Tab Content
+		$(contentLocation).closest('.tabs-content').children('li').hide();
+		$(contentLocation).css('display', 'block');
+	}
 
-    if (/^#/.test(contentLocation)) {
-      //Show Tab Content
-      $(contentLocation).closest('.tabs-content').children('li').hide();
-      $(contentLocation).css('display', 'block');
-    }
+	$('dl.tabs').each(function () {
+		//Get all tabs
+		var tabs = $(this).children('dd').children('a');
+		tabs.click(function (e) {
+			activateTab($(this));
+		});
+	});
 
-    var parents = $tab.parents();
-    if (!initialLoad && parents.is('.home-page') && parents.is('.search-appliance')) {
-      // If the user has typed anything in the search box of the previous tab, copy it to the next tab's search box
-      var previousContent = $($activeTab.attr('href') + 'Tab');
-      var previousInput = previousContent.find('input.srch-box');
-      previousInput.focus();
-      if (previousInput.val() && previousInput.val() != previousInput.data('placeholder')) {
-        var input = $(contentLocation).find('input.srch-box');
-        input.val(previousInput.val());
-        input.focus();
-        previousInput.val(previousInput.data('placeholder'));
-        // Make sure the cursor is at the end of the search box
-        if (input[0].setSelectionRange) {
-          input[0].setSelectionRange(input.val().length, input.val().length);
-        }
-      }
-    }
-  }
+	if (window.location.hash) {
+		activateTab($('a[href="' + window.location.hash + '"]'));
+		$.foundation.customForms.appendCustomMarkup();
+	}
 
-  $('dl.tabs').each(function () {
-    //Get all tabs
-    var tabs = $(this).children('dd').children('a');
-    tabs.click(function (e) {
-      activateTab($(this));
-    });
-  });
-
-  if (window.location.hash) {
-    activateTab($('a[href="' + window.location.hash + '"]'), true);
-    $.foundation.customForms.appendCustomMarkup();
-  }
-
-  /* ALERT BOXES ------------ */
-  $(".alert-box").delegate("a.close", "click", function(event) {
+	/* ALERT BOXES ------------ */
+	$(".alert-box").delegate("a.close", "click", function(event) {
     event.preventDefault();
-    $(this).closest(".alert-box").fadeOut(function(event){
-      $(this).remove();
-    });
-  });
+	  $(this).closest(".alert-box").fadeOut(function(event){
+	    $(this).remove();
+	  });
+	});
 
 
-  /* PLACEHOLDER FOR FORMS ------------- */
-  /* Remove this and jquery.placeholder.min.js if you don't need :) */
+	/* PLACEHOLDER FOR FORMS ------------- */
+	/* Remove this and jquery.placeholder.min.js if you don't need :) */
 
-  $('input, textarea').placeholder();
+	$('input, textarea').placeholder();
 
-  /* TOOLTIPS ------------ */
-  $(this).tooltips();
-
-
-
-  /* UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE6/7/8 SUPPORT AND ARE USING .block-grids */
-//  $('.block-grid.two-up>li:nth-child(2n+1)').css({clear: 'left'});
-//  $('.block-grid.three-up>li:nth-child(3n+1)').css({clear: 'left'});
-//  $('.block-grid.four-up>li:nth-child(4n+1)').css({clear: 'left'});
-//  $('.block-grid.five-up>li:nth-child(5n+1)').css({clear: 'left'});
+	/* TOOLTIPS ------------ */
+	$(this).tooltips();
 
 
 
-  /* DROPDOWN NAV ------------- */
+	/* UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE6/7/8 SUPPORT AND ARE USING .block-grids */
+//	$('.block-grid.two-up>li:nth-child(2n+1)').css({clear: 'left'});
+//	$('.block-grid.three-up>li:nth-child(3n+1)').css({clear: 'left'});
+//	$('.block-grid.four-up>li:nth-child(4n+1)').css({clear: 'left'});
+//	$('.block-grid.five-up>li:nth-child(5n+1)').css({clear: 'left'});
 
-  var lockNavBar = false;
-  $(document).on('click', '.nav-bar a.flyout-toggle', function(e) {
-    e.preventDefault();
-    var flyout = $(this).siblings('.flyout');
-    if (lockNavBar === false) {
-      $('.nav-bar .flyout').not(flyout).slideUp(500);
-      flyout.slideToggle(500, function(){
-        lockNavBar = false;
-      });
-    }
-    lockNavBar = true;
-  });
+
+
+	/* DROPDOWN NAV ------------- */
+
+	var lockNavBar = false;
+	$('.nav-bar a.flyout-toggle').live('click', function(e) {
+		e.preventDefault();
+		var flyout = $(this).siblings('.flyout');
+		if (lockNavBar === false) {
+			$('.nav-bar .flyout').not(flyout).slideUp(500);
+			flyout.slideToggle(500, function(){
+				lockNavBar = false;
+			});
+		}
+		lockNavBar = true;
+	});
   if (Modernizr.touch) {
     $('.nav-bar>li.has-flyout>a.main').css({
       'padding-right' : '75px'
@@ -112,7 +92,7 @@ jQuery(document).ready(function ($) {
   }
 
 
-  /* DISABLED BUTTONS ------------- */
-  /* Gives elements with a class of 'disabled' a return: false; */
-
+	/* DISABLED BUTTONS ------------- */
+	/* Gives elements with a class of 'disabled' a return: false; */
+  
 });
