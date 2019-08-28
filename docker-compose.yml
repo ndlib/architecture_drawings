@@ -16,7 +16,6 @@ services:
         timeout: 10s
         retries: 5
   rails:
-    image: architecture_drawings_rails
     build:
       context: .
       dockerfile: docker/Dockerfile.rails
