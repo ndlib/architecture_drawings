@@ -1,7 +1,10 @@
-version: '3'
+# test push 27
+version: '3.2'
 services:
   mysql:
     build:
+      cache_from:
+        - ${DOCKER_CACHE}
       context: .
       dockerfile: ./docker/Dockerfile.mysql
     ports:
@@ -17,6 +20,8 @@ services:
         retries: 5
   rails:
     build:
+      cache_from:
+        - ${DOCKER_CACHE}
       context: .
       dockerfile: docker/Dockerfile.rails
     command: bash docker/rails_entry.sh
@@ -36,6 +41,8 @@ services:
       - solr
   solr:
     build:
+      cache_from:
+        - ${DOCKER_CACHE}
       context: .
       dockerfile: docker/Dockerfile.solr
     command: bash /solr/jetty.sh start
