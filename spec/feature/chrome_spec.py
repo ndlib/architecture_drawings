@@ -1,6 +1,7 @@
 
 import unittest
 import os
+import sys
 import re
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
@@ -34,7 +35,7 @@ class ChromeSpec(unittest.TestCase):
         try:
             WebDriverWait(self.driver, 10).until(Expected.presence_of_element_located((By.CLASS_NAME, "hesburgh-wrapped")))
         except TimeoutException:
-            print "Timed out waiting for header to load"
+            self.fail("Timed out waiting for header to load")
 
     def test_home_link(self):
         driver = self.driver
@@ -62,4 +63,5 @@ class ChromeSpec(unittest.TestCase):
 
 
 suite = unittest.TestLoader().loadTestsFromTestCase(ChromeSpec)
-unittest.TextTestRunner(verbosity=2).run(suite)
+result = unittest.TextTestRunner(verbosity=2).run(suite)
+sys.exit(not result.wasSuccessful())
