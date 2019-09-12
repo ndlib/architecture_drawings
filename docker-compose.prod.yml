@@ -1,4 +1,4 @@
-version: '3'
+version: '3.2'
 services:
   rails:
     environment:
@@ -7,6 +7,8 @@ services:
       - static-content:/project_root/public/assets
   nginx:
     build:
+      cache_from:
+        - ${DOCKER_CACHE}
       context: .
       dockerfile: docker/Dockerfile.nginx
     command: bash project_root/nginx_entry.sh
