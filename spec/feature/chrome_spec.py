@@ -21,7 +21,7 @@ class ChromeSpec(unittest.TestCase):
         options.add_argument('-headless')
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('--no-sandbox')
-        cls.driver = Chrome(executable_path='/usr/local/bin/chromedriver', options=options)
+        cls.driver = Chrome(options=options)
         cls.driver.implicitly_wait(10)
 
     @classmethod
@@ -34,6 +34,7 @@ class ChromeSpec(unittest.TestCase):
         # be sensitive to changes in https://github.com/ndlib/drapes
         try:
             WebDriverWait(self.driver, 10).until(Expected.presence_of_element_located((By.CLASS_NAME, "hesburgh-wrapped")))
+            WebDriverWait(self.driver, 10).until(Expected.presence_of_element_located((By.XPATH, "//nav[@aria-label='Main Navigation']")))
         except TimeoutException:
             self.fail("Timed out waiting for header to load")
 
